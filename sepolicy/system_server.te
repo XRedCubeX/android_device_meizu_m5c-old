@@ -154,6 +154,8 @@ allow system_server zygote:unix_stream_socket { getopt getattr };
 # Purpose : for kill-switch should only grant to access frp partition, to be fix
 allow system_server platformblk_device:dir search;
 
+# Persist
+allow system_server protect_s_data_file:dir r_dir_perms;
 
 # Debugfs
 allow system_server debugfs:dir { read open };
