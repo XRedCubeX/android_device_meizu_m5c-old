@@ -43,6 +43,8 @@ import com.android.internal.telephony.MtkEccList;
 public class MediaTekRIL extends RIL implements CommandsInterface {
     static final String LOG_TAG = "MediaTekRIL";
 
+    static final int REFRESH_SESSION_RESET = 6; /* Session reset */
+
     static final int RIL_REQUEST_VENDOR_BASE = 2000;
     static final int RIL_REQUEST_MODEM_POWEROFF = (RIL_REQUEST_VENDOR_BASE + 10);
 //    static final int RIL_REQUEST_DUAL_SIM_MODE_SWITCH  = (RIL_REQUEST_VENDOR_BASE + 11);
@@ -268,6 +270,14 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
         String rawefId = p.readString();
         response.efId   = rawefId == null ? 0 : Integer.parseInt(rawefId);
         response.aid = p.readString();
+
+        if (response.refreshResult > IccRefreshResponse.REFRESH_RESULT_RESET) {
+            if (response.refreshResult == REFRESH_SESSION_RESET) {
+                response.refreshResult = IccRefreshResponse.REFRESH_RESULT_RESET;
+            } else {
+                response.refreshResult = IccRefreshResponse.REFRESH_RESULT_INIT;
+            }
+        }
 
         return response;
     }
