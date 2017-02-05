@@ -33,31 +33,15 @@ Not working :
 
 Change log
 ----------
-### v0.7
-- zRam properly used
-- overall cleanup/fixes
-### v0.6
-- OMX blobs fixed
-### v0.5
-- mobile data fixed
-### v0.4
-- InCall audio and recorder fixed
-- gestures fixed
-- selinux cleanup / some denials fix
-### v0.3
-- Transition from Cyanogen to LineageOS
-- Android base update - 7.1.1 - 05/01/2017 Security Patch
-### v0.2
-- GPS / overall clean-up & update
 ### v0.1
-- M2 Note basic bring-up on Cm-14.1
+- M2 Note basic bring-up on LineageOS-14.1
   
 Credits & Thanks 
 ---------
-CyanogenMod / LineageOS
-Team MAD
-Divis1969
-DanielHk
-
+CyanogenMod / LineageOS  
+Team MAD  
+Divis1969  
+DanielHk  
+  
 And about everyone else in the Mediatek community ;)  
 
