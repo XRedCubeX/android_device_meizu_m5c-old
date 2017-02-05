@@ -16,21 +16,6 @@ Build the code:
     breakfast m2note
     make -j 4 bacon showcommands 2>&1 | tee build.log
 
-Current state
--------------
-
-Working :  
-- Boot  
-- Wifi  
-- Audio (inCall & recorder)
-- Bluetooth  
-- Sensors  
-- Telephony : Calls / SMS / Data  
-- Gestures  
-
-Not working :  
-- Camera  
-
 Change log
 ----------
 ### v0.1
