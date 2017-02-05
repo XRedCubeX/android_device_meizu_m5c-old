@@ -11,12 +11,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
+ <string name="device_settings_app_name">Gestos con Pantalla Apagada</string>
     <!-- Gesture shortcuts -->
     <string name="screen_gestures_panel_title">Atajos de gestos</string>
     <string name="screen_gestures_panel_summary">Usar gestos cuando la pantalla está apagada</string>
 
-    <string name="touchscreen_control_gesture_head">Gestos de Pantalla Apagada</string>
+    <string name="touchscreen_control_gesture_head">Gestos con Pantalla Apagada</string>
     <string name="touchscreen_control_gesture_title">Activar Gestos de Pantalla</string>
     <string name="gesture_category_title">Gestos Disponibles</string>
 
