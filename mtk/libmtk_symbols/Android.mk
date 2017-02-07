@@ -1,12 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := \
-    mtk_gui.cpp \
-    mtk_ui.cpp
-
-# only for 64bit libraries
-LOCAL_SRC_FILES_64 := mtk_parcel.cpp
+LOCAL_SRC_FILES := mtk_ui.cpp
 
 LOCAL_SHARED_LIBRARIES := libbinder liblog libgui libui
 
