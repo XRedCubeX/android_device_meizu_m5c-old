@@ -16,8 +16,7 @@ PRODUCT_PACKAGES += \
 # Mediatek
 PRODUCT_PACKAGES += \
     libstlport \
-    libgralloc_extra \
-    librrc
+    libgralloc_extra
 
 # Ion
 PRODUCT_PACKAGES += libion
@@ -51,9 +50,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.default \
     power.mt6753
-
-# Charger
-PRODUCT_PACKAGES += charger_res_images
 
 # LiveDisplay
 PRODUCT_PACKAGES += libjni_livedisplay

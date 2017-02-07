@@ -6,7 +6,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 DEVICE_PATH := device/meizu/m2note
 
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal xhdpi
@@ -20,9 +20,4 @@ TARGET_OTA_ASSERT_DEVICE := m2note,m2n,meizu_m2_note
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.allow.mock.location=1 \
-    persist.service.acm.enable=0 \
-    ro.mount.fs=EXT4
 

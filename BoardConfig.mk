@@ -13,6 +13,7 @@ TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Fragments include
 -include $(DEVICE_PATH)/board/*.mk
+# Fun with flags
 
 # MTK flags
 BOARD_HAS_MTK_HARDWARE := true
@@ -25,6 +26,5 @@ BOARD_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 
 # Camera
-# Pre-Nougat cam HALv1
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
