@@ -10,7 +10,8 @@ PRODUCT_PACKAGES += \
     libmtk_symbols \
     libshim_agps \
     libshim_omx \
-    libshim_gui
+    libshim_gui \
+    libshim_ui
 
 # Mediatek
 PRODUCT_PACKAGES += \
