@@ -40,3 +40,12 @@ LOCAL_SRC_FILES := mtk_ui.cpp
 LOCAL_SHARED_LIBRARIES := libbinder liblog libui
 LOCAL_MODULE := libshim_ui
 include $(BUILD_SHARED_LIBRARY)
+
+## libshim_cam
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := mtk_cam.cpp
+
+LOCAL_SHARED_LIBRARIES := libbinder liblog libgui libui
+LOCAL_MODULE := libshim_cam
+include $(BUILD_SHARED_LIBRARY)
