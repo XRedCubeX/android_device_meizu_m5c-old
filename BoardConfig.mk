@@ -13,13 +13,12 @@ TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Fragments include
 -include $(DEVICE_PATH)/board/*.mk
-# Fun with flags
+
+## Fun with flags
 
 # MTK flags
-BOARD_HAS_MTK_HARDWARE := true
 BOARD_USES_MTK_HARDWARE := true
 BOARD_USES_LEGACY_MTK_AV_BLOB := true
-BOARD_NO_SECURE_DISCARD := true
 
 # Global flags
 BOARD_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
