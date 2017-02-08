@@ -14,7 +14,7 @@ on early-init
 on init
     export LD_PRELOAD "libmtk_symbols.so"
 
-    export LD_SHIM_LIBS "/system/bin/mtk_agpsd|libshim_agps.so:/system/lib/libMtkOmxVdec.so|libshim_omx.so:/system/lib/libshowlogo.so|libshim_gui.so:/system/lib/libaal.so|/system/lib/libshim_gui.so:/system/lib64/libaal.so|/system/lib64/libshim_gui.so:/system/lib/libmtk_mmutils.so|/system/lib/libshim_ui.so:/system/lib64/libmtk_mmutils.so|/system/lib64/libshim_ui.so"
+    export LD_SHIM_LIBS "/system/bin/mtk_agpsd|libshim_agps.so:/system/lib/libMtkOmxVdec.so|libshim_omx.so:/system/lib/libshowlogo.so|libshim_asc.so:/system/lib/libaal.so|/system/lib/libshim_asc.so:/system/lib64/libaal.so|/system/lib64/libshim_asc.so:/system/lib/libmtk_mmutils.so|/system/lib/libshim_ui.so:/system/lib64/libmtk_mmutils.so|/system/lib64/libshim_ui.so"
 
     # mount points
     mkdir /protect_f 0771 system system

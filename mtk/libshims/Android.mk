@@ -22,13 +22,13 @@ LOCAL_SHARED_LIBRARIES_32 := libstagefright
 LOCAL_MODULE := libshim_omx
 include $(BUILD_SHARED_LIBRARY)
 
-## libshim_gui
+## libshim_asc
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := mtk_gui.cpp
+LOCAL_SRC_FILES := mtk_asc.cpp
 
 LOCAL_SHARED_LIBRARIES := libbinder liblog libgui
-LOCAL_MODULE := libshim_gui
+LOCAL_MODULE := libshim_asc
 include $(BUILD_SHARED_LIBRARY)
 
 
