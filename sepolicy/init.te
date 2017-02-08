@@ -16,3 +16,6 @@ allow init platformblk_device:blk_file setattr;
 
 # Gestures
 allow init gesture_sysfs:file setattr;
+
+# LD_SHIM_LIBS
+allow init surfaceflinger:process noatsecure;
