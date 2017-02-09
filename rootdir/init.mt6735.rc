@@ -12,7 +12,7 @@ on early-init
     #restorecon /sys/class/meizu/ps/ps_calibration
 
 on init
-    export LD_SHIM_LIBS "/system/bin/mtk_agpsd|libshim_agps.so:/system/lib/libMtkOmxVdec.so|libshim_omx.so:/system/lib/libshowlogo.so|libshim_asc.so:/system/lib/libaal.so|libshim_asc.so:/system/lib64/libaal.so|libshim_asc.so:/system/lib/libmtk_mmutils.so|libshim_ui.so:/system/lib64/libmtk_mmutils.so|libshim_ui.so:/system/lib64/hw/hwcomposer.mt6753.so|libshim_cam.so:/system/lib/hw/hwcomposer.mt6753.so|libshim_cam.so:/system/lib64/libcam.client.so|libshim_cam.so:/system/lib/libcam.client.so|libshim_cam.so:/system/lib/libMtkOmxVdec.so|libshim_cam.so"
+    export LD_SHIM_LIBS "/system/bin/mtk_agpsd|libshim_agps.so:/system/lib/libshowlogo.so|libshim_asc.so:/system/lib/libaal.so|libshim_asc.so:/system/lib64/libaal.so|libshim_asc.so:/system/lib/libmtk_mmutils.so|libshim_ui.so:/system/lib64/libmtk_mmutils.so|libshim_ui.so:/system/lib64/hw/hwcomposer.mt6753.so|libshim_cam.so:/system/lib/hw/hwcomposer.mt6753.so|libshim_cam.so:/system/lib64/libcam.client.so|libshim_cam.so:/system/lib/libcam.client.so|libshim_cam.so:/system/lib/libMtkOmxVdec.so|libshim_cam.so"
 
     # mount points
     mkdir /protect_f 0771 system system

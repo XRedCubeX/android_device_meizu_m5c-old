@@ -12,22 +12,12 @@ LOCAL_MODULE := libshim_agps
 include $(BUILD_SHARED_LIBRARY)
 
 
-## libshim_omx
-include $(CLEAR_VARS)
-
-LOCAL_MULTILIB = 32
-LOCAL_SRC_FILES_32 := mtk_omx.cpp
-
-LOCAL_SHARED_LIBRARIES_32 := libstagefright
-LOCAL_MODULE := libshim_omx
-include $(BUILD_SHARED_LIBRARY)
-
 ## libshim_asc
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := mtk_asc.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder liblog libgui
+LOCAL_SHARED_LIBRARIES := libbinder libgui
 LOCAL_MODULE := libshim_asc
 include $(BUILD_SHARED_LIBRARY)
 
@@ -37,15 +27,16 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := mtk_ui.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder liblog libui
+LOCAL_SHARED_LIBRARIES := libbinder libui
 LOCAL_MODULE := libshim_ui
 include $(BUILD_SHARED_LIBRARY)
+
 
 ## libshim_cam
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := mtk_cam.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder liblog libgui libui
+LOCAL_SHARED_LIBRARIES := libbinder libgui libui
 LOCAL_MODULE := libshim_cam
 include $(BUILD_SHARED_LIBRARY)
