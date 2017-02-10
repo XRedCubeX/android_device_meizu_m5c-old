@@ -1,8 +1,5 @@
-# Custom system/core/rootdir files
-TARGET_PROVIDES_INIT_RC := true
-
+# Custom services
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/init.rc:root/init.rc \
     $(DEVICE_PATH)/rootdir/init/audioserver.rc:system/etc/init/audioserver.rc \
     $(DEVICE_PATH)/rootdir/init/cameraserver.rc:system/etc/init/cameraserver.rc
 
