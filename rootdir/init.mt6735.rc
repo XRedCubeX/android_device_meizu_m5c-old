@@ -19,8 +19,6 @@ on init
     mkdir /protect_s 0771 system system
     mkdir /persist 0771 system system
     mkdir /nvdata 0771 system system
-    mkdir /custom
-
 
     # ion device
     chmod 0666 /dev/ion
@@ -98,9 +96,6 @@ on post-fs
     chown system system /protect_s
     chmod 0770 /protect_s
 
-    chown system system /system/bin/sbchk
-    chmod 0771 /system/bin/sbchk
-
     mkdir /nvdata/APCFG 0770 system camera
     mkdir /nvdata/APCFG/APRDCL 0770 system camera
     mkdir /nvdata/APCFG/APRDEB 0770 system camera
@@ -147,7 +142,6 @@ on post-fs
     restorecon /dev/stpbt
     restorecon /dev/stpgps
 
-    chown system system /sys/block/mmcblk0/queue/scheduler
 
 on post-fs-data
     # We chown/chmod /nvdata again so because mount is run as root + defaults
@@ -787,11 +781,6 @@ service wpa_supplicant /system/bin/wpa_supplicant \
 #
 # MTK Wi-Fi related services (End)
 #
-
-service PPLAgent /system/bin/ppl_agent
-    class main
-    user system
-    group system cache
 
 # GPS
 service agpsd /system/bin/mtk_agpsd
