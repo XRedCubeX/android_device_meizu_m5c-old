@@ -15,9 +15,10 @@ include $(BUILD_SHARED_LIBRARY)
 ## libshim_asc
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := mtk_asc.cpp
+LOCAL_MULTILIB = 32
+LOCAL_SRC_FILES_32 := mtk_asc.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder libgui
+LOCAL_SHARED_LIBRARIES_32 := libbinder libgui
 LOCAL_MODULE := libshim_asc
 include $(BUILD_SHARED_LIBRARY)
 
