@@ -1,7 +1,6 @@
 # Custom services
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/init/audioserver.rc:system/etc/init/audioserver.rc \
-    $(DEVICE_PATH)/rootdir/init/cameraserver.rc:system/etc/init/cameraserver.rc
 
 # device rootdir
 PRODUCT_COPY_FILES += \
