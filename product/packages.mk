@@ -8,8 +8,9 @@ PRODUCT_PACKAGES += \
 # Mtk symbols & shim
 PRODUCT_PACKAGES += \
     libshim_agps \
-    libshim_cam \
     libshim_asc \
+    libshim_cam \
+    libshim_snd \
     libshim_ui
 
 # Mediatek
