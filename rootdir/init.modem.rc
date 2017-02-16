@@ -95,14 +95,14 @@ service ccci_fsd /system/bin/ccci_fsd 0
     oneshot
 
 service ccci_mdinit /system/bin/ccci_mdinit 0
-    user system
-    group radio system
+    user root
+    group root radio system
     class core
     oneshot
 
 service ccci_rpcd /system/bin/ccci_rpcd 0
     user radio
-    group radio system
+    group radio cache inet misc
     class core
     oneshot
 
