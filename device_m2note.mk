@@ -1,9 +1,6 @@
 $(call inherit-product-if-exists, vendor/meizu/m2note/m2note-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
-
 DEVICE_PATH := device/meizu/m2note
 
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
