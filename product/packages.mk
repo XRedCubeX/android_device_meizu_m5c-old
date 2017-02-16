@@ -13,10 +13,8 @@ PRODUCT_PACKAGES += \
     libshim_snd \
     libshim_ui
 
-# Mediatek
-PRODUCT_PACKAGES += \
-    libstlport \
-    libgralloc_extra
+# libstlport
+PRODUCT_PACKAGES += libstlport
 
 # Ion
 PRODUCT_PACKAGES += libion
