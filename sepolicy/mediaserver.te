@@ -80,7 +80,6 @@ allow mediaserver Vcodec_device:chr_file { read write ioctl open };
 # Date : WK14.36
 # Operation : Migration
 # Purpose : bring up
-allow mediaserver MtkCodecService:binder call;
 allow mediaserver ccci_device:chr_file { read write ioctl open };
 allow mediaserver eemcs_device:chr_file { read write ioctl open };
 allow mediaserver devmap_device:chr_file { read open };
@@ -146,11 +145,6 @@ allow mediaserver camera_fdvt_device:chr_file { read write ioctl open };
 # Operation : Migration
 # Purpose : MJC Driver
 allow mediaserver MJC_device:chr_file { read write ioctl open };
-
-# Date : WK14.39
-# Operation : Migration
-# Purpose : APE PLAYBACK
-binder_call(mediaserver,MtkCodecService)
 
 # Data : WK14.39
 # Operation : Migration

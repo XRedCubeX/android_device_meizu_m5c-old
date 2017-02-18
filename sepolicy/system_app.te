@@ -4,13 +4,6 @@
 
 # permissive system_app;
 
-
-# Date : 2014/07/31
-# Stage: BaseUT
-# Purpose :[CdsInfo][CdsInfo uses net shell commands to get network information and write WI-FI MAC address by NVRAM]
-# Package Name: com.mediatek.connectivity
-allow system_app nvram_agent_binder:binder call;
-
 # Date: 2014/08/01
 # Operation: BaseUT
 # Purpose: [Settings][Settings used list views need velocity tracker access touch dev]
@@ -93,12 +86,6 @@ allow system_app qemu_pipe_device:chr_file rw_file_perms;
 # Operation : SQC
 # Purpose : for oma dm fota recovery update
 allow system_app ctl_rbfota_prop:property_service set;
-
-# Date : 2014/11/20
-# Operation: SQC
-# Purpose: [Settings][Developer options module will communicate with all Services through binder call]
-# Package: com.android.settings
-binder_call(system_app, MtkCodecService)
 
 # Date : 2014/11/26
 # Operation: SQC

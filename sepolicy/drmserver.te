@@ -8,7 +8,6 @@
 # Operation : DRM UT 
 # Purpose : To pass DRM UT
 
-allow drmserver nvram_agent_binder:binder call;
 allow drmserver platform_app:dir search;
 allow drmserver platform_app:file { read getattr open };
 allow drmserver property_socket:sock_file write;
