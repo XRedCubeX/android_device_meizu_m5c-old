@@ -64,13 +64,6 @@ allow system_app devmap_device:chr_file { read ioctl open };
 allow system_app graphics_device:chr_file { read write ioctl open };
 allow system_app graphics_device:dir search;
 
-# Data : 2014/09/09
-# Operation : Migration
-# Purpose : [Privacy protection lock][com.mediatek.ppl need to bind ppl_agent service to read/write nvram file]
-# Package name : com.mediatek.ppl
-
-allow system_app ppl_agent:binder call;
-
 # Date: 2014/10/7
 # Operation: SQC
 # Purpose: [sysoper][sysoper will create folder /cache/recovery]
