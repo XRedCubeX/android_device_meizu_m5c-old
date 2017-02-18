@@ -97,21 +97,11 @@ streamin.     u:object_r:audiohal_prop:s0
 a2dp.     u:object_r:audiohal_prop:s0
 persist.af.     u:object_r:audiohal_prop:s0
 
-#=============allow tedongle to set tedongle.*=============
-tedongle.   u:object_r:radio_prop:s0
-ctl.ril-3gddaemon   u:object_r:ctl_ril3gd_prop:s0
-ctl.zpppd_gprs      u:object_r:ctl_zpppdgprs_prop:s0
-
 #=============allow DM==============
 # persist.dm.lock
 persist.dm. u:object_r:persist_dm_prop:s0
 # dm fota
 ctl.rbfota u:object_r:ctl_rbfota_prop:s0
-
-#=============allow ipod==============
-ctl.ipod                u:object_r:ctl_ipod_prop:s0
-ipo.ipoh.               u:object_r:ipod_prop:s0
-persist.ipoh.           u:object_r:ipod_prop:s0
 
 #=============allow wmt ==============
 persist.mtk.wcn u:object_r:wmt_prop:s0

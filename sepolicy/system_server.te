@@ -70,11 +70,6 @@ allow system_server resmon:fifo_file write;
 # Purpose : for operate HDMI device
 allow system_server graphics_device:chr_file { read ioctl open };
 
-# Date: WK14.40
-# Operation : Migration
-# Purpose : for ACTION_PREBOOT_IPO intent in ipo boot
-binder_call(system_server, ipod)
-
 # Date: wk14.40
 # Operation : SQC 
 # Purpose : [ALPS01756200] wwop boot up fail
@@ -111,11 +106,6 @@ allow system_server ctl_bootanim_prop:property_service set;
 allow system_server proc_net:file write;
 allow system_server wide_dhcpv6_data_file:dir search;
 allow system_server wide_dhcpv6_data_file:file { read getattr open };
-
-# Date: WK14.41
-# Operation : Migration
-# Purpose : allow system_server to start ipod
-allow system_server ctl_ipod_prop:property_service set;
 
 # Date: WK14.43
 # Operation : Migration

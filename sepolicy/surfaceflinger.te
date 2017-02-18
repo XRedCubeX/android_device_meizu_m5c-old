@@ -38,10 +38,6 @@ allow surfaceflinger bootanim:dir search;
 allow surfaceflinger bootanim:file { read getattr open };
 allow surfaceflinger self:capability dac_override;
 
-# for ipo
-allow surfaceflinger ipod:dir search;
-binder_call(surfaceflinger, ipod)
-
 # for MTK Emulator HW GPU
 allow surfaceflinger qemu_pipe_device:chr_file rw_file_perms;
 

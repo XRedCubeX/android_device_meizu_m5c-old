@@ -106,10 +106,6 @@ type ctl_zpppdgprs_prop, property_type;
 type persist_dm_prop, property_type;
 type ctl_rbfota_prop, property_type;
 
-#=============allow ipod==============
-type ipod_prop, property_type;
-type ctl_ipod_prop, property_type;
-
 #=============allow wmt==============
 type wmt_prop, property_type;
 

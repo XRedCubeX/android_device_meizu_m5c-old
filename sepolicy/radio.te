@@ -62,11 +62,6 @@ unix_socket_connect(radio, agpsd, mtk_agpsd)
 # Purpose : for IMSA connect to volte_imsa1 provided by imcb process
 unix_socket_connect(radio, volte_imsa1, volte_imcb)
 
-# Date : 2014/10/17
-# Operation : IT
-# Purpose : Talks to ril-3gddaemon via the rild-dongle socket.
-unix_socket_connect(radio, rild-dongle, ril-3gddaemon)
-
 # Date : 2014/11/05
 # Operation : IT
 # Purpose : for IMS_RILA connect to rild_ims provided by mtkrild process
