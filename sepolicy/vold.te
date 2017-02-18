@@ -82,7 +82,6 @@ allow vold system_data_file:file { relabelto };
 # Date : WK14.49
 # Purpose : ptrace process
 allow vold platform_app:process ptrace;
-allow vold mobile_log_d:process ptrace;
 
 # Date : WK14.50
 # Purpose : read/write sys env

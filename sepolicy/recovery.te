@@ -76,10 +76,8 @@ allow recovery self:capability sys_boot;
 # Operation : Migration 
 # Purpose : FOTA upgrade
 allow recovery app_data_file:file { read open };
-allow recovery mobicore_data_file:file { read getattr open relabelto };
 
 # Date : WK14.47
 # Operation : Migration 
 # Purpose : Root Integrity Check
 allow recovery md_ctrl:file { read getattr open };
-allow recovery mobicore_data_file:dir { read open };

@@ -62,8 +62,6 @@ allow system_server anr_data_file:file relabelto;
 # Operation : Migration 
 # Purpose : for debug
 allow system_server debuggerd:binder call;
-allow system_server resmon:fd use;
-allow system_server resmon:fifo_file write;
 
 # Date : WK14.39
 # Operation : Migration 
@@ -152,12 +150,6 @@ allow system_server agpsd_data_file:dir search;
 allow system_server save_locale_prop:property_service set;
 
 # Date: WK14.47
-# Operation : Sanity
-# Purpose : for /system/app/mcRegistry and /proc/secmem (TEE enable)
-allow system_server mobicore_data_file:dir r_dir_perms;
-allow system_server proc_secmem:file { rw_file_perms };
-
-# Date: WK14.47
 # Operation : MTBF
 # Purpose : for debug
 allow system_server sf_rtt_file:file r_file_perms;
@@ -181,12 +173,6 @@ allow system_server exm0_device:chr_file { read write open };
 # Operation : SQC
 # Purpose : for querying zygote socket
 allow system_server zygote:unix_stream_socket { getopt getattr };
-
-# Date: WK14.52
-# Operation : Feature developing
-# Purpose : Communicate with native daemon (epdg_wod)
-unix_socket_connect(system_server, wod_action, epdg_wod)
-unix_socket_connect(system_server, wod_sim, epdg_wod)
 
 # Date: WK15.05
 # Purpose : for kill-switch should only grant to access frp partition, to be fix

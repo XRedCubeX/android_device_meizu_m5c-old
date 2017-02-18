@@ -9,9 +9,6 @@
 # Purpose : IPC communication between bluetooth and mtkbt (BT host), and bluetooth and mediaserver
 allow bluetooth bt_int_adp_socket:sock_file write;
 allow bluetooth mediaserver:unix_dgram_socket sendto;
-allow bluetooth mtkbt:unix_dgram_socket sendto;
-allow bluetooth mtkbt:unix_stream_socket connectto;
-allow bluetooth mtkbt:fd use;
 allow bluetooth init:unix_dgram_socket sendto;
 
 # Data : WK14.36
@@ -23,7 +20,6 @@ allow bluetooth bt_data_file:file { open read write create setattr getattr appen
 # Data : WK14.44
 # Operation : Migration
 # IPC communication between bluetooth and mtkbt
-binder_call(bluetooth, mtkbt)
 #============= mediaserver ==============
 allow mediaserver bt_data_file:file read;
 

@@ -41,9 +41,6 @@ allow surfaceflinger self:capability dac_override;
 # for MTK Emulator HW GPU
 allow surfaceflinger qemu_pipe_device:chr_file rw_file_perms;
 
-# for SVP secure memory allocation
-allow surfaceflinger proc_secmem:file { read write open ioctl };
-
 # for watchdog
 allow surfaceflinger anr_data_file:dir { relabelfrom read remove_name getattr };
 allow surfaceflinger anr_data_file:file { rename getattr unlink open };
@@ -59,12 +56,6 @@ allow surfaceflinger untrusted_app_tmpfs:file write;
 #for BufferQueue check process name of em_svr   
 allow surfaceflinger em_svr:dir search;
 allow surfaceflinger em_svr:file { read getattr open };
-
-# need to check what is this allowance for
-allow surfaceflinger mobicore:unix_stream_socket connectto;
-allow surfaceflinger mobicore_data_file:file { read getattr open };
-allow surfaceflinger mobicore_user_device:chr_file { read write ioctl open };
-allow surfaceflinger mobicore_data_file:dir search;
 
 # /dev/mtk_smi
 allow surfaceflinger mtk_smi_device:chr_file { read write open ioctl };

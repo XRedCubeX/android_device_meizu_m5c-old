@@ -101,17 +101,10 @@ allow system_app qemu_pipe_device:chr_file rw_file_perms;
 # Purpose : for oma dm fota recovery update
 allow system_app ctl_rbfota_prop:property_service set;
 
-# Date : 2014/11/19
-# Operation: SQC
-# Purpose: [Settings][RenderThread][operate device file failed]
-# Package: com.android.settings
-allow system_app proc_secmem:file rw_file_perms;
-
 # Date : 2014/11/20
 # Operation: SQC
 # Purpose: [Settings][Developer options module will communicate with all Services through binder call]
 # Package: com.android.settings
-binder_call(system_app, mtkbt)
 binder_call(system_app, MtkCodecService)
 
 # Date : 2014/11/26

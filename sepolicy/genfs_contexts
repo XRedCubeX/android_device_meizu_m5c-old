@@ -1,6 +1,3 @@
-
-genfscon proc /secmem0 u:object_r:proc_secmem:s0
-
 genfscon proc /driver/thermal u:object_r:proc_thermal:s0
 genfscon proc /mtkcooler u:object_r:proc_mtkcooler:s0
 genfscon proc /mtktz u:object_r:proc_mtktz:s0

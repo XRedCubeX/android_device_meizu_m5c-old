@@ -22,7 +22,6 @@ allow radio zygote:unix_stream_socket { getopt getattr };
 # Purpose : for mtkrild and viarild
 allow radio mtkrild:unix_stream_socket connectto;
 allow radio mtkrildmd2:unix_stream_socket connectto;
-allow radio statusd:unix_stream_socket connectto;
 
 # Date : WK14.38 2014/09/16
 # Operation : Migration
@@ -34,7 +33,6 @@ allow radio mtgpio_device:chr_file { read ioctl open };
 allow radio platformblk_device:dir search;
 allow radio stpbt_device:chr_file { read write open };
 allow radio bt_int_adp_socket:sock_file write;
-allow radio mtkbt:unix_dgram_socket sendto;
 allow radio guiext-server:binder { transfer call };
 allow radio persist_ril_prop:property_service set;
 allow radio mt6605_device:chr_file { read write ioctl open getattr };
@@ -56,11 +54,6 @@ allow radio cdma_prop:property_service set;
 # Purpose : mtk_agpsd establishes the local socket as agpsd for all A-GPS 
 # application to do something with mtk_agpsd
 unix_socket_connect(radio, agpsd, mtk_agpsd)
-
-# Date : 2014/10/14
-# Operation : IT
-# Purpose : for IMSA connect to volte_imsa1 provided by imcb process
-unix_socket_connect(radio, volte_imsa1, volte_imcb)
 
 # Date : 2014/11/05
 # Operation : IT

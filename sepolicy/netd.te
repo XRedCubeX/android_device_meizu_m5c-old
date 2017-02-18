@@ -33,20 +33,6 @@ allow netd platform_app_tmpfs:file write;
 # Purpose :  PPPOE Test 
 allow netd ppp:process sigkill;
 
-# Date : WK14.39
-# Operation : Migration
-# Purpose :  MDLogger USB logging
-allow netd mdlogger:fd use;
-allow netd mdlogger:tcp_socket { read write };
-allow netd mdlogger:tcp_socket { getopt setopt };
-
-# Date : WK14.41
-# Operation : Migration
-# Purpose :  network logging
-allow netd netdiag:fd use;
-allow netd netdiag:udp_socket { read write getopt setopt};
-
-
 # Date : WK14.41
 # Operation : Migration
 # Purpose :  ipv6 Tethering Test 
@@ -61,13 +47,6 @@ allow netd radvd_data_file:file { read write create open unlink};
 allow netd self:capability { setuid net_bind_service setgid };
 allow netd wide_dhcpv6_data_file:dir { read search write add_name remove_name};
 allow netd wide_dhcpv6_data_file:file { read write create open getattr unlink};
-
-# Date : WK14.42
-# Operation : Migration 
-# Purpose : for VoLTE L early bring up and first call
-allow netd volte_stack:fd use;
-allow netd volte_stack:tcp_socket { read write setopt getopt };
-allow netd volte_stack:udp_socket { read write setopt getopt };
 
 # Date : WK14.42
 # Operation : Migration
@@ -85,25 +64,9 @@ allow netd self:capability { setuid setgid };
 #============= netd ==============
 allow netd isolated_app_tmpfs:file write;
 
-# Date : W14.52
-# Operation : Migration
-# Purpose :  add ePDG support
-allow netd ipsec:fd use;
-allow netd ipsec:tcp_socket { read write setopt getopt };
-
 #============= netd ==============
 allow netd untrusted_app:fd use;
 allow netd untrusted_app_tmpfs:file write;
-
-#============= netd ==============
-# Date : W14.53
-# Operation : Migration
-# Purpose :  For volte_imcb ut
-allow netd volte_imcb:fd use;
-allow netd volte_imcb:tcp_socket { read write };
-allow netd volte_imcb:tcp_socket getopt;
-allow netd volte_imcb:tcp_socket setopt;
-
 
 # Date : W15.02
 # Operation :  SQC
