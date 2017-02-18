@@ -810,34 +810,10 @@ service msensord /system/bin/msensord
     class main
     oneshot
 
-service s62xd /system/bin/s62xd
-    disabled
-    user compass
-    group system
-    class main
-
-service ami304d /system/bin/ami304d
-    user system
-    group system
-    disabled
-    class main
-
 service akmd09911 /system/bin/akmd09911
     disabled
     user system
     group system
-    class main
-
-service mc6420d /system/bin/mc6420d
-    disabled
-    user system
-    group system
-    class main
-
-service geomagneticd /system/bin/geomagneticd
-    disabled
-    user system
-    group system input
     class main
 
 #
