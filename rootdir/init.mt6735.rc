@@ -828,22 +828,10 @@ service akmd09911 /system/bin/akmd09911
     group system
     class main
 
-service bmm050d /system/bin/bmm050d
-    disabled
-    user system
-    group system
-    class main
-
 service mc6420d /system/bin/mc6420d
     disabled
     user system
     group system
-    class main
-
-service orientationd /system/bin/orientationd
-    disabled
-    user system
-    group system input
     class main
 
 service geomagneticd /system/bin/geomagneticd
