@@ -12,7 +12,7 @@ on early-init
     #restorecon /sys/class/meizu/ps/ps_calibration
 
 on init
-    export LD_SHIM_LIBS "/system/lib/libshowlogo.so|libshim_asc.so:/system/lib/libmtk_mmutils.so|libshim_ui.so:/system/lib64/libmtk_mmutils.so|libshim_ui.so:/system/lib64/hw/hwcomposer.mt6753.so|libshim_cam.so:/system/lib/hw/hwcomposer.mt6753.so|libshim_cam.so:/system/lib64/libcam.client.so|libshim_cam.so:/system/lib/libcam.client.so|libshim_cam.so:/system/lib/libMtkOmxVdec.so|libshim_cam.so:/system/lib/hw/audio.primary.mt6753.so|libshim_snd.so:/system/lib64/hw/audio.primary.mt6753.so|libshim_snd.so"
+    export LD_SHIM_LIBS "/system/lib/libshowlogo.so|libshim_asc.so:/system/lib/libmtk_mmutils.so|libshim_ui.so:/system/lib64/libmtk_mmutils.so|libshim_ui.so:/system/lib64/hw/hwcomposer.mt6753.so|libshim_cam.so:/system/lib/hw/hwcomposer.mt6753.so|libshim_cam.so:/system/lib64/libcam.client.so|libshim_cam.so:/system/lib/libcam.client.so|libshim_cam.so:/system/lib/libMtkOmxVdec.so|libshim_cam.so:/system/lib/hw/audio.primary.mt6753.so|libshim_snd.so:/system/lib64/hw/audio.primary.mt6753.so|libshim_snd.so:/system/lib/liblog.so|libshim_xlog.so:/system/lib64/liblog.so|libshim_xlog.so"
 
     # mount points
     mkdir /protect_f 0771 system system

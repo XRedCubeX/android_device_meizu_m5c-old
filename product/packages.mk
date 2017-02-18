@@ -11,7 +11,8 @@ PRODUCT_PACKAGES += \
     libshim_asc \
     libshim_cam \
     libshim_snd \
-    libshim_ui
+    libshim_ui \
+    libshim_xlog
 
 # libstlport
 PRODUCT_PACKAGES += libstlport
