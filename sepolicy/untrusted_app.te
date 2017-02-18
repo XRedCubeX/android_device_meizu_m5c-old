@@ -4,12 +4,6 @@
 
 # permissive untrusted_app;
 
-# Date : 2014/09/04
-# Stage: BaseUT
-# Purpose :[Launcher2][View update graphics]
-# Package Name: com.android.launcher2
-allow untrusted_app guiext-server:binder { transfer call };
-
 # Date : 2014/09/09
 # Operation : Development LCA Feature "Move OAT to SD Card"
 # Purpose : for LCA ROM Size Slim

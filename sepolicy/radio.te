@@ -5,7 +5,6 @@
 allow radio custom_file:dir getattr;
 #violate never allow rule
 #allow radio device:chr_file { read write ioctl open getattr };
-allow radio dm_agent_binder:binder call;
 allow radio rild2_socket:sock_file write;
 allow radio rild3_socket:sock_file write;
 allow radio rild4_socket:sock_file write;
@@ -33,7 +32,6 @@ allow radio mtgpio_device:chr_file { read ioctl open };
 allow radio platformblk_device:dir search;
 allow radio stpbt_device:chr_file { read write open };
 allow radio bt_int_adp_socket:sock_file write;
-allow radio guiext-server:binder { transfer call };
 allow radio persist_ril_prop:property_service set;
 allow radio mt6605_device:chr_file { read write ioctl open getattr };
 allow radio nfc_socket:dir { write add_name remove_name search };
@@ -86,16 +84,3 @@ allow radio rild_atci_c2k_socket:sock_file write;
 # Purpose : for engineermode camera
 allow radio debug_prop:property_service set;
 
-# Date : 2015/04/11
-# Operation : VT development
-# Purpose : for VT usage
-allow radio vtservice:binder call;
-allow radio vtservice:binder transfer;
-allow vtservice self:capability dac_override;
-allow vtservice soc_vt_svc_socket:sock_file write;
-allow vtservice soc_vt_tcv_socket:sock_file write;
-allow vtservice platform_app:binder call;
-allow vtservice system_server:binder call;
-allow vtservice fuse:dir write;
-allow vtservice surfaceflinger:fd use;
-allow vtservice tmpfs:lnk_file read;

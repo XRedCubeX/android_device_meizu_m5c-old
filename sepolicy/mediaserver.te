@@ -52,11 +52,6 @@ allow mediaserver system_data_file:file open;
 
 # Date : WK14.36
 # Operation : Migration
-# Purpose : guiext service for VP
-allow mediaserver guiext-server:binder { transfer call };
-
-# Date : WK14.36
-# Operation : Migration
 # Purpose : media server and bt process communication for A2DP data.and other control flow
 allow mediaserver bluetooth:unix_dgram_socket sendto;
 allow mediaserver bt_a2dp_stream_socket:sock_file write;

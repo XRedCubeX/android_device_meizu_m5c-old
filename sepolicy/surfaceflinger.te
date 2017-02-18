@@ -6,7 +6,6 @@
 allow surfaceflinger self:capability { net_admin sys_nice };
 allow surfaceflinger self:netlink_socket { read bind create };
 allow surfaceflinger debug_prop:property_service set;
-allow surfaceflinger guiext-server:binder { transfer call };
 allow surfaceflinger system_data_file:dir { write add_name create};
 allow surfaceflinger system_data_file:file { open };
 allow surfaceflinger proc:file write;

@@ -216,7 +216,6 @@
 /dev/socket/wod_action(/.*)? u:object_r:wod_action_socket:s0
 /dev/socket/wod_sim(/.*)? u:object_r:wod_sim_socket:s0
 /dev/socket/wod_ipsec(/.*)? u:object_r:wod_ipsec_socket:s0
-/dev/socket/tunman(/.*)? u:object_r:tunman_socket:s0
 /dev/stpbt(/.*)? u:object_r:stpbt_device:s0
 /dev/stpgps        u:object_r:mnld_device:s0
 /dev/stpgps(/.*)? u:object_r:stpgps_device:s0
@@ -279,16 +278,11 @@
 /system/bin/akmd09911 u:object_r:akmd09911_exec:s0
 /system/bin/ccci_fsd u:object_r:ccci_fsd_exec:s0
 /system/bin/ccci_mdinit u:object_r:ccci_mdinit_exec:s0
-/system/bin/dm_agent_binder u:object_r:dm_agent_binder_exec:s0
-/system/bin/dmlog u:object_r:dmlog_exec:s0
 /system/bin/em_svr u:object_r:em_svr_exec:s0
 /system/bin/factory u:object_r:factory_exec:s0
 /system/bin/fuelgauged u:object_r:fuelgauged_exec:s0
-/system/bin/geomagneticd u:object_r:geomagneticd_exec:s0
 /system/bin/gsm0710muxdmd2 u:object_r:gsm0710muxdmd2_exec:s0
 /system/bin/gsm0710muxd u:object_r:gsm0710muxd_exec:s0
-/system/bin/guiext-server u:object_r:guiext-server_exec:s0
-/system/bin/mc6420d u:object_r:mc6420d_exec:s0
 /system/bin/meta_tst u:object_r:meta_tst_exec:s0
  
 /system/bin/msensord u:object_r:msensord_exec:s0
@@ -298,16 +292,13 @@
 /system/bin/muxreport u:object_r:muxreport_exec:s0
 /system/bin/nvram_daemon u:object_r:nvram_daemon_exec:s0
 /system/bin/pq u:object_r:pq_exec:s0
-/system/bin/s62xd u:object_r:s62xd_exec:s0
 /system/bin/terservice u:object_r:terservice_exec:s0
 /system/bin/thermal_manager u:object_r:thermal_manager_exec:s0
 /system/bin/wifi2agps u:object_r:wifi2agps_exec:s0
 /system/bin/wmt_loader u:object_r:wmt_loader_exec:s0
-/system/bin/OperaMaxSystem u:object_r:tunman_exec:s0
 /system/etc/sensor(/.*)?	u:object_r:system_sensor_data_file:s0
 /system/xbin/mnld u:object_r:mnld_exec:s0
 /system/bin/md_ctrl u:object_r:md_ctrl_exec:s0
-/system/bin/vtservice u:object_r:vtservice_exec:s0
 
 # Wallpaper file for smartbook
 /data/system/users/[0-9]+/smartbook_wallpaper	u:object_r:wallpaper_file:s0
