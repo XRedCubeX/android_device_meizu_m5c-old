@@ -1,9 +1,3 @@
-# ==============================================
-# MTK Policy Rule
-# ============
+# ueventd
 
-# for early-migration, set as permissive
-# permissive ueventd;
-
-# add for sysfs:leds; pls check it on L official policy
 allow ueventd sysfs:file setattr;

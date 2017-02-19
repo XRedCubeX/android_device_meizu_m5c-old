@@ -1,6 +1,4 @@
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+# device
 
 type devmap_device, dev_type;
 type ttyMT_device, dev_type;

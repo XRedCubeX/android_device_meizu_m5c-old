@@ -1,7 +1,7 @@
+# mnld
+
 type mnld, domain;
 type mnld_exec, exec_type, file_type;
-
-# STOPSHIP: Permissive is not allowed. CTS violation!
 
 init_daemon_domain(mnld)
 

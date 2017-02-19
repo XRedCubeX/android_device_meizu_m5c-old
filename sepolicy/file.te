@@ -1,6 +1,4 @@
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+# file
 
 type custom_file, file_type, data_file_type;
 type lost_found_data_file, file_type, data_file_type;
@@ -12,9 +10,7 @@ type ppp_data_file, file_type, data_file_type;
 type wide_dhcpv6_data_file, file_type, data_file_type;
 type wpa_supplicant_data_file, file_type, data_file_type;
 type radvd_data_file, file_type, data_file_type;
-# Date : WK14.37
-# Operation : Migration
-# Purpose : SF rtt dump
+
 type sf_rtt_file, file_type, data_file_type;
 
 type dfo_socket, file_type;
@@ -70,11 +66,8 @@ type nvram_data_file, file_type, data_file_type;
 type nvdata_file, file_type, data_file_type;
 type mediaserver_data_file, file_type, data_file_type;
 
-# 20131213 KKMR1_CQ_CTS_02
 allow asec_apk_file rootfs:filesystem associate;
 
-
-# 20131213 KKMR1_CQ_CTS_02
 allow cache_file rootfs:filesystem associate;
 
 

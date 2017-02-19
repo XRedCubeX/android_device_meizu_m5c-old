@@ -1,25 +1,7 @@
-# ==============================================
-# Policy File of /system/binmtk_6620_launcher Executable File 
+# mtk_6620_launcher
 
-
-# ==============================================
-# Type Declaration
-# ==============================================
-
-type mtk_6620_launcher_exec , exec_type, file_type;
-type mtk_6620_launcher ,domain;
-
-# ==============================================
-# Android Policy Rule
-# ==============================================
-
-# ==============================================
-# NSA Policy Rule
-# ==============================================
-
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+type mtk_6620_launcher_exec, exec_type, file_type;
+type mtk_6620_launcher, domain;
 
 allow mtk_6620_launcher wmt_prop:property_service set;
 allow mtk_6620_launcher init:unix_stream_socket connectto;

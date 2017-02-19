@@ -1,17 +1,7 @@
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+# untrusted_app
 
-# permissive untrusted_app;
-
-# Date : 2014/09/09
-# Operation : Development LCA Feature "Move OAT to SD Card"
-# Purpose : for LCA ROM Size Slim
 allow untrusted_app dalvikcache_data_file:lnk_file read;
 
-# Date : WK14.46
-# Operation : Migration
-# Purpose : for MTK Emulator HW GPU
 allow untrusted_app qemu_pipe_device:chr_file rw_file_perms;
 
 # CTS issue

@@ -1,6 +1,4 @@
-# ==============================================
-# MTK Policy Rule
-# ============
+# radio
 
 allow radio custom_file:dir getattr;
 #violate never allow rule

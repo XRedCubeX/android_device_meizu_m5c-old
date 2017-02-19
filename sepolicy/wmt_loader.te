@@ -1,25 +1,7 @@
-# ==============================================
-# Policy File of /system/binwmt_loader Executable File 
+# wmt_loader
 
-
-# ==============================================
-# Type Declaration
-# ==============================================
-
-type wmt_loader_exec , exec_type, file_type;
-type wmt_loader ,domain;
-
-# ==============================================
-# Android Policy Rule
-# ==============================================
-
-# ==============================================
-# NSA Policy Rule
-# ==============================================
-
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+type wmt_loader_exec, exec_type, file_type;
+type wmt_loader, domain;
 
 allow wmt_loader wmt_prop:property_service set;
 allow wmt_loader init:unix_stream_socket connectto;

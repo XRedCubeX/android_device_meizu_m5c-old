@@ -1,20 +1,10 @@
-# ==============================================
-# Policy File of /system/binmuxreport Executable File
+# muxreport
 
+type muxreport_exec, exec_type, file_type;
+type muxreport, domain;
 
-# ==============================================
-# Type Declaration
-# ==============================================
-
-type muxreport_exec , exec_type, file_type;
-type muxreport ,domain;
-
-# ==============================================
-# MTK Policy Rule
-# ==============================================
-
-#permissive muxreport;
 init_daemon_domain(muxreport)
+
 allow muxreport ccci_device:chr_file { read write ioctl open };
 allow muxreport ril_mux_report_case_prop:property_service set;
 allow muxreport init:unix_stream_socket connectto;

@@ -1,20 +1,10 @@
-# ==============================================
-# Policy File of /system/bin/mtkrild Executable File
+# mtkrild
 
-
-# ==============================================
-# Type Declaration
-# ==============================================
-
-type mtkrild_exec , exec_type, file_type;
-type mtkrild ,domain;
-
-
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+type mtkrild_exec, exec_type, file_type;
+type mtkrild, domain;
 
 init_daemon_domain(mtkrild)
+
 net_domain(mtkrild)
 allow mtkrild self:netlink_route_socket nlmsg_write;
 allow mtkrild kernel:system module_request;

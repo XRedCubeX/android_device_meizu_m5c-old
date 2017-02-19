@@ -1,11 +1,7 @@
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+# property
+
 type mtk_default_prop, property_type;
 
-# Date: W14.32
-# Operation: Migration
-# Purpose: don't allow to use default_prop
 neverallow { domain -init } default_prop:property_service set;
 neverallow { domain -init -system_server -system_app -recovery } ctl_default_prop:property_service set;
 

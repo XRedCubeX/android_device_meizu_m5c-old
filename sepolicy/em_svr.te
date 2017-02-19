@@ -1,31 +1,10 @@
-# ==============================================
-# Policy File of /system/binem_svr Executable File 
+# em_svr
 
-
-# ==============================================
-# Type Declaration
-# ==============================================
-
-type em_svr_exec , exec_type, file_type;
-type em_svr ,domain;
-
-# ==============================================
-# Android Policy Rule
-# ==============================================
-
-# ==============================================
-# NSA Policy Rule
-# ==============================================
-
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+type em_svr_exec, exec_type, file_type;
+type em_svr, domain;
 
 init_daemon_domain(em_svr)
 
-# Date: W14.38 2014/09/17
-# Operation : Migration
-# Purpose : for em_svr
 allow em_svr proc:file write;
 allow em_svr sysfs:file write;
 allow em_svr platformblk_device:blk_file { read write open };

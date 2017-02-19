@@ -1,20 +1,10 @@
-# ==============================================
-# Policy File of /system/bin/mtkrildmd2 Executable File
+# mtkrildmd2
 
-
-# ==============================================
-# Type Declaration
-# ==============================================
-
-type mtkrildmd2_exec , exec_type, file_type;
-type mtkrildmd2 ,domain;
-
-
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+type mtkrildmd2_exec, exec_type, file_type;
+type mtkrildmd2, domain;
 
 init_daemon_domain(mtkrildmd2)
+
 net_domain(mtkrildmd2)
 allow mtkrildmd2 self:netlink_route_socket nlmsg_write;
 allow mtkrildmd2 kernel:system module_request;

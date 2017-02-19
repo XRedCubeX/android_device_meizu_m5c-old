@@ -1,13 +1,5 @@
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+# system_app
 
-# permissive system_app;
-
-# Date: 2014/08/01
-# Operation: BaseUT
-# Purpose: [Settings][Settings used list views need velocity tracker access touch dev]
-# Package: com.android.settings
 allow system_app touch_device:chr_file { read ioctl open };
 
 # Date: 2014/08/04

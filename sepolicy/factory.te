@@ -1,31 +1,10 @@
-# ==============================================
-# Policy File of /system/binfactory Executable File 
+# factory
 
+type factory_exec, exec_type, file_type;
+type factory, domain;
 
-# ==============================================
-# Type Declaration
-# ==============================================
-
-type factory_exec , exec_type, file_type;
-type factory ,domain;
-
-# ==============================================
-# Android Policy Rule
-# ==============================================
-
-# ==============================================
-# NSA Policy Rule
-# ==============================================
-
-# ==============================================
-# MTK Policy Rule
-# ==============================================
-
-#permissive factory;
 init_daemon_domain(factory)
-#unconfined_domain(factory)
 
-#============= factory ==============
 allow factory MTK_SMI_device:chr_file { read ioctl open };
 allow factory accdet_device:chr_file { read ioctl open };
 allow factory als_ps_device:chr_file { read ioctl open };
@@ -111,19 +90,12 @@ allow factory devpts:chr_file { read write getattr ioctl };
 allow factory vfat:dir search;
 allow factory hrm_device:chr_file { read ioctl open };
 
-# Date: WK14.47
-# Operation : Migration
-# Purpose : CCCI
 allow factory eemcs_device:chr_file { read write ioctl open };
 
-# Purpose : SDIO
 allow factory ttySDIO_device:chr_file { read write ioctl open };
 
-# Date: WK15.01
-# Purpose : OTG Mount
 allow factory fuse:dir mounton;
-# Date: WK15.07
-# Purpose : use c2k flight mode;
+
 allow factory vmodem_device:chr_file { read write ioctl open };
 
 # m2note

@@ -1,6 +1,5 @@
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+# service_contexts
+
 NvRAMAgent          u:object_r:nvram_agent_service:s0
 phoneEx             u:object_r:radio_service:s0
 DmAgent             u:object_r:dm_agent_binder_service:s0

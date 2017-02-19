@@ -1,6 +1,5 @@
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+# property_contexts
+
 #=============allow ccci_mdinit to start gsm0710muxd==============
 ctl.gsm0710muxd u:object_r:ctl_gsm0710muxd_prop:s0
 ctl.gsm0710muxd-s u:object_r:ctl_gsm0710muxd-s_prop:s0

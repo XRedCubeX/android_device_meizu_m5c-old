@@ -1,8 +1,5 @@
-# ==============================================
-# MTK Policy Rule
-# ============
+# healthd
 
-#============= healthd ==============
 allow healthd self:capability dac_override;
 allow healthd mtkrild:unix_stream_socket connectto;
 allow healthd rild_oem_socket:sock_file write;

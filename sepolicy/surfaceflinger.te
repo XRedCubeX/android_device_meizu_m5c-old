@@ -1,6 +1,4 @@
-# ==============================================
-# MTK Policy Rule
-# ============
+# surfaceflinger
 
 # for debug purpose
 allow surfaceflinger self:capability { net_admin sys_nice };
