@@ -48,9 +48,9 @@ include $(BUILD_SHARED_LIBRARY)
 ## libshim_snd
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := mtk_audio.cpp
+LOCAL_SRC_FILES := audio/mtk_audio.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder
+LOCAL_SHARED_LIBRARIES := libbinder libmedia
 LOCAL_MODULE := libshim_snd
 include $(BUILD_SHARED_LIBRARY)
 
