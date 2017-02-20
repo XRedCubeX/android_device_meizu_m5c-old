@@ -1,3 +1,7 @@
+# mediaserver with system group
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/init/mediaserver.rc:system/etc/init/mediaserver.rc 
+
 # device rootdir
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/factory_init.project.rc:root/factory_init.project.rc \
