@@ -102,7 +102,6 @@ on post-fs
     mkdir /nvdata/APCFG/APRDCL 0770 system camera
     mkdir /nvdata/APCFG/APRDEB 0770 system camera
     # allow BT to read mac address
-    chown root:net_bt_stack /data/nvram/APCFG/APRDEB/BT_Addr
     chown root:net_bt_stack /nvdata/APCFG/APRDEB/BT_Addr
     mkdir /nvdata/md     0770 system radio
     mkdir /nvdata/md_cmn 0770 system radio
@@ -160,7 +159,7 @@ on post-fs-data
     #give system access to rfkill device node
     chmod 0660 /dev/rfkill
 
-    # create for muxd pts device node , to operate without root
+    # create for muxd pts device node to operate without root
     mkdir /dev/radio 0770 radio radio
 
     mkdir /data/drm/wv 0770 drm system

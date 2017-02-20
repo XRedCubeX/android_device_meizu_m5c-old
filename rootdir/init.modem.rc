@@ -42,13 +42,6 @@ service gsm0710muxd /system/bin/gsm0710muxd -s /dev/ttyC0 -f 512 -n 8 -m basic
     disabled
     oneshot
 
-service gsm0710muxdmd2 /system/bin/gsm0710muxdmd2 -s /dev/ccci2_tty0 -f 512 -n 8 -m basic
-    class core
-    user root
-    group radio cache inet misc
-    disabled
-    oneshot
-
 service muxreport-daemon /system/bin/muxreport
     class core
     user radio
@@ -56,7 +49,8 @@ service muxreport-daemon /system/bin/muxreport
     disabled
     oneshot
 
-service_redefine ril-daemon /system/bin/mtkrild
+# disable rild
+service ril-daemon /system/bin/mtkrild
     disabled
 
 service ril-daemon-mtk /system/bin/mtkrild
@@ -84,9 +78,6 @@ service ril-daemon-mtk /system/bin/mtkrild
     disabled
     oneshot
 
-#
-#  Modem related services (Begin)
-#
 
 service ccci_fsd /system/bin/ccci_fsd 0
     user radio
@@ -99,16 +90,6 @@ service ccci_mdinit /system/bin/ccci_mdinit 0
     group root radio system
     class core
     oneshot
-
-service ccci_rpcd /system/bin/ccci_rpcd 0
-    user radio
-    group radio cache inet misc
-    class core
-    oneshot
-
-#
-#  Modem related services (End)
-#
 
 service terservice /system/bin/terservice
     class core
