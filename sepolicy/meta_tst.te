@@ -40,7 +40,6 @@ allow meta_tst gsensor_device:chr_file { read ioctl open };
 allow meta_tst kd_camera_flashlight_device:chr_file { read write ioctl open };
 allow meta_tst kd_camera_hw_device:chr_file { read write ioctl open };
 allow meta_tst msensor_device:chr_file { read ioctl open };
-allow meta_tst mt6605_device:chr_file { read write open ioctl getattr };
 allow meta_tst self:capability { sys_boot ipc_lock };
 allow meta_tst sysfs_wake_lock:file { read write open };
 allow meta_tst system_data_file:sock_file { write create setattr };

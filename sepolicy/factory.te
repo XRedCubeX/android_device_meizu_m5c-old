@@ -34,7 +34,6 @@ allow factory misc_sd_device:chr_file { read ioctl open };
 allow factory mnld_device:chr_file { read write ioctl open };
 allow factory mnld_exec:file { read execute open execute_no_trans };
 allow factory msensor_device:chr_file { read ioctl open };
-allow factory mt6605_device:chr_file { read write ioctl open getattr };
 allow factory node:tcp_socket node_bind;
 allow factory nvram_data_file:dir { write read open add_name getattr setattr};
 allow factory nvram_data_file:file { write getattr setattr read create open };
