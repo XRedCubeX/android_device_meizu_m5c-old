@@ -37,7 +37,8 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-    camera/mtk_cam.cpp \
+    camera/mtk_gui.cpp \
+    camera/mtk_gbc1.cpp \
     camera/mtk_omx.cpp
 
 LOCAL_SHARED_LIBRARIES := libbinder libgui libui
