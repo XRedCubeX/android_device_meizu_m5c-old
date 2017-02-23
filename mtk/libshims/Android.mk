@@ -33,6 +33,16 @@ LOCAL_MODULE := libshim_ui
 include $(BUILD_SHARED_LIBRARY)
 
 
+## libshim_gui
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := gui/SensorManager.cpp
+
+LOCAL_SHARED_LIBRARIES := libbinder libgui liblog libutils
+LOCAL_MODULE := libshim_gui
+include $(BUILD_SHARED_LIBRARY)
+
+
 ## libshim_cam
 include $(CLEAR_VARS)
 

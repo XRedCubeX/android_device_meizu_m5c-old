@@ -10,6 +10,7 @@ PRODUCT_PACKAGES += \
     libshim_agps \
     libshim_asc \
     libshim_cam \
+    libshim_gui \
     libshim_snd \
     libshim_ui \
     libshim_xlog
