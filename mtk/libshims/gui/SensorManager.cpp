@@ -39,8 +39,7 @@ namespace android {
 android::Mutex android::SensorManager::sLock;
 std::map<String16, SensorManager*> android::SensorManager::sPackageInstances;
 
-#ifdef MTK_HARDWARE
-
+// MTK
 static const String8 packageName8("");
 
 
@@ -63,7 +62,7 @@ SensorManager::SensorManager()
 sp<SensorEventQueue> SensorManager::createEventQueue() {
 	return createEventQueue(packageName8, 0);
 }
-#endif  // MTK_HARDWARE
+// MTK
 
 SensorManager& SensorManager::getInstanceForPackage(const String16& packageName) {
     Mutex::Autolock _l(sLock);
