@@ -38,8 +38,9 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
     camera/mtk_gui.cpp \
-    camera/mtk_gbc1.cpp \
     camera/mtk_omx.cpp
+
+    ##camera/mtk_gbc1.cpp \
 
 LOCAL_SHARED_LIBRARIES := libbinder libgui libui
 LOCAL_MODULE := libshim_cam
