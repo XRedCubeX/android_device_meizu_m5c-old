@@ -15,11 +15,6 @@ Build the code:
     source build/envsetup.sh
     breakfast m2note
     make -j 4 bacon showcommands 2>&1 | tee build.log
-
-Change log
-----------
-### v0.1
-- M2 Note basic bring-up on LineageOS-14.1
   
 Credits & Thanks 
 ---------
