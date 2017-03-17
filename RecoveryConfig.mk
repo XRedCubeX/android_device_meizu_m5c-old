@@ -50,4 +50,3 @@ TARGET_RECOVERY_FSTAB := device/meizu/m2note/rootdir/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 endif
-

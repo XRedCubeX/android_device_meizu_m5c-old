@@ -20,4 +20,3 @@ PRODUCT_PACKAGES += \
     fsck.ntfs \
     mkfs.ntfs \
     mount.ntfs
-

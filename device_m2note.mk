@@ -17,4 +17,3 @@ TARGET_OTA_ASSERT_DEVICE := m2note,m2n,meizu_m2_note
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
