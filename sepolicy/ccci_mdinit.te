@@ -69,4 +69,8 @@ allow ccci_mdinit mtk_tele_prop:property_service set;
 
 # Nougat
 allow ccci_mdinit sysfs:file { write read open };
-
+allow ccci_mdinit proc:file { read open ioctl };
+allow ccci_mdinit persist_ril_prop:file { read open getattr };
+allow ccci_mdinit mediatek_prop:file { read open getattr ioctl };
+allow ccci_mdinit mtk_md_prop:file { read open getattr ioctl };
+allow ccci_mdinit rootfs:lnk_file { getattr };

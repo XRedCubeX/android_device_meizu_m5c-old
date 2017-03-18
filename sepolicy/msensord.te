@@ -12,3 +12,6 @@ allow msensord ctl_msensord_prop:property_service set;
 #unix_socket_connect(msensord,property,init)
 
 allow msensord ctl_akmd09911_prop:property_service set;
+
+# Nougat
+allow msensord rootfs:lnk_file { getattr };

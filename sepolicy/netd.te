@@ -42,5 +42,7 @@ allow netd isolated_app:fd use;
 
 allow netd radio_tmpfs:file write;
 
-
-
+# Nougat
+allow netd wifi_data_file:dir { create setattr };
+allow netd dhcp_data_file:dir { setattr };
+allow netd wifi_data_file:sock_file { create setattr unlink };

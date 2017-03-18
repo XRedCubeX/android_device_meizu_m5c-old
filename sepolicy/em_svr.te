@@ -46,3 +46,6 @@ allow em_svr tmpfs:lnk_file read;
 # for use binder
 binder_use(em_svr)
 binder_call(em_svr, surfaceflinger)
+
+# Nougat
+allow em_svr rootfs:lnk_file { getattr };

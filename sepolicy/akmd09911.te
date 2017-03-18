@@ -10,7 +10,7 @@ allow akmd09911 gsensor_device:chr_file { open ioctl read write };
 allow akmd09911 input_device:dir { search open read write };
 allow akmd09911 input_device:file { open read };
 allow akmd09911 akmd8963_access_file1:file { open read write getattr setattr };
-allow akmd09911 akmd8963_access_file2:file { open read write};
+allow akmd09911 akmd8963_access_file2:file { open read write };
 
 # for msensor daemon access "data/misc".
 allow akmd09911 system_data_file:dir { create setattr };

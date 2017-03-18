@@ -18,3 +18,5 @@ allow thermal_manager self:capability chown;
 allow thermal_manager self:capability fowner;
 allow thermal_manager self:capability fsetid;
 
+# Nougat
+allow thermal_manager rootfs:lnk_file { getattr };

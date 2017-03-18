@@ -10,3 +10,8 @@ allow init gesture_sysfs:file setattr;
 
 # LD_SHIM_LIBS
 allow init surfaceflinger:process noatsecure;
+
+# Nougat
+allow init loop_device:blk_file { write };
+allow init block_device:lnk_file setattr;
+allow init debugfs:file { write };

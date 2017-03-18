@@ -19,3 +19,6 @@ allow fuelgauged input_device:file { open read };
 #allow fuelgauged fuelgauged_access_file2:file { open read write};
 
 allow fuelgauged system_data_file:dir { write add_name create setattr };
+
+# Nougat
+allow fuelgauged rootfs:lnk_file { getattr };
