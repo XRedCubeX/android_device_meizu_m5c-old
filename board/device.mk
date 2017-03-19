@@ -1,3 +1,6 @@
+# Force linking shim
+#LINKER_FORCED_SHIM_LIBS := a.so|b.so
+
 ## Fun with flags
 
 # MTK flags
