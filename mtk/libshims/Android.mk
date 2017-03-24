@@ -23,12 +23,20 @@ LOCAL_MODULE := libshim_asc
 include $(BUILD_SHARED_LIBRARY)
 
 
+## libshim_cam
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := camera/mtk_gbc1.cpp
+
+LOCAL_SHARED_LIBRARIES := libbinder libui libgui
+LOCAL_MODULE := libshim_cam
+include $(BUILD_SHARED_LIBRARY)
+
+
 ## libshim_ui
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := \
-    ui/mtk_gbc1.cpp \
-    ui/mtk_ui.cpp
+LOCAL_SRC_FILES := ui/mtk_ui.cpp
 
 LOCAL_SHARED_LIBRARIES := libbinder libui
 LOCAL_MODULE := libshim_ui
@@ -53,7 +61,7 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := mtk_omx.cpp
     
 
-LOCAL_SHARED_LIBRARIES := libbinder libgui libui
+LOCAL_SHARED_LIBRARIES := libbinder
 LOCAL_MODULE := libshim_omx
 include $(BUILD_SHARED_LIBRARY)
 
