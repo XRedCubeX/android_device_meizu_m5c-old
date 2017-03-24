@@ -38,23 +38,23 @@ include $(BUILD_SHARED_LIBRARY)
 ## libshim_gui
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := gui/SensorManager.cpp
+LOCAL_SRC_FILES := \
+    gui/mtk_gui.cpp \
+    gui/SensorManager.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder libgui liblog libutils
+LOCAL_SHARED_LIBRARIES := libbinder libgui liblog libui libutils
 LOCAL_MODULE := libshim_gui
 include $(BUILD_SHARED_LIBRARY)
 
 
-## libshim_cam
+## libshim_omx
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := \
-    camera/mtk_gui.cpp \
-    camera/mtk_omx.cpp
+LOCAL_SRC_FILES := mtk_omx.cpp
     
 
 LOCAL_SHARED_LIBRARIES := libbinder libgui libui
-LOCAL_MODULE := libshim_cam
+LOCAL_MODULE := libshim_omx
 include $(BUILD_SHARED_LIBRARY)
 
 
