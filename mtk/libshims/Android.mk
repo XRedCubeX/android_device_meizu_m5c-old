@@ -26,7 +26,9 @@ include $(BUILD_SHARED_LIBRARY)
 ## libshim_ui
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := mtk_ui.cpp
+LOCAL_SRC_FILES := \
+    ui/mtk_gbc1.cpp \
+    ui/mtk_ui.cpp
 
 LOCAL_SHARED_LIBRARIES := libbinder libui
 LOCAL_MODULE := libshim_ui
@@ -48,7 +50,6 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
     camera/mtk_gui.cpp \
-    camera/mtk_gbc1.cpp \
     camera/mtk_omx.cpp
     
 
