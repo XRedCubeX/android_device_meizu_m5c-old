@@ -11,6 +11,7 @@ PRODUCT_PACKAGES += \
     libshim_asc \
     libshim_cam \
     libshim_gui \
+    libshim_omx \
     libshim_snd \
     libshim_ui \
     libshim_xlog

@@ -28,8 +28,10 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := camera/mtk_gbc1.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder libui libgui
+LOCAL_SHARED_LIBRARIES := libui
 LOCAL_MODULE := libshim_cam
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+
 include $(BUILD_SHARED_LIBRARY)
 
 
