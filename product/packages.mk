@@ -47,6 +47,9 @@ PRODUCT_PACKAGES += \
 # LiveDisplay
 PRODUCT_PACKAGES += libjni_livedisplay
 
+# Include explicitly to work around Facelock issues
+PRODUCT_PACKAGES += libprotobuf-cpp-full
+
 # USB
 PRODUCT_PACKAGES += com.android.future.usb.accessory
 
