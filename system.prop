@@ -53,6 +53,7 @@ ro.mtk_bt_support=1
 ro.mtk_agps_app=1
 ro.mtk_wlan_support=1
 ro.mtk_gps_support=1
+ro.product.first_api_level=22
 
 # Google assistant trick
 ro.opa.eligible_device=true
