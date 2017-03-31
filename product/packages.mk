@@ -9,12 +9,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_agps \
     libshim_asc \
-    libshim_cam \
     libshim_gui \
     libshim_omx \
     libshim_snd \
     libshim_ui \
     libshim_xlog
+    #libshim_cam \
 
 # libstlport
 PRODUCT_PACKAGES += libstlport
