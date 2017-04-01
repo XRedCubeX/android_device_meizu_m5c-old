@@ -55,9 +55,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += libjni_livedisplay
 
 # USB
-PRODUCT_PACKAGES += \
-    librs_jni \
-    com.android.future.usb.accessory
+PRODUCT_PACKAGES += com.android.future.usb.accessory
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -65,5 +63,4 @@ PRODUCT_PACKAGES += \
     hostapd \
     hostapd_cli \
     dhcpcd.conf \
-    wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant

@@ -109,7 +109,6 @@ persist.mtk.wcn.combo.chipid=-1
 
 wfd.dummy.enable=1
 
-keyguard.no_require_sim=true
 persist.sys.keyguard_intercept=true
 persist.call.waiting.volume=70
 persist.call_recording.enabled=true
