@@ -281,6 +281,7 @@
 /system/bin/fuelgauged u:object_r:fuelgauged_exec:s0
 /system/bin/gsm0710muxdmd2 u:object_r:gsm0710muxdmd2_exec:s0
 /system/bin/gsm0710muxd u:object_r:gsm0710muxd_exec:s0
+/system/bin/meizupshelper u:object_r:meizupshelper_exec:s0
 /system/bin/meta_tst u:object_r:meta_tst_exec:s0
  
 /system/bin/msensord u:object_r:msensord_exec:s0
@@ -312,3 +313,6 @@
 
 # m2note
 /dev/BU64245(/.*)? u:object_r:BU64245_device:s0
+
+# Meizupshelper
+/sys/devices/virtual/meizu/ps/ps_calibration u:object_r:meizu_ps_calibration_trigger:s0
