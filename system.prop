@@ -16,9 +16,6 @@ wifi.direct.interface=p2p0
 # Camera
 ro.camera.sound.forced=0
 camera.disable_zsl_mode=1
-# legacy Hal specifics
-media.stagefright.legacyencoder=true
-media.stagefright.less-secure=true
 
 # Power off opt in IPO
 sys.ipo.pwrdncap=2
