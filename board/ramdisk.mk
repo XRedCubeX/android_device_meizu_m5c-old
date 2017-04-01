@@ -1,6 +1,6 @@
-# mediaserver with system group
+# cameraserver with media group
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/init/mediaserver.rc:system/etc/init/mediaserver.rc 
+    $(DEVICE_PATH)/rootdir/init/cameraserver.rc:system/etc/init/cameraserver.rc 
 
 # device rootdir
 PRODUCT_COPY_FILES += \
