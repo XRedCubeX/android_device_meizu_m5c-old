@@ -57,18 +57,6 @@ LOCAL_MODULE := libshim_gui
 include $(BUILD_SHARED_LIBRARY)
 
 
-## libshim_omx
-include $(CLEAR_VARS)
-
-LOCAL_MULTILIB = 32
-LOCAL_SRC_FILES_32 := mtk_omx.cpp
-    
-
-LOCAL_SHARED_LIBRARIES_32 := libbinder
-LOCAL_MODULE := libshim_omx
-include $(BUILD_SHARED_LIBRARY)
-
-
 ## libshim_snd
 include $(CLEAR_VARS)
 
