@@ -1,0 +1,13 @@
+# Mtk fix
+allow cameraserver camera_isp_device:chr_file { ioctl open read write };
+allow cameraserver devmap_device:chr_file { ioctl open read };
+allow cameraserver kd_camera_hw_device:chr_file { ioctl open read write };
+allow cameraserver proc:file { open read };
+allow cameraserver sysfs:file { open read };
+allow cameraserver CAM_CAL_DRV_device:chr_file { ioctl open read write };
+allow cameraserver kd_camera_flashlight_device:chr_file { ioctl open read write };
+allow cameraserver nvdata_file:dir search;
+allow cameraserver nvdata_file:file { getattr open read };
+allow cameraserver platformblk_device:blk_file { open read write };
+allow cameraserver proc:file ioctl;
+allow cameraserver proc_meminfo:file { getattr open read };

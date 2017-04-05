@@ -6,3 +6,8 @@ allow kernel block_device:blk_file { read write };
 allow kernel loop_device:blk_file { read };
 
 allow kernel platformblk_device:blk_file { open read write };
+
+# Mtk fix
+allow kernel nvdata_file:dir search;
+allow kernel nvdata_file:file { open read };
+allow kernel self:capability dac_override;

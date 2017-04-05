@@ -10,3 +10,9 @@ allow bluetooth bt_data_file:file { open read write create setattr getattr appen
 allow bluetooth platform_app_tmpfs:file write;
 
 allow mediaserver bt_data_file:file read;
+
+# Mtk fix
+allow bluetooth nvdata_file:dir search;
+allow bluetooth persist_bt_prop:file { getattr open read };
+allow bluetooth stpbt_device:chr_file { open read write };
+allow bluetooth wmt_prop:file { getattr open read };

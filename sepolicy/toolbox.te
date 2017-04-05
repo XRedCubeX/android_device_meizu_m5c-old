@@ -1,0 +1,2 @@
+# Mtk fix
+allow toolbox zram0_device:blk_file { getattr open read write };

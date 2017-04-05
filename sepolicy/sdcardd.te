@@ -1,0 +1,2 @@
+# Mtk fix
+allow sdcardd unlabeled:file getattr;

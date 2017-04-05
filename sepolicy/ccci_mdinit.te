@@ -67,6 +67,10 @@ allow ccci_mdinit custom_file:dir { search };
 allow ccci_mdinit custom_file:file { open read getattr };
 allow ccci_mdinit mtk_tele_prop:property_service set;
 
+# Mtk fix
+allow ccci_mdinit init:unix_stream_socket connectto;
+allow ccci_mdinit property_socket:sock_file write;
+
 # Nougat
 allow ccci_mdinit sysfs:file { write read open };
 allow ccci_mdinit proc:file { read open ioctl };

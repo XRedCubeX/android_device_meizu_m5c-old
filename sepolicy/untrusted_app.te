@@ -11,8 +11,5 @@ allow untrusted_app fuse:file execute;
 allow untrusted_app protect_f_data_file:dir getattr;
 allow untrusted_app protect_s_data_file:dir getattr;
 
-#elephantstress tools for thermal
-allow untrusted_app proc_mtktz:dir search;
-allow untrusted_app proc_mtktz:file read;
-allow untrusted_app proc_mtktz:file open;
-allow untrusted_app proc_mtktz:file getattr;
+# Mtk fix
+allow untrusted_app unlabeled:file { getattr open read };

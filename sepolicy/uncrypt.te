@@ -1,0 +1,2 @@
+# Mtk fix
+allow uncrypt kmsg_device:chr_file { open write };
