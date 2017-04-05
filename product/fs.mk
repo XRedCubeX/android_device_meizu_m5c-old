@@ -1,7 +1,3 @@
-# camera legacy
-PRODUCT_PACKAGES += \
-    fs_config_files
-
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck \
