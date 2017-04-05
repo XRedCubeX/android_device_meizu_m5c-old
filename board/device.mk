@@ -1,5 +1,5 @@
 # Force linking shim
-#LINKER_FORCED_SHIM_LIBS := a.so|b.so
+LINKER_FORCED_SHIM_LIBS := "/system/lib/liblog.so|libshim_xlog.so:/system/lib64/liblog.so|libshim_xlog.so:/system/lib/libgui.so|libshim_gui.so:/system/lib64/libgui.so|libshim_gui.so"
 
 ## Fun with flags
 
