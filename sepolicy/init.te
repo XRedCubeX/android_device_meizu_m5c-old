@@ -18,4 +18,6 @@ allow init zram0_device:blk_file write;
 # Nougat
 allow init loop_device:blk_file { write };
 allow init block_device:lnk_file setattr;
-allow init debugfs:file { write };
+
+allow init debugfs:dir mounton;
+allow init debugfs:file write;
