@@ -28,6 +28,9 @@ ro.sys.usb.bicr=yes
 ro.sys.usb.charging.only=yes
 ro.sys.usb.storage.type=mtp,mass_storage
 
+# SD
+ro.sys.sdcardfs=true
+
 # audio
 ro.audio.silent=0
 persist.audio.dirac.speaker=true
