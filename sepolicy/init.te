@@ -12,6 +12,7 @@ allow init gesture_sysfs:file setattr;
 allow init surfaceflinger:process noatsecure;
 
 # Mtk fix
+allow init tmpfs:lnk_file create;
 allow init wmtWifi_device:chr_file write;
 allow init zram0_device:blk_file write;
 
