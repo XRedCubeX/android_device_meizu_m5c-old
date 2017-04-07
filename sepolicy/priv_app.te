@@ -1,0 +1,2 @@
+# Mtk fix
+allow priv_app unlabeled:file getattr;
