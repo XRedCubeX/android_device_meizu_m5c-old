@@ -1,0 +1,2 @@
+# Mtk sdcardfs fix
+allow sgdisk voldblk_device:blk_file { getattr ioctl open read };

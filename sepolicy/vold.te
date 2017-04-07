@@ -57,3 +57,6 @@ allow vold misc_device:chr_file read;
 allow vold platform_app:fd use;
 
 allow vold block_device:file create;
+
+# Mtk sdcardfs fix
+allow vold voldblk_device:blk_file { create ioctl open read unlink };
