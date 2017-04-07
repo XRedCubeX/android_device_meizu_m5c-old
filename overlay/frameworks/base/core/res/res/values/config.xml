@@ -52,15 +52,8 @@
         <item>mobile_fota,10,0,2,300000,true</item>
         <item>mobile_ims,11,0,2,300000,true</item>
         <item>mobile_cbs,12,0,2,300000,true</item>
-        <item>mobile_dm,34,0,3,300000,true</item>
-        <item>mobile_wap,35,0,3,300000,true</item>
-        <item>mobile_net,36,0,3,300000,true</item>
-        <item>mobile_cmmail,37,0,3,300000,true</item>
-        <item>mobile_rcse,38,0,3,300000,true</item>
-        <item>usb,40,40,0,-1,true</item>
         <item>mobile_ia,14,0,2,-1,true</item>
         <item>bluetooth,7,7,0,-1,true</item>
-        <item>csd,41,41,3,-1,true</item>
     </string-array>
 
     <string-array translatable="false" name="radioAttributes">
