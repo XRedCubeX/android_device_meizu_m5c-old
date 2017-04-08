@@ -28,9 +28,6 @@ allow mtkrild system_data_file:file r_file_perms;
 allow mtkrild system_file:file x_file_perms;
 allow mtkrild proc:file write;
 allow mtkrild proc_net:file write;
-allow mtkrild eemcs_device:chr_file { read write };
-allow mtkrild eemcs_device:chr_file open;
-allow mtkrild eemcs_device:chr_file ioctl;
 
 # property service
 allow mtkrild radio_prop:property_service set;

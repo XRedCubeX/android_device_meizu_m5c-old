@@ -89,8 +89,6 @@ allow factory devpts:chr_file { read write getattr ioctl };
 allow factory vfat:dir search;
 allow factory hrm_device:chr_file { read ioctl open };
 
-allow factory eemcs_device:chr_file { read write ioctl open };
-
 allow factory ttySDIO_device:chr_file { read write ioctl open };
 
 allow factory fuse:dir mounton;

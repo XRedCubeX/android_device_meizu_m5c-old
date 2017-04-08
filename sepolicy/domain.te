@@ -1,3 +1,0 @@
-# domain
-
-allow domain exm0_device:chr_file { read write ioctl open };

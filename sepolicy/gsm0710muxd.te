@@ -21,8 +21,6 @@ allow gsm0710muxd property_socket:sock_file write;
 allow gsm0710muxd self:capability setuid;
 allow gsm0710muxd device:dir remove_name;
 allow gsm0710muxd device:lnk_file unlink;
-allow gsm0710muxd eemcs_device:chr_file open;
-allow gsm0710muxd eemcs_device:chr_file { read write };
 
 # Nougat
 allow gsm0710muxd gsm0710muxd_prop:file r_file_perms;

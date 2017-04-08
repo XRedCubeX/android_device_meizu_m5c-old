@@ -152,11 +152,6 @@ allow system_server exec_type:file r_file_perms;
 
 # Date: WK14.48
 # Operation : SQC
-# Purpose : for accessing exm0 tmpfs device
-allow system_server exm0_device:chr_file { read write open };
-
-# Date: WK14.48
-# Operation : SQC
 # Purpose : for querying zygote socket
 allow system_server zygote:unix_stream_socket { getopt getattr };
 

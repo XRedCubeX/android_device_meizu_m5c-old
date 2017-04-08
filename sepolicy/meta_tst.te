@@ -74,15 +74,12 @@ allow meta_tst camera_pipemgr_device:chr_file { open read write ioctl };
 allow meta_tst MTK_SMI_device:chr_file { open read write ioctl };
 allow meta_tst tmpfs:lnk_file read;
 
-allow meta_tst eemcs_device:chr_file { read write ioctl open };
-
 allow meta_tst shell_exec:file { read open execute_no_trans };
 allow meta_tst system_data_file:dir create;
 
 allow meta_tst misc_device:chr_file { read write open };
 allow meta_tst proc_lk_env:file { read write ioctl open };
 
-allow meta_tst emd_device:chr_file { read write ioctl open };
 allow meta_tst ttyACM_device:chr_file { read write ioctl open };
 
 allow meta_tst block_device:blk_file getattr;
