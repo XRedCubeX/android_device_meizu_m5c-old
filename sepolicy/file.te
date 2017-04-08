@@ -1,4 +1,6 @@
 # file
+type protect_s_data_file, file_type, data_file_type;
+type protect_f_data_file, file_type, data_file_type;
 
 type custom_file, file_type, data_file_type;
 type lost_found_data_file, file_type, data_file_type;
@@ -57,10 +59,7 @@ type mnld_data_file, file_type, data_file_type;
 type sysctl_socket, file_type;
 
 type backuprestore_socket, file_type;
-type nfc_socket, file_type;
 
-type protect_f_data_file, file_type, data_file_type;
-type protect_s_data_file, file_type, data_file_type;
 type persist_data_file, file_type, data_file_type;
 type nvram_data_file, file_type, data_file_type;
 type nvdata_file, file_type, data_file_type;
@@ -81,19 +80,6 @@ type logmisc_data_file, file_type, data_file_type;
 
 #mobilelog data/log_temp
 type logtemp_data_file, file_type, data_file_type; 
-
-# NE core_forwarder
-type aee_core_data_file, file_type, data_file_type;
-
-# AEE exp
-type aee_exp_data_file, file_type, data_file_type;
-type aee_dumpsys_data_file, file_type, data_file_type;
-
-# SF bqdump
-type sf_bqdump_data_file, file_type, data_file_type;
-
-#for 3Gdongle
-type rild-dongle_socket, file_type;
 
 type ccci_cfg_file, file_type, data_file_type; 
 #For sensor

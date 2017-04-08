@@ -1,26 +1,32 @@
 # device
+type ccci_device, dev_type;
+type ccci_monitor_device, dev_type;
 
-type devmap_device, dev_type;
 type ttyMT_device, dev_type;
 type ttySDIO_device, dev_type;
 type vmodem_device, dev_type;
-type stpwmt_device, dev_type;
-type wmtdetect_device, dev_type;
-type wmtWifi_device, dev_type;
 type stpbt_device, dev_type;
 type stpgps_device, dev_type;
+type stpwmt_device, dev_type;
 type pmem_multimedia_device, dev_type;
 type mt6516_isp_device, dev_type;
 type mt6516_IDP_device, dev_type;
 type mt9p012_device, dev_type;
 type mt6516_jpeg_device, dev_type;
-type M4U_device_device, dev_type;
 type hwmsensor_device, dev_type;
-type msensor_device, dev_type;
-type gsensor_device, dev_type;
+type wmtWifi_device, dev_type;
+type wmtdetect_device, dev_type;
+type gsm0710muxd_device, dev_type;
+type mdlog_device, dev_type;
 type als_ps_device, dev_type;
+type gsensor_device, dev_type;
+type msensor_device, dev_type;
 type gyroscope_device, dev_type;
+type devmap_device, dev_type;
 type Vcodec_device, dev_type;
+type M4U_device_device, dev_type;
+type mtk_smi_device, dev_type;
+
 type MJC_device, dev_type;
 type smartpa_device, dev_type;
 type smartpa1_device, dev_type;
@@ -63,9 +69,6 @@ type MT6516_MP4_ENC_device, dev_type;
 type sensor_device, dev_type;
 type xlog_device, dev_type;
 type aed_device, dev_type;
-type ccci_device, dev_type;
-type ccci_monitor_device, dev_type;
-type gsm0710muxd_device, dev_type;
 type eemcs_device, dev_type;
 type emd_device, dev_type;
 type exm0_device, dev_type; 
@@ -125,7 +128,6 @@ type kick_powerkey_device, dev_type;
 type agps_device, dev_type;
 type mnld_device, dev_type;
 type hotknot_device, dev_type;
-type mdlog_device, dev_type;
 type md32_device, dev_type;
 type etb_device, dev_type;
 type MT_pmic_adc_cali_device, dev_type;
@@ -142,9 +144,6 @@ type keyblock_device, dev_type;
 type offloadservice_device, dev_type;
 type ttyACM_device, dev_type;
 type hrm_device, dev_type;
-
-# /dev/mtk_smi
-type mtk_smi_device, dev_type;
 
 # m2note
 type BU64245_device, dev_type;

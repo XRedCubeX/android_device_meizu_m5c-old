@@ -26,7 +26,6 @@ allow shell mediaserver_exec:file rx_file_perms;
 allow shell msensord_exec:file rx_file_perms;
 allow shell mtk_agpsd_exec:file rx_file_perms;
 allow shell mtkrild_exec:file rx_file_perms;
-allow shell mtkrildmd2_exec:file rx_file_perms;
 allow shell mtp_exec:file rx_file_perms;
 allow shell muxreport_exec:file rx_file_perms;
 allow shell nvram_daemon_exec:file rx_file_perms;
@@ -50,6 +49,3 @@ allow shell su_exec:file rx_file_perms;
 ')
 
 allow shell qemu_pipe_device:chr_file rw_file_perms;
-
-allow shell aee_exp_data_file:dir r_dir_perms;
-allow shell aee_exp_data_file:file r_file_perms;
