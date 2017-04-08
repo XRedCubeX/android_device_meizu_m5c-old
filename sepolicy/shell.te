@@ -46,5 +46,3 @@ allow shell block_device:dir search;
 userdebug_or_eng(`
 allow shell su_exec:file rx_file_perms;
 ')
-
-allow shell qemu_pipe_device:chr_file rw_file_perms;

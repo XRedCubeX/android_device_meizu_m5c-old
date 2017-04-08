@@ -2,8 +2,6 @@
 
 allow untrusted_app dalvikcache_data_file:lnk_file read;
 
-allow untrusted_app qemu_pipe_device:chr_file rw_file_perms;
-
 # CTS issue
 allow untrusted_app proc_lk_env:file getattr;
 allow untrusted_app proc_sysrq:file getattr;

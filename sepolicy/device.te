@@ -119,7 +119,6 @@ type mtk-adc-cali_device, dev_type;
 type MT_pmic_cali_device,dev_type;
 type barometer_device,dev_type;
 type otp_device, dev_type;
-type qemu_pipe_device, dev_type;
 type icusb_device, dev_type;
 type irtx_device, dev_type;
 type pmic_ftm_device, dev_type;

@@ -69,10 +69,6 @@ allow mtkrild platformblk_device:dir search;
 allow mtkrild platform_app:fd use;
 allow mtkrild radio:fd use;
 
-# For emulator
-allow mtkrild qemu_pipe_device:chr_file rw_file_perms;
-allow mtkrild socket_device:sock_file write;
-
 # Mtk fix
 allow mtkrild init:unix_stream_socket connectto;
 allow mtkrild property_socket:sock_file write;

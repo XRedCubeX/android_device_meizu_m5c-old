@@ -63,11 +63,6 @@ unix_socket_connect(system_app, agpsd, mtk_agpsd);
 # Package: com.android.settings
 allow system_app asec_apk_file:file r_file_perms;
 
-# Date : WK14.46
-# Operation : Migration
-# Purpose : for MTK Emulator HW GPU
-allow system_app qemu_pipe_device:chr_file rw_file_perms;
-
 # Date : 2014/11/18
 # Operation : SQC
 # Purpose : for oma dm fota recovery update
