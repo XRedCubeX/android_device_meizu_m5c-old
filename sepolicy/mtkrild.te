@@ -73,6 +73,8 @@ allow mtkrild radio:fd use;
 allow mtkrild init:unix_stream_socket connectto;
 allow mtkrild property_socket:sock_file write;
 
+allow mtkrild serial_number_prop:property_service set;
+
 # Nougat
 allow mtkrild gsm0710muxd_prop:file { read open getattr };
 allow mtkrild persist_ril_prop:file { read open getattr };

@@ -7,6 +7,7 @@ init_daemon_domain(ccci_mdinit)
 
 wakelock_use(ccci_mdinit)
 
+allow ccci_mdinit ctl_ccci_fsd_prop:property_service set;
 allow ccci_mdinit ctl_gsm0710muxd_prop:property_service set;
 
 #=============allow ccci_mdinit to start emcsmdlogger==============
@@ -40,6 +41,8 @@ allow ccci_mdinit nvram_data_file:file create_file_perms;
 allow ccci_mdinit nvram_data_file:lnk_file read;
 allow ccci_mdinit nvdata_file:dir rw_dir_perms;
 allow ccci_mdinit nvdata_file:file create_file_perms;
+allow ccci_mdinit sysfs_ccci:file rw_file_perms;
+allow ccci_mdinit sysfs_wake_lock:file rw_file_perms;
 allow ccci_mdinit nvram_device:chr_file rw_file_perms;
 
 allow ccci_mdinit protect_f_data_file:dir rw_dir_perms;

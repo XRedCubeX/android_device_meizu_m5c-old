@@ -2,6 +2,10 @@
 
 allow init nvram_data_file:dir { write search setattr read create open add_name };
 allow init nvdata_file:dir { write search setattr read create open add_name };
+# Allow init to format formattable partitions…partitions
+allow init nvdata_device:blk_file write;
+allow init protect1_device:blk_file write;
+allow init protect2_device:blk_file write;
 
 allow init platformblk_device:blk_file setattr;
 
