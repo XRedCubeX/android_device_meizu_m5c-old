@@ -73,6 +73,7 @@ allow mtkrild radio:fd use;
 allow mtkrild init:unix_stream_socket connectto;
 allow mtkrild property_socket:sock_file write;
 
+# Mtk sn
 allow mtkrild serial_number_prop:property_service set;
 
 # Nougat

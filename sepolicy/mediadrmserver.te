@@ -1,0 +1,2 @@
+# Mtk sn
+allow mediadrmserver serial_number_prop:file { getattr open read };

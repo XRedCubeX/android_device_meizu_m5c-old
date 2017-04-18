@@ -90,5 +90,9 @@ allow meta_tst pro_info_device:chr_file { open read write ioctl };
 
 allow meta_tst ttySDIO_device:chr_file { read write ioctl open };
 
+# Gps
+allow meta_tst sysfs_gps_file:dir search;
+allow meta_tst sysfs_gps_file:file rw_file_perms;
+
 # m2note
 allow mediaserver BU64245_device:chr_file { read write ioctl open };

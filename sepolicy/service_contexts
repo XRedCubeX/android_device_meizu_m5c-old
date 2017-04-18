@@ -3,7 +3,6 @@
 NvRAMAgent          u:object_r:nvram_agent_service:s0
 phoneEx             u:object_r:radio_service:s0
 DmAgent             u:object_r:dm_agent_binder_service:s0
-hotknot_service 	u:object_r:system_app_service:s0
 vie_command  		u:object_r:system_app_service:s0
 terservice          u:object_r:terservice_service:s0
 memory_dumper       u:object_r:mediaserver_service:s0

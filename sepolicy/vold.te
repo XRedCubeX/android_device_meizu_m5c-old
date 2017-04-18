@@ -51,10 +51,9 @@ allow vold system_data_file:dir { relabelfrom relabelto setattr };
 allow vold system_data_file:file { relabelto };
 
 allow vold platform_app:process ptrace;
+allow vold platform_app:fd use;
 
 allow vold misc_device:chr_file read;
-
-allow vold platform_app:fd use;
 
 allow vold block_device:file create;
 

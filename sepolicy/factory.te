@@ -51,6 +51,8 @@ allow factory self:tcp_socket { setopt read bind create accept write connect lis
 allow factory self:udp_socket { create ioctl };
 allow factory stpbt_device:chr_file { read write open };
 allow factory sysfs:file write;
+allow factory sysfs_gps_file:dir r_dir_perms;
+allow factory sysfs_gps_file:file rw_file_perms;
 allow factory sysfs_wake_lock:file { read write open };
 allow factory system_data_file:dir { write remove_name add_name };
 allow factory system_data_file:sock_file { write create setattr };
@@ -85,7 +87,6 @@ allow factory pmic_ftm_device:chr_file { read write ioctl open};
 allow factory powerctl_prop:property_service set;
 allow factory ttyGS_device:chr_file { read write open ioctl};
 allow factory ttyMT_device:chr_file { read write open ioctl};
-allow factory irtx_device:chr_file { read write ioctl open };
 allow factory devpts:chr_file { read write getattr ioctl };
 allow factory vfat:dir search;
 allow factory hrm_device:chr_file { read ioctl open };
