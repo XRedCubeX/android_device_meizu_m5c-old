@@ -7,6 +7,7 @@ init_daemon_domain(kpoc_charger)
 
 allow kpoc_charger block_device:dir search;
 allow kpoc_charger platformblk_device:dir search;
+allow kpoc_charger platformblk_device:blk_file { open read };
 allow kpoc_charger graphics_device:dir search;
 allow kpoc_charger input_device:dir { open read search };
 allow kpoc_charger input_device:chr_file { open read write ioctl };
