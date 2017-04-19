@@ -32,10 +32,12 @@
 /data/misc/wpa_supplicant(/.*)?		u:object_r:wpa_supplicant_data_file:s0
 /data/nvram(/.*)?			u:object_r:nvram_data_file:s0
 /nvdata(/.*)?				u:object_r:nvdata_file:s0
-/data/ipsec(./*)?			u:object_r:wod_ipsec_conf_file:s0
-/data/ipsec/wo(./*)?			u:object_r:wod_apn_conf_file:s0
+/data/ipsec(/.*)?			u:object_r:wod_ipsec_conf_file:s0
+/data/ipsec/wo(/.*)?			u:object_r:wod_apn_conf_file:s0
 /data/data_tmpfs_log(/.*)?		u:object_r:data_tmpfs_log_file:s0
 /data/tmp_mnt/data_tmpfs_log(/.*)?	u:object_r:data_tmpfs_log_file:s0
+# missing from thermal_manager rules
+/data/\.tp\.settings u:object_r:thermal_manager_data_file:s0
 
 ##########################
 # Devices
@@ -304,4 +306,4 @@
 /data/system/users/[0-9]+/smartbook_wallpaper	u:object_r:wallpaper_file:s0
 
 # Zram
-/dev/block/zram0(/.*)?			u:object_r:zram0_device:s0
+/dev/block/zram0(/.*)?				u:object_r:zram0_device:s0

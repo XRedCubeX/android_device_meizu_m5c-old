@@ -33,8 +33,10 @@ allow nvram_daemon self:capability { fowner chown dac_override dac_read_search f
 
 allow nvram_daemon system_data_file:dir {create write add_name};
 
-allow nvram_daemon nvram_device:chr_file {read write open ioctl};
-allow nvram_daemon pro_info_device:chr_file {read write open ioctl};
+allow nvram_daemon nvram_device:blk_file { open read write };
+allow nvram_daemon nvram_device:chr_file { read write open ioctl};
+allow nvram_daemon pro_info_device:chr_file { read write open ioctl};
+allow nvram_daemon pro_info_device:blk_file { open read write };
 
 allow nvram_daemon block_device:dir search;
 

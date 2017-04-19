@@ -36,6 +36,8 @@ allow ccci_mdinit nvdata_file:dir rw_dir_perms;
 allow ccci_mdinit nvdata_file:file create_file_perms;
 allow ccci_mdinit sysfs_ccci:file rw_file_perms;
 allow ccci_mdinit sysfs_wake_lock:file rw_file_perms;
+
+allow ccci_mdinit nvram_device:blk_file { open read write };
 allow ccci_mdinit nvram_device:chr_file rw_file_perms;
 
 allow ccci_mdinit protect_f_data_file:dir rw_dir_perms;
@@ -44,6 +46,7 @@ allow ccci_mdinit protect_f_data_file:file create_file_perms;
 allow ccci_mdinit protect_s_data_file:dir rw_dir_perms;
 allow ccci_mdinit protect_s_data_file:file create_file_perms;
 allow ccci_mdinit platformblk_device:blk_file { read write open };
+allow ccci_mdinit platformblk_device:dir search;
 
 allow ccci_mdinit ril_mux_report_case_prop:property_service set;
 

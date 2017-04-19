@@ -129,5 +129,8 @@ type sysfs_gps_file, fs_type, sysfs_type;
 # Gestures
 type gesture_sysfs, sysfs_type, file_type;
 
+# Thermal manager
+type thermal_manager_data_file, file_type, data_file_type;
+
 # Thunderquake vibrator
 type sysfs_vibrator, sysfs_type, file_type;

@@ -853,4 +853,4 @@ service conn_launcher /system/bin/6620_launcher -p /system/etc/firmware/
 
 service kpoc_charger /system/bin/kpoc_charger
     class charger
-
+    seclabel u:r:kpoc_charger:s0

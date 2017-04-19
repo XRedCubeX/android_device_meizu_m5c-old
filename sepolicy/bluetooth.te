@@ -10,6 +10,8 @@ allow bluetooth platform_app_tmpfs:file write;
 
 allow mediaserver bt_data_file:file read;
 
+allow bluetooth platformblk_device:dir search;
+
 # Mtk fix
 allow bluetooth nvdata_file:dir search;
 allow bluetooth nvdata_file:file rw_file_perms;

@@ -18,8 +18,8 @@ allow mnld nvram_data_file:dir create_dir_perms;
 allow mnld nvram_data_file:file create_file_perms;
 allow mnld nvram_data_file:lnk_file read;
 
-allow mnld nvram_device:chr_file{read write};
-allow mnld nvram_device:chr_file { ioctl open };
+allow mnld nvram_device:blk_file { open read write };
+allow mnld nvram_device:chr_file{ ioctl open read write};
 
 allow mnld nvdata_file:dir create_dir_perms;
 allow mnld nvdata_file:file create_file_perms;

@@ -4,6 +4,7 @@ type thermal_manager_exec, exec_type, file_type;
 type thermal_manager, domain;
 
 init_daemon_domain(thermal_manager)
+file_type_auto_trans(thermal_manager, system_data_file, thermal_manager_data_file)
 
 allow thermal_manager proc_mtkcooler:dir search;
 allow thermal_manager proc_mtktz:dir search;

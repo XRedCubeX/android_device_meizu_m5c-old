@@ -4,3 +4,4 @@ allow fsck nvdata_device:blk_file          rw_file_perms;
 
 # Mtk fix
 allow fsck platformblk_device:blk_file { getattr ioctl open read write };
+allow fsck platformblk_device:dir search;
