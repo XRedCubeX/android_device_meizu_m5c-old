@@ -1,5 +1,4 @@
 # ccci_fsd
-
 type ccci_fsd_exec, exec_type, file_type;
 type ccci_fsd, domain;
 

@@ -1,5 +1,4 @@
 # audioserver - audio services
-
 # Nvram / Nvdata
 allow audioserver nvdata_file:dir search;
 allow audioserver nvdata_file:file getattr;

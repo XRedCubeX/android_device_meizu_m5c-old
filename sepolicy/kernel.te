@@ -1,5 +1,4 @@
 # kernel
-
 # Nvram / Nvdata
 allow kernel	nvdata_file:dir search;
 allow kernel	nvdata_file:file { open read };

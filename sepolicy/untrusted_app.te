@@ -3,5 +3,3 @@ allow untrusted_app		dalvikcache_data_file:lnk_file read;
 allow untrusted_app		fuse:file execute;
 allow untrusted_app		proc_lk_env:file getattr;
 allow untrusted_app		proc_sysrq:file getattr;
-allow untrusted_app		protect_f_data_file:dir getattr;
-allow untrusted_app		protect_s_data_file:dir getattr;

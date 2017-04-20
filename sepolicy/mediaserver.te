@@ -1,5 +1,4 @@
 # Mediaserver
-
 # Nvram / Nvdata
 allow mediaserver nvdata_file:dir rw_dir_perms;
 allow mediaserver nvdata_file:file create_file_perms;

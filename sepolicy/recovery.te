@@ -1,5 +1,4 @@
 # recovery
-
 allow recovery misc_device:chr_file *;
 allow recovery platformblk_device:dir *;
 allow recovery platformblk_device:blk_file *;

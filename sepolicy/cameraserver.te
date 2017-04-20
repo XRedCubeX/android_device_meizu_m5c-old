@@ -1,5 +1,4 @@
 # Cameraserver
-
 # Nvram / Nvdata
 allow cameraserver nvdata_file:dir search;
 allow cameraserver nvdata_file:file { getattr open read };

@@ -1,5 +1,4 @@
 ## Services ##
-
 /system/bin/6620_launcher			u:object_r:mtk_6620_launcher_exec:s0
 /system/bin/wmt_loader				u:object_r:wmt_loader_exec:s0
 
@@ -15,7 +14,7 @@
 /system/bin/muxreport				u:object_r:muxreport_exec:s0
 /system/bin/nvram_daemon			u:object_r:nvram_daemon_exec:s0
 /system/bin/terservice				u:object_r:terservice_exec:s0
-# Charger
+
 /system/bin/fuelgauged				u:object_r:fuelgauged_exec:s0
 /system/bin/kpoc_charger			u:object_r:kpoc_charger_exec:s0
 
@@ -110,8 +109,6 @@
 /dev/pmem_multimedia(/.*)?			u:object_r:pmem_multimedia_device:s0
 /dev/pmt(/.*)?					u:object_r:pmt_device:s0
 /dev/preloader(/.*)?				u:object_r:preloader_device:s0
-/dev/protect_f(/.*)?				u:object_r:protect_f_device:s0
-/dev/protect_s(/.*)?				u:object_r:protect_s_device:s0
 /dev/psaux(/.*)?				u:object_r:psaux_device:s0
 /dev/ptmx(/.*)?					u:object_r:ptmx_device:s0
 /dev/ptyp.*					u:object_r:ptyp_device:s0
@@ -168,7 +165,6 @@
 /dev/shf					u:object_r:shf_device:s0
 /protect_f(/.*)?				u:object_r:protect_f_data_file:s0
 /protect_s(/.*)?				u:object_r:protect_s_data_file:s0
-/protect_s/properties(/.*)?			u:object_r:persist_property_file:s0
 /persist(/.*)?					u:object_r:persist_data_file:s0
 /dev/ttyACM0					u:object_r:ttyACM_device:s0
 /dev/hrm					u:object_r:hrm_device:s0
@@ -189,29 +185,36 @@
 /dev/socket/mnld				u:object_r:mnld_socket:s0
 
 ## Sysfs nodes ##
-/sys/devices/virtual/gpsdrv(/.*)?		u:object_r:sysfs_gps_file:s0
-/sys/bus/platform/drivers/msensor/daemon2	u:object_r:msensord_daemon2:s0
-/sys/bus/platform/drivers/msensor/daemon	u:object_r:msensord_daemon:s0
-/sys/devices/platform/gsensor/driver(/.*)?	u:object_r:sysfs_gsensor_file:s0
-/sys/devices/platform/msensor/driver(/.*)?	u:object_r:sysfs_msensor_file:s0
-/sys/bus/platform/drivers/mtk-kpd(/.*)?		u:object_r:sysfs_keypad_file:s0
-/sys/power/vcorefs/pwr_ctrl --			u:object_r:sysfs_vcorefs_pwrctrl:s0
-/sys/kernel/ccci/boot				u:object_r:sysfs_ccci:s0
-/sys/devices/platform/mtk_disp_mgr.0/rgb	u:object_r:livedisplay_sysfs:s0
-/sys/devices/virtual/meizu/ps/ps_calibration	u:object_r:meizu_ps_calibration_trigger:s0
-/sys/devices/platform/mx-gs/gesture_control	u:object_r:gesture_sysfs:s0
-/sys/kernel/thunderquake_engine/level		u:object_r:sysfs_vibrator:s0
+/sys/devices/virtual/gpsdrv(/.*)?				u:object_r:sysfs_gps_file:s0
+/sys/bus/platform/drivers/msensor/daemon2			u:object_r:msensord_daemon2:s0
+/sys/bus/platform/drivers/msensor/daemon			u:object_r:msensord_daemon:s0
+/sys/devices/platform/gsensor/driver(/.*)?			u:object_r:sysfs_gsensor_file:s0
+/sys/devices/platform/msensor/driver(/.*)?			u:object_r:sysfs_msensor_file:s0
+/sys/bus/platform/drivers/mtk-kpd(/.*)?				u:object_r:sysfs_keypad_file:s0
+/sys/power/vcorefs/pwr_ctrl --					u:object_r:sysfs_vcorefs_pwrctrl:s0
+/sys/kernel/ccci/boot						u:object_r:sysfs_ccci:s0
+/sys/devices/platform/mtk_disp_mgr.0/rgb			u:object_r:livedisplay_sysfs:s0
+/sys/devices/virtual/meizu/ps/ps_calibration			u:object_r:meizu_ps_calibration_trigger:s0
+/sys/devices/platform/mx-gs/gesture_control			u:object_r:gesture_sysfs:s0
+/sys/kernel/thunderquake_engine/level				u:object_r:sysfs_vibrator:s0
+/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq		u:object_r:perf_control_sysfs:s0
+/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq		u:object_r:perf_control_sysfs:s0
+/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor		u:object_r:perf_control_sysfs:s0
+/sys/block/mmcblk0/queue/scheduler				u:object_r:perf_control_sysfs:s0
+/sys/devices/.*/queue/scheduler					u:object_r:perf_control_sysfs:s0
 
 ## Block devices ##
 /dev/block/platform/mtk-msdc\.0/[0-9]+\.(msdc|MSDC)0/by-name/proinfo	u:object_r:proinfo_device:s0
 /dev/block/platform/mtk-msdc\.0/by-name/proinfo				u:object_r:proinfo_device:s0
+/dev/block/platform/mtk-msdc\.0/[0-9]+\.(msdc|MSDC)0/by-name/logo	u:object_r:logo_block_device:s0
+/dev/block/platform/mtk-msdc\.0/by-name/logo				u:object_r:logo_block_device:s0
+/dev/block/platform/mtk-msdc\.0/[0-9]+\.(msdc|MSDC)0/by-name/protect1	u:object_r:protect1_device:s0
+/dev/block/platform/mtk-msdc\.0/[0-9]+\.(msdc|MSDC)0/by-name/protect2	u:object_r:protect2_device:s0
 /dev/block/platform/mtk-msdc\.0/[0-9]+\.(msdc|MSDC)0/by-name/userdata	u:object_r:userdata_block_device:s0
 /dev/block/platform/mtk-msdc\.0/[0-9]+\.(msdc|MSDC)0/by-name/cache	u:object_r:cache_block_device:s0
 /dev/block/platform/mtk-msdc\.0/[0-9]+\.(msdc|MSDC)0/by-name/recovery	u:object_r:recovery_block_device:s0
 /dev/block/platform/mtk-msdc\.0/[0-9]+\.(msdc|MSDC)0/by-name/frp	u:object_r:frp_block_device:s0
 /dev/block/platform/mtk-msdc\.0/[0-9]+\.(msdc|MSDC)0/by-name/metadata	u:object_r:metadata_block_device:s0
-/dev/block/platform/mtk-msdc\.0/[0-9]+\.(msdc|MSDC)0/by-name/logo	u:object_r:logo_block_device:s0
-/dev/block/platform/mtk-msdc\.0/by-name/logo				u:object_r:logo_block_device:s0
 /dev/block/mmcblk1							u:object_r:mmc_device:s0
 /dev/block/zram0(/.*)?							u:object_r:swap_block_device:s0
 

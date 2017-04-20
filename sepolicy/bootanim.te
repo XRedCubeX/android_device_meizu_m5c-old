@@ -1,5 +1,4 @@
 # Bootanim.te
-
 allow bootanim self:netlink_socket create_socket_perms;
 
 allow bootanim mediaserver:binder call;

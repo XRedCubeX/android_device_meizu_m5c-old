@@ -1,5 +1,4 @@
 # mtk_6620_launcher
-
 type mtk_6620_launcher_exec, exec_type, file_type;
 type mtk_6620_launcher, domain;
 

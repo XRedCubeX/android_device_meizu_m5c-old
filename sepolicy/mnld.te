@@ -1,5 +1,4 @@
 # mnld
-
 type mnld, domain;
 type mnld_exec, exec_type, file_type;
 

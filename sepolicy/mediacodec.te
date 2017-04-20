@@ -1,5 +1,4 @@
 # Mediacodec
-
 # Nvram / Nvdata
 allow mediacodec nvdata_file:dir rw_dir_perms;
 allow mediacodec nvdata_file:file create_file_perms;

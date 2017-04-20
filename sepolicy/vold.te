@@ -1,5 +1,4 @@
 # vold
-
 # Nvram / Nvdata
 allow vold nvram_data_file:file { read getattr open write create setattr};
 allow vold nvram_data_file:lnk_file read;
@@ -8,6 +7,13 @@ allow vold nvdata_file:file { read getattr open write create setattr};
 allow vold nvdata_file:dir { read ioctl open write add_name create getattr setattr search};
 allow vold nvdata_device:blk_file rw_file_perms;
 allow vold nvram_device:chr_file rw_file_perms;
+
+allow vold protect_f_data_file:dir create_dir_perms;
+allow vold protect_f_data_file:file create_file_perms;
+allow vold protect_s_data_file:dir create_dir_perms;
+allow vold protect_s_data_file:file create_file_perms;
+allow vold protect1_device:blk_file rw_file_perms;
+allow vold protect2_device:blk_file rw_file_perms;
 
 allow vold platformblk_device:blk_file rw_file_perms;
 allow vold platformblk_device:dir search;
@@ -28,10 +34,6 @@ allow vold system_data_file:file open;
 
 allow vold mediaserver:process ptrace;
 
-allow vold protect_f_data_file:dir { read getattr open ioctl };
-allow vold protect_s_data_file:dir { read getattr open ioctl };
-allow vold protect1_device:blk_file rw_file_perms;
-allow vold protect2_device:blk_file rw_file_perms;
 allow vold persist_data_file:dir { read getattr open ioctl };
 
 allow vold proc_lk_env:file rw_file_perms;

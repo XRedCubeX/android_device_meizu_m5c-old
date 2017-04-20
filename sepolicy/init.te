@@ -1,5 +1,4 @@
 # init
-
 # Nvram / Nvdata
 allow init nvram_data_file:dir { write search setattr read create open add_name };
 allow init nvdata_file:dir { write search setattr read create open add_name };

@@ -1,5 +1,4 @@
 # property
-
 type mtk_default_prop, property_type;
 
 neverallow { domain -init } default_prop:property_service set;

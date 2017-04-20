@@ -1,5 +1,4 @@
 # shell
-
 allow shell mtk_6620_launcher_exec:file rx_file_perms;
 allow shell akmd09911_exec:file rx_file_perms;
 allow shell zygote_exec:file rx_file_perms;

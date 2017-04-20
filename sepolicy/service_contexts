@@ -1,8 +1,7 @@
 # service_contexts
 PQ			u:object_r:pq_service:s0
-
 NvRAMAgent		u:object_r:nvram_agent_service:s0
-phoneEx             u:object_r:radio_service:s0
-DmAgent             u:object_r:dm_agent_binder_service:s0
-terservice          u:object_r:terservice_service:s0
-media.mmsdk         u:object_r:mediaserver_service:s0
+phoneEx			u:object_r:radio_service:s0
+DmAgent			u:object_r:dm_agent_binder_service:s0
+terservice		u:object_r:terservice_service:s0
+media.mmsdk		u:object_r:mediaserver_service:s0

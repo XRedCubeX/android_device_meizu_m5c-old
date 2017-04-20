@@ -1,5 +1,4 @@
 # mtk_agpsd
-
 type mtk_agpsd_exec, exec_type, file_type;
 type mtk_agpsd, domain;
 

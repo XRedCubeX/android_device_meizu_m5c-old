@@ -1,5 +1,4 @@
 # gsm0710muxd
-
 type gsm0710muxd_exec, exec_type, file_type;
 type gsm0710muxd, domain;
 

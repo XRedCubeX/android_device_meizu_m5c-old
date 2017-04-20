@@ -1,5 +1,4 @@
 # wmt_loader
-
 type wmt_loader_exec, exec_type, file_type;
 type wmt_loader, domain;
 

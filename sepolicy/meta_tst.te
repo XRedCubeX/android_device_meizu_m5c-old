@@ -1,5 +1,4 @@
 # meta_tst
-
 type meta_tst_exec, exec_type, file_type;
 type meta_tst, domain;
 

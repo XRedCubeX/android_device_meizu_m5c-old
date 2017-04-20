@@ -1,5 +1,4 @@
 # system_app
-
 allow system_app touch_device:chr_file { read ioctl open };
 
 # Purpose: [MTKThermalManager][View thermal zones and coolers, and change thermal policies]
@@ -47,6 +46,9 @@ dontaudit system_app radio_data_file:dir search;
 
 # Mtk Agps
 unix_socket_connect(system_app, agpsd, mtk_agpsd);
+
+# Perf control
+allow system_app perf_control_sysfs:file rw_file_perms;
 
 # Gestures
 allow system_app gesture_sysfs:file rw_file_perms;

@@ -1,5 +1,4 @@
 # radio
-
 allow radio custom_file:dir getattr;
 allow radio zygote:unix_stream_socket { getopt getattr };
 

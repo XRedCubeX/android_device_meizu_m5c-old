@@ -1,5 +1,4 @@
 # Fsck
-
 # Nvram / Nvdata
 allow fsck nvdata_device:blk_file	rw_file_perms;
 

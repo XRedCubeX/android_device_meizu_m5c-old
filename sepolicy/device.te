@@ -1,16 +1,10 @@
 # device
-
 # Radio devices
 type ccci_device, dev_type;
 type ccci_monitor_device, dev_type;
-
-type ttyMT_device, dev_type;
-type ttySDIO_device, dev_type;
-type vmodem_device, dev_type;
 type stpbt_device, dev_type;
 type stpgps_device, dev_type;
 type stpwmt_device, dev_type;
-type pmem_multimedia_device, dev_type;
 type hwmsensor_device, dev_type;
 type wmtWifi_device, dev_type;
 type wmtdetect_device, dev_type;
@@ -31,6 +25,10 @@ type Vcodec_device, dev_type;
 type M4U_device_device, dev_type;
 type mtk_smi_device, dev_type;
 
+type ttyMT_device, dev_type;
+type ttySDIO_device, dev_type;
+type vmodem_device, dev_type;
+type pmem_multimedia_device, dev_type;
 type MJC_device, dev_type;
 type smartpa_device, dev_type;
 type smartpa1_device, dev_type;
@@ -91,12 +89,8 @@ type mtk_kpd_device, dev_type;
 type network_device, dev_type;
 type nvram_device, dev_type;
 type nvdata_device, dev_type;
-type protect1_device, dev_type;
-type protect2_device, dev_type;
 type pmt_device, dev_type;
 type preloader_device, dev_type;
-type protect_f_device, dev_type;
-type protect_s_device, dev_type;
 type psaux_device, dev_type;
 type ptyp_device, dev_type;
 type recovery_device, dev_type;
@@ -138,5 +132,7 @@ type BU64245_device, dev_type;
 
 # Block devices
 type proinfo_device, dev_type;
+type protect1_device, dev_type;
+type protect2_device, dev_type;
 type logo_block_device, dev_type;
 type mmc_device, dev_type;

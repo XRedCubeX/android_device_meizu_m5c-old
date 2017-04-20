@@ -1,5 +1,4 @@
 # thermal_manager
-
 type thermal_manager_exec, exec_type, file_type;
 type thermal_manager, domain;
 

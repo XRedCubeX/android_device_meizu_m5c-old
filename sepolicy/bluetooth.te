@@ -1,5 +1,4 @@
 # bluetooth
-
 # Nvram / Nvdata
 allow bluetooth nvdata_file:dir search;
 allow bluetooth nvdata_file:file rw_file_perms;

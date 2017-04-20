@@ -1,5 +1,4 @@
 # system_server
-
 # Purpose : for 120Hz Smart Switch
 allow system_server mtk_rrc_device:chr_file { read write ioctl open };
 # Purpose : for bring up
@@ -7,10 +6,6 @@ allow system_server hwmsensor_device:chr_file { read ioctl open };
 allow system_server m_batch_misc_device:chr_file { read ioctl open };
 allow system_server proc:file write;
 allow system_server touch_device:chr_file { read ioctl open };
-
-# Purpose : for wifi p2p functionality
-allow system_server dhcp_data_file:dir { read write remove_name search getattr };
-allow system_server dhcp_data_file:file { read open unlink getattr };
 
 # Purpose : for wifi functionality
 allow system_server hostapd:unix_dgram_socket sendto;
@@ -58,14 +53,10 @@ allow system_server RT_Monitor_device:chr_file { read ioctl open };
 # Purpose : for system_server to start bootanim
 allow system_server ctl_bootanim_prop:property_service set;
 
-
-# Purpose :  ALPS01763317
 # After connected to DHCPv6 enabled 6to4 IPv6 AP, 
 #the ipv6 related values of getprop command are wrong  
 #============= system_server ==============
 allow system_server proc_net:file write;
-allow system_server wide_dhcpv6_data_file:dir search;
-allow system_server wide_dhcpv6_data_file:file { read getattr open };
 
 # Purpose : for bring up
 allow system_server anr_data_file:dir relabelfrom;

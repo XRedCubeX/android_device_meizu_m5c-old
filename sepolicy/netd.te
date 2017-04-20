@@ -1,7 +1,4 @@
 # netd
-
-type dhcp6s_exec,exec_type,file_type;
-
 allow netd wmtWifi_device:chr_file { write open };
 
 allow netd kernel:system module_request;
@@ -14,16 +11,10 @@ allow netd platform_app_tmpfs:file write;
 
 allow netd ppp:process sigkill;
 
-allow netd dhcp6s_exec:file execute;
-allow netd dhcp_data_file:dir { read search write add_name remove_name };
-allow netd dhcp_data_file:file { read write create open getattr unlink};
-
 allow netd radvd_data_file:dir { read write search add_name remove_name};
 allow netd radvd_data_file:file { read write create open unlink};
 
 allow netd self:capability { setuid net_bind_service setgid };
-allow netd wide_dhcpv6_data_file:dir { read search write add_name remove_name};
-allow netd wide_dhcpv6_data_file:file { read write create open getattr unlink};
 
 allow netd device:file { open write };
 
@@ -44,5 +35,4 @@ allow netd unlabeled:file { getattr lock open read };
 
 # Nougat
 allow netd wifi_data_file:dir { create setattr };
-allow netd dhcp_data_file:dir { setattr };
 allow netd wifi_data_file:sock_file { create setattr unlink };

@@ -1,5 +1,4 @@
 # terservice
-
 type terservice_exec, exec_type, file_type;
 type terservice, domain;
 

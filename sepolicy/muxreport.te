@@ -1,5 +1,4 @@
 # muxreport
-
 type muxreport_exec, exec_type, file_type;
 type muxreport, domain;
 
