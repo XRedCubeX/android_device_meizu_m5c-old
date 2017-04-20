@@ -59,3 +59,6 @@ allow vold platform_app:fd use;
 allow vold misc_device:chr_file read;
 
 allow vold block_device:file create;
+
+# sdcardfs
+allow vold voldblk_device:blk_file { create unlink rw_file_perms };
