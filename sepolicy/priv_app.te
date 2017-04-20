@@ -1,6 +1,2 @@
-# Mtk fix
-allow priv_app device:dir { open read };
-allow priv_app unlabeled:file getattr;
-
 # Mtk sn
 allow priv_app serial_number_prop:file read;

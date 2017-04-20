@@ -1,13 +1,15 @@
 # vold
 
+# Nvram / Nvdata
 allow vold nvram_data_file:file { read getattr open write create setattr};
 allow vold nvram_data_file:lnk_file read;
 allow vold nvram_data_file:dir { read open write add_name create getattr setattr search};
 allow vold nvdata_file:file { read getattr open write create setattr};
 allow vold nvdata_file:dir { read ioctl open write add_name create getattr setattr search};
 allow vold nvdata_device:blk_file rw_file_perms;
-allow vold nvram_device:chr_file { read write open };
-allow vold platformblk_device:blk_file { read write open };
+allow vold nvram_device:chr_file rw_file_perms;
+
+allow vold platformblk_device:blk_file rw_file_perms;
 allow vold platformblk_device:dir search;
 allow vold proc:file write;
 
@@ -15,7 +17,6 @@ allow vold misc_sd_device:chr_file { read ioctl open };
 
 allow vold kernel:system module_request;
 allow vold misc_device:chr_file { write open };
-allow vold platformblk_device:blk_file { ioctl getattr };
 
 allow vold system_data_file:lnk_file { create unlink };
 
@@ -33,7 +34,7 @@ allow vold protect1_device:blk_file rw_file_perms;
 allow vold protect2_device:blk_file rw_file_perms;
 allow vold persist_data_file:dir { read getattr open ioctl };
 
-allow vold proc_lk_env:file { read write open ioctl};
+allow vold proc_lk_env:file rw_file_perms;
 allow vold media_rw_data_file:dir { read open };
 
 allow vold tmpfs:lnk_file create;
@@ -56,9 +57,3 @@ allow vold platform_app:fd use;
 allow vold misc_device:chr_file read;
 
 allow vold block_device:file create;
-
-# zram
-allow vold zram0_device:blk_file getattr;
-
-# Mtk sdcardfs fix
-allow vold voldblk_device:blk_file { create ioctl open read unlink };

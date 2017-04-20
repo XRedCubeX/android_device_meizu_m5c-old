@@ -1,2 +1,0 @@
-# Mtk fix
-allow debuggerd self:capability sys_resource;

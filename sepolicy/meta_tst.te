@@ -13,25 +13,28 @@ allow meta_tst ccci_device:chr_file { read write ioctl open };
 allow meta_tst graphics_device:chr_file { read write ioctl open };
 allow meta_tst graphics_device:dir search;
 allow meta_tst mdlog_device:chr_file { read write open };
-allow meta_tst nvram_data_file:dir { write read open add_name remove_name search create getattr setattr };
-allow meta_tst nvram_data_file:file { setattr read create write getattr unlink open append };
-allow meta_tst nvram_data_file:lnk_file read;
 allow meta_tst nvdata_device:blk_file rw_file_perms;
 allow meta_tst nvdata_file:dir { write read open add_name remove_name search create getattr setattr };
 allow meta_tst nvdata_file:file { setattr read create write getattr unlink open append };
 allow meta_tst nvram_device:chr_file { read write open ioctl };
+allow meta_tst nvram_data_file:dir { write read open add_name remove_name search create getattr setattr };
+allow meta_tst nvram_data_file:file { setattr read create write getattr unlink open append };
+allow meta_tst nvram_data_file:lnk_file read;
+
 allow meta_tst platformblk_device:blk_file { read write open };
 allow meta_tst platformblk_device:dir search;
 allow meta_tst port:tcp_socket { name_connect name_bind };
 allow meta_tst rootfs:file entrypoint;
 allow meta_tst rtc_device:chr_file { read ioctl open };
-allow meta_tst self:capability { net_raw chown fsetid sys_nice net_admin fowner dac_override sys_admin };
+allow meta_tst self:capability {chown dac_override fowner fsetid ipc_lock net_admin net_raw sys_admin sys_boot sys_nice };
+
 allow meta_tst self:tcp_socket { create connect setopt bind };
 allow meta_tst self:udp_socket { create ioctl };
 allow meta_tst stpbt_device:chr_file { read write open };
 allow meta_tst sysfs:file write;
 allow meta_tst system_data_file:dir { write remove_name add_name };
-allow meta_tst system_data_file:sock_file unlink;
+allow meta_tst system_data_file:sock_file { create setattr unlink write };
+
 allow meta_tst ttyGS_device:chr_file { read write ioctl open };
 allow meta_tst wmtWifi_device:chr_file { write open };
 allow meta_tst als_ps_device:chr_file { read ioctl open };
@@ -41,9 +44,7 @@ allow meta_tst gsensor_device:chr_file { read ioctl open };
 allow meta_tst kd_camera_flashlight_device:chr_file { read write ioctl open };
 allow meta_tst kd_camera_hw_device:chr_file { read write ioctl open };
 allow meta_tst msensor_device:chr_file { read ioctl open };
-allow meta_tst self:capability { sys_boot ipc_lock };
 allow meta_tst sysfs_wake_lock:file { read write open };
-allow meta_tst system_data_file:sock_file { write create setattr };
 allow meta_tst system_file:file execute_no_trans;
 allow meta_tst MT_pmic_adc_cali_device:chr_file { read write ioctl open };
 allow meta_tst block_device:dir search;
@@ -72,7 +73,7 @@ allow meta_tst persist_data_file:file { read write create open getattr setattr};
 
 allow meta_tst devmap_device:chr_file { open read write ioctl };
 allow meta_tst camera_pipemgr_device:chr_file { open read write ioctl };
-allow meta_tst MTK_SMI_device:chr_file { open read write ioctl };
+allow meta_tst mtk_smi_device:chr_file { open read write ioctl };
 allow meta_tst tmpfs:lnk_file read;
 
 allow meta_tst shell_exec:file { read open execute_no_trans };
@@ -86,7 +87,7 @@ allow meta_tst ttyACM_device:chr_file { read write ioctl open };
 allow meta_tst block_device:blk_file getattr;
 allow meta_tst shell_exec:file { read open };
 
-allow meta_tst pro_info_device:chr_file { open read write ioctl };
+allow meta_tst proinfo_device:chr_file rw_file_perms;
 
 allow meta_tst ttySDIO_device:chr_file { read write ioctl open };
 

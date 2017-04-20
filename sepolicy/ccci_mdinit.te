@@ -7,14 +7,23 @@ init_daemon_domain(ccci_mdinit)
 
 wakelock_use(ccci_mdinit)
 
+# Nvram / Nvdata
+allow ccci_mdinit nvram_data_file:dir rw_dir_perms;
+allow ccci_mdinit nvram_data_file:file create_file_perms;
+allow ccci_mdinit nvram_data_file:lnk_file read;
+allow ccci_mdinit nvdata_file:dir rw_dir_perms;
+allow ccci_mdinit nvdata_file:file create_file_perms;
+allow ccci_mdinit nvram_device:blk_file { open read write };
+allow ccci_mdinit nvram_device:chr_file rw_file_perms;
+
+allow ccci_mdinit protect_f_data_file:dir rw_dir_perms;
+allow ccci_mdinit protect_f_data_file:file create_file_perms;
+allow ccci_mdinit protect_s_data_file:dir rw_dir_perms;
+allow ccci_mdinit protect_s_data_file:file create_file_perms;
+
 allow ccci_mdinit ctl_ccci_fsd_prop:property_service set;
 allow ccci_mdinit ctl_gsm0710muxd_prop:property_service set;
-
-#allow ccci_mdinit ctl_gsm0710muxd_prop:property_service set;
 allow ccci_mdinit { ctl_gsm0710muxd_prop ctl_gsm0710muxd-s_prop ctl_gsm0710muxd-d_prop ctl_gsm0710muxdmd2_prop}:property_service set;
-
-#allow ccci_mdinit ctl_ril-daemon-mtk_prop:property_service set;
-allow ccci_mdinit { ctl_rildaemon_prop ctl_ril-daemon-mtk_prop ctl_ril-daemon-s_prop ctl_ril-daemon-d_prop ctl_ril-daemon-md2_prop }:property_service set;
 
 allow ccci_mdinit ril_active_md_prop:property_service set;
 allow ccci_mdinit mtk_md_prop:property_service set;
@@ -27,24 +36,10 @@ allow ccci_mdinit ccci_device:chr_file rw_file_perms;
 allow ccci_mdinit ccci_monitor_device:chr_file rw_file_perms;
 
 # TODO: Do not allow write access to all of /sys
-allow ccci_mdinit sysfs:file write;
-
-allow ccci_mdinit nvram_data_file:dir rw_dir_perms;
-allow ccci_mdinit nvram_data_file:file create_file_perms;
-allow ccci_mdinit nvram_data_file:lnk_file read;
-allow ccci_mdinit nvdata_file:dir rw_dir_perms;
-allow ccci_mdinit nvdata_file:file create_file_perms;
+allow ccci_mdinit sysfs:file { write read open };
 allow ccci_mdinit sysfs_ccci:file rw_file_perms;
 allow ccci_mdinit sysfs_wake_lock:file rw_file_perms;
 
-allow ccci_mdinit nvram_device:blk_file { open read write };
-allow ccci_mdinit nvram_device:chr_file rw_file_perms;
-
-allow ccci_mdinit protect_f_data_file:dir rw_dir_perms;
-allow ccci_mdinit protect_f_data_file:file create_file_perms;
-
-allow ccci_mdinit protect_s_data_file:dir rw_dir_perms;
-allow ccci_mdinit protect_s_data_file:file create_file_perms;
 allow ccci_mdinit platformblk_device:blk_file { read write open };
 allow ccci_mdinit platformblk_device:dir search;
 
@@ -52,7 +47,6 @@ allow ccci_mdinit ril_mux_report_case_prop:property_service set;
 
 allow ccci_mdinit mdlog_data_file:dir search;
 allow ccci_mdinit mdlog_data_file:file { read open };
-allow ccci_mdinit platformblk_device:dir search;
 
 allow ccci_mdinit ccci_cfg_file:dir create_dir_perms;
 allow ccci_mdinit ccci_cfg_file:file create_file_perms;
@@ -71,7 +65,6 @@ allow ccci_mdinit init:unix_stream_socket connectto;
 allow ccci_mdinit property_socket:sock_file write;
 
 # Nougat
-allow ccci_mdinit sysfs:file { write read open };
 allow ccci_mdinit proc:file { read open ioctl };
 allow ccci_mdinit persist_ril_prop:file { read open getattr };
 allow ccci_mdinit mediatek_prop:file { read open getattr ioctl };

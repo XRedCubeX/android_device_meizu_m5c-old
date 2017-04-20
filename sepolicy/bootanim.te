@@ -1,7 +1,6 @@
 # Bootanim.te
 
-allow bootanim self:netlink_socket { read bind create write};
-#allow bootanim proc_secmem:file { read open};
+allow bootanim self:netlink_socket create_socket_perms;
 
 allow bootanim mediaserver:binder call;
 allow bootanim mediaserver:binder transfer;

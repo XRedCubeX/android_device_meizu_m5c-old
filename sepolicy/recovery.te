@@ -10,7 +10,7 @@ allow recovery rootfs:dir *;
 
 allow recovery bootimg_device:chr_file *;
 allow recovery recovery_device:chr_file *;
-allow recovery logo_device:chr_file *;
+allow recovery logo_block_device:chr_file r_file_perms;
 allow recovery preloader_device:chr_file *;
 allow recovery uboot_device:chr_file *;
 allow recovery init:dir *;

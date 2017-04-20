@@ -1,6 +1,14 @@
+# Mediacodec
+
+# Nvram / Nvdata
+allow mediacodec nvdata_file:dir rw_dir_perms;
+allow mediacodec nvdata_file:file create_file_perms;
+allow mediacodec ccci_device:chr_file rw_file_perms;
+
 allow mediacodec proc:file { getattr ioctl open read };
 allow mediacodec proc_meminfo:file { getattr open read };
-allow mediacodec sysfs:file { open read write };
-
 allow mediacodec Vcodec_device:chr_file { ioctl open read write };
+
 allow mediacodec mtk_smi_device:chr_file { ioctl open read };
+allow mediacodec proc:file { getattr ioctl open read };
+allow mediacodec sysfs:file { open read write };

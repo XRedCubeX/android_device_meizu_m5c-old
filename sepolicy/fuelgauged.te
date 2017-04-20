@@ -5,20 +5,15 @@ type fuelgauged, domain;
 
 init_daemon_domain(fuelgauged)
 
-allow fuelgauged input_device:dir { search open read write };
-allow fuelgauged input_device:file { open read };
-allow fuelgauged mtk-adc-cali_device:chr_file { open ioctl read write };
+allow fuelgauged	fuelgauged:netlink_kobject_uevent_socket { write create bind read};
+allow fuelgauged	fuelgauged:netlink_socket { create bind write read};
 
-allow fuelgauged kmsg_device:chr_file { open write };
-allow fuelgauged fuelgauged:netlink_kobject_uevent_socket { write create bind read};
-allow fuelgauged fuelgauged:netlink_socket { create bind write read};
+allow fuelgauged	input_device:dir { search open read write };
+allow fuelgauged	input_device:file { open read };
 
-allow fuelgauged input_device:dir { search open read write };
-allow fuelgauged input_device:file { open read };
-#allow fuelgauged fuelgauged_access_file1:file { open read write };
-#allow fuelgauged fuelgauged_access_file2:file { open read write};
+allow fuelgauged	kmsg_device:chr_file { open write };
+allow fuelgauged	mtk-adc-cali_device:chr_file { open ioctl read write };
 
-allow fuelgauged system_data_file:dir { write add_name create setattr };
+allow fuelgauged	rootfs:lnk_file { getattr };
 
-# Nougat
-allow fuelgauged rootfs:lnk_file { getattr };
+allow fuelgauged	system_data_file:dir { write add_name create setattr };

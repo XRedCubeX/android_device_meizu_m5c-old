@@ -1,4 +1,0 @@
-# dnsmasq
-allow dnsmasq netd:file read;
-
-allow dnsmasq unlabeled:file { getattr open read };

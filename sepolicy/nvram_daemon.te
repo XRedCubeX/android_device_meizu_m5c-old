@@ -5,18 +5,25 @@ type nvram_daemon, domain;
 
 init_daemon_domain(nvram_daemon)
 
-allow nvram_daemon mmcblk_device:blk_file rw_file_perms;
-allow nvram_daemon platformblk_device:blk_file rw_file_perms;
-
-allow nvram_daemon system_prop:property_service set;
-
-allow nvram_daemon shell_exec:file { x_file_perms read open };
+# Nvram / Nvdata
 allow nvram_daemon nvram_data_file:dir create_dir_perms;
 allow nvram_daemon nvram_data_file:file create_file_perms;
 allow nvram_daemon nvram_data_file:lnk_file read;
 allow nvram_daemon nvdata_device:blk_file rw_file_perms;
 allow nvram_daemon nvdata_file:dir create_dir_perms;
 allow nvram_daemon nvdata_file:file create_file_perms;
+allow nvram_daemon nvram_device:blk_file rw_file_perms;
+allow nvram_daemon nvram_device:chr_file { read write open ioctl};
+
+allow nvram_daemon proinfo_device:chr_file { read write open ioctl};
+allow nvram_daemon proinfo_device:blk_file rw_file_perms;
+
+allow nvram_daemon self:capability { chown dac_override dac_read_search fowner fsetid };
+allow nvram_daemon platformblk_device:blk_file rw_file_perms;
+
+allow nvram_daemon system_prop:property_service set;
+
+allow nvram_daemon shell_exec:file { x_file_perms read open };
 
 allow nvram_daemon system_file:file execute_no_trans;
 
@@ -24,19 +31,11 @@ allow nvram_daemon als_ps_device:chr_file { read ioctl open };
 allow nvram_daemon mtk-adc-cali_device:chr_file { read write ioctl open };
 allow nvram_daemon gsensor_device:chr_file { read ioctl open };
 allow nvram_daemon gyroscope_device:chr_file { read ioctl open };
-allow nvram_daemon init:unix_stream_socket connectto;
 allow nvram_daemon platformblk_device:dir search;
 
-allow nvram_daemon property_socket:sock_file write;
 allow nvram_daemon sysfs:file write;
-allow nvram_daemon self:capability { fowner chown dac_override dac_read_search fsetid };
 
 allow nvram_daemon system_data_file:dir {create write add_name};
-
-allow nvram_daemon nvram_device:blk_file { open read write };
-allow nvram_daemon nvram_device:chr_file { read write open ioctl};
-allow nvram_daemon pro_info_device:chr_file { read write open ioctl};
-allow nvram_daemon pro_info_device:blk_file { open read write };
 
 allow nvram_daemon block_device:dir search;
 
@@ -44,5 +43,9 @@ allow nvram_daemon block_device:dir search;
 allow nvram_daemon sysfs:file { write read open };
 allow nvram_daemon rootfs:dir { read open };
 allow nvram_daemon rootfs:file r_file_perms;
-allow nvram_daemon toolbox_exec:file { r_file_perms execute execute_no_trans };
 allow nvram_daemon rootfs:lnk_file { getattr };
+allow nvram_daemon toolbox_exec:file { r_file_perms execute execute_no_trans };
+
+# Socket
+allow nvram_daemon init:unix_stream_socket connectto;
+allow nvram_daemon property_socket:sock_file write;

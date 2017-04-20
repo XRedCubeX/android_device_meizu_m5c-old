@@ -1,17 +1,20 @@
+# Cameraserver
+
+# Nvram / Nvdata
+allow cameraserver nvdata_file:dir search;
+allow cameraserver nvdata_file:file { getattr open read };
+
 # Mtk fix
 allow cameraserver devmap_device:chr_file { ioctl open read };
 
 allow cameraserver mediatek_prop:file { getattr open read };
-
-allow cameraserver nvdata_file:dir search;
-allow cameraserver nvdata_file:file { getattr open read };
 
 allow cameraserver platformblk_device:blk_file { open read write };
 allow cameraserver proc:file { ioctl open read };
 allow cameraserver proc_meminfo:file { getattr open read };
 
 allow cameraserver serial_number_prop:file { getattr open read };
-allow cameraserver sysfs:file getattr;
+allow cameraserver sysfs:file { getattr open read write };
 
 # Flashlight
 allow cameraserver kd_camera_hw_device:chr_file { ioctl open read write };
@@ -20,10 +23,9 @@ allow cameraserver kd_camera_flashlight_device:chr_file { ioctl open read write 
 # Camera
 allow cameraserver BU64245_device:chr_file { ioctl open read write };
 allow cameraserver camera_isp_device:chr_file { ioctl open read write };
-
 allow cameraserver CAM_CAL_DRV_device:chr_file { ioctl open read write };
 allow cameraserver mtk_smi_device:chr_file { ioctl open read };
-allow cameraserver sysfs:file { getattr open read write };
+
 
 # Nougat
 allow cameraserver rootfs:lnk_file { getattr };

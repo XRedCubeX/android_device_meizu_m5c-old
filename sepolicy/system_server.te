@@ -1,36 +1,28 @@
 # system_server
 
-# Operation : 120Hz Feature SQC
 # Purpose : for 120Hz Smart Switch
 allow system_server mtk_rrc_device:chr_file { read write ioctl open };
-# Operation : Migration 
 # Purpose : for bring up
 allow system_server hwmsensor_device:chr_file { read ioctl open };
 allow system_server m_batch_misc_device:chr_file { read ioctl open };
 allow system_server proc:file write;
 allow system_server touch_device:chr_file { read ioctl open };
 
-# Operation : Migration 
 # Purpose : for wifi p2p functionality
 allow system_server dhcp_data_file:dir { read write remove_name search getattr };
 allow system_server dhcp_data_file:file { read open unlink getattr };
 
-# Operation : Migration 
 # Purpose : for wifi functionality
-allow system_server wpa_wlan0_socket:sock_file write;
 allow system_server hostapd:unix_dgram_socket sendto;
 allow hostapd system_server:unix_dgram_socket sendto;
 
-# Operation : Migration 
 # Purpose : for WFD functionality
 allow system_server media_wfd_prop:property_service set;
 
-# Operation : Migration 
 # Purpose : for idling on homescreen
 allow system_server dontpanic_data_file:dir search;
 allow system_server mnld:unix_dgram_socket sendto;
 
-# Operation : Migration 
 # Purpose : for debug
 allow system_server debuggerd:fd use;
 allow system_server mnld_data_file:sock_file create_file_perms;
@@ -38,45 +30,35 @@ allow system_server mnld_data_file:sock_file rw_file_perms;
 allow system_server mnld_data_file:dir create_file_perms;
 allow system_server mnld_data_file:dir rw_dir_perms;
 
-# Operation : Migration 
 # Purpose : for idling on homescreen
 allow system_server touch_device:chr_file write;
 
-# Operation : Migration 
 # Purpose : for relabeling files in /data/anr/ created at bootup
 allow system_server anr_data_file:file relabelto;
 
-# Operation : Migration 
 # Purpose : for debug
 allow system_server debuggerd:binder call;
 
-# Operation : Migration 
 # Purpose : for operate HDMI device
 allow system_server graphics_device:chr_file { read ioctl open };
 
-# Operation : SQC 
 # Purpose : [ALPS01756200] wwop boot up fail
 allow system_server custom_file:dir { read search open getattr};
 allow system_server custom_file:file { read open getattr};
 
-# Operation : Migration
 # Purpose : boost surfaceflinger to RT
 allow system_server surfaceflinger:process setsched;
 
-# Operation : Migration
 # Purpose : [ALPS01760531] for bring up after auto-merge
 allow system_server zygote:binder impersonate;
 
-# Operation : Migration
 # Purpose : for system_server operate /dev/RT_Monitor when enable hang detect
 allow system_server RT_Monitor_device:chr_file { read ioctl open };
 
-# Operation : Migration
 # Purpose : for system_server to start bootanim
 allow system_server ctl_bootanim_prop:property_service set;
 
 
-# Operation : SQC
 # Purpose :  ALPS01763317
 # After connected to DHCPv6 enabled 6to4 IPv6 AP, 
 #the ipv6 related values of getprop command are wrong  
@@ -85,36 +67,21 @@ allow system_server proc_net:file write;
 allow system_server wide_dhcpv6_data_file:dir search;
 allow system_server wide_dhcpv6_data_file:file { read getattr open };
 
-# Operation : Migration
 # Purpose : for bring up
 allow system_server anr_data_file:dir relabelfrom;
-allow system_server sf_rtt_file:dir relabelto;
 
-# Operation : Migration
-# Purpose : for debug
-allow system_server sf_rtt_file:dir r_dir_perms;
-
-# Operation : Migration
 # Purpose : for mtk gps epos library useage
 allow system_server devmap_device:chr_file r_file_perms;
 
-# Operation : Migration
 # Purpose : for sensorhubservice
 allow system_server shf_device:chr_file rw_file_perms;
 
-# Operation : Migration
 # Purpose : for saveLocale to set SystemProperties
 allow system_server save_locale_prop:property_service set;
 
-# Operation : MTBF
-# Purpose : for debug
-allow system_server sf_rtt_file:file r_file_perms;
-
-# Operation : MTBF
 # Purpose : for native process backtrace dump
 allow system_server exec_type:file r_file_perms;
 
-# Operation : SQC
 # Purpose : for querying zygote socket
 allow system_server zygote:unix_stream_socket { getopt getattr };
 
@@ -137,7 +104,7 @@ allow system_server wmt_prop:file { read open getattr };
 allow system_server wifi_data_file:sock_file { unlink };
 
 # Sensor
-allow system_server akmd8963_access_file1:file { getattr open read setattr write };
+allow system_server akmd_access_file1:file { getattr open read setattr write };
 
 # Mtk sn
 allow system_server serial_number_prop:file read;

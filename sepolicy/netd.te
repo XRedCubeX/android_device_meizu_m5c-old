@@ -5,8 +5,7 @@ type dhcp6s_exec,exec_type,file_type;
 allow netd wmtWifi_device:chr_file { write open };
 
 allow netd kernel:system module_request;
-allow netd self:capability sys_module;
-allow netd self:capability fsetid;
+allow netd self:capability { fsetid sys_module setgid setuid };
 
 allow netd mtk_wifi_prop:property_service set; 
 
@@ -29,16 +28,14 @@ allow netd wide_dhcpv6_data_file:file { read write create open getattr unlink};
 allow netd device:file { open write };
 
 #============= netd ==============
-allow netd self:capability { setuid setgid };
 
+allow netd isolated_app:fd use;
 allow netd isolated_app_tmpfs:file write;
 
 allow netd untrusted_app:fd use;
 allow netd untrusted_app_tmpfs:file write;
-
 allow netd untrusted_app:unix_stream_socket { read write getopt setopt};
 
-allow netd isolated_app:fd use;
 
 allow netd radio_tmpfs:file write;
 

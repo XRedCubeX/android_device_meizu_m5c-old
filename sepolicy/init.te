@@ -1,13 +1,19 @@
 # init
 
+# Nvram / Nvdata
 allow init nvram_data_file:dir { write search setattr read create open add_name };
 allow init nvdata_file:dir { write search setattr read create open add_name };
+
 # Allow init to format formattable partitions…partitions
 allow init nvdata_device:blk_file write;
 allow init protect1_device:blk_file write;
 allow init protect2_device:blk_file write;
 
 allow init platformblk_device:blk_file setattr;
+
+# Debugfs
+allow init debugfs:dir mounton;
+allow init debugfs:file write;
 
 # Gestures
 allow init gesture_sysfs:file setattr;
@@ -16,12 +22,6 @@ allow init gesture_sysfs:file setattr;
 allow init tmpfs:lnk_file create;
 allow init wmtWifi_device:chr_file write;
 
-# Zram
-allow init zram0_device:blk_file write;
-
 # Nougat
 allow init loop_device:blk_file { write };
 allow init block_device:lnk_file setattr;
-
-allow init debugfs:dir mounton;
-allow init debugfs:file write;

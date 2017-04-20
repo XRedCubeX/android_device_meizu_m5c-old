@@ -89,9 +89,6 @@ type wmt_prop, property_type;
 #============= permission_check ==============
 type persist_md_prop, property_type;
 
-#=============allow sensor==============
-type ctl_msensord_prop, property_type;
-type ctl_akmd09911_prop, property_type;
 #=============allow statusd==============
 type net_cdma_mdmstat, property_type;
 type cdma_prop, property_type;
@@ -112,5 +109,11 @@ type pppd_gprs_prop, property_type;
 #=============allow wifi offload deamon  ==============
 type mtk_wod_prop, property_type;
 
-type serial_number_prop, property_type;
 type vold_encryption_type_prop, property_type;
+
+# Sensors
+type ctl_msensord_prop, property_type;
+type ctl_akmd09911_prop, property_type;
+
+# Mtk sn
+type serial_number_prop, property_type;

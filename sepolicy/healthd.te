@@ -1,8 +1,9 @@
 # healthd
+allow healthd app_data_file:file write;
+allow healthd device:dir {open read write};
 
 allow healthd self:capability dac_override;
-allow healthd mtkrild:unix_stream_socket connectto;
-allow healthd rild_oem_socket:sock_file write;
 allow healthd sysfs_vcorefs_pwrctrl:file write;
-allow healthd app_data_file:file write;
 
+# Socket
+allow healthd mtkrild:unix_stream_socket connectto;

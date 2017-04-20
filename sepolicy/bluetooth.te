@@ -1,5 +1,9 @@
 # bluetooth
-allow bluetooth bt_int_adp_socket:sock_file write;
+
+# Nvram / Nvdata
+allow bluetooth nvdata_file:dir search;
+allow bluetooth nvdata_file:file rw_file_perms;
+
 allow bluetooth mediaserver:unix_dgram_socket sendto;
 allow bluetooth init:unix_dgram_socket sendto;
 
@@ -8,16 +12,12 @@ allow bluetooth bt_data_file:file { open read write create setattr getattr appen
 
 allow bluetooth platform_app_tmpfs:file write;
 
-allow mediaserver bt_data_file:file read;
-
 allow bluetooth platformblk_device:dir search;
 
 # Mtk fix
-allow bluetooth nvdata_file:dir search;
-allow bluetooth nvdata_file:file rw_file_perms;
-allow bluetooth persist_bt_prop:file { getattr open read };
 allow bluetooth stpbt_device:chr_file { open read write };
 allow bluetooth wmt_prop:file { getattr open read };
 
 # bt prop
 allow bluetooth bt_prop:file { getattr open read };
+allow bluetooth persist_bt_prop:file { getattr open read };

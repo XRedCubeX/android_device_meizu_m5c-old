@@ -8,10 +8,12 @@ init_daemon_domain(pq)
 allow pq system_prop:property_service set;
 allow pq graphics_device:chr_file { read write open ioctl };
 
-allow pq init:unix_stream_socket connectto;
-allow pq property_socket:sock_file write;
 allow pq tmpfs:lnk_file read;
 
 # Nougat
 allow pq proc:file { read open ioctl };
 allow pq rootfs:lnk_file { getattr };
+
+# Socket
+allow pq init:unix_stream_socket connectto;
+allow pq property_socket:sock_file write;

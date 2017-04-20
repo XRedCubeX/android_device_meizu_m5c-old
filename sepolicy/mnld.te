@@ -4,16 +4,9 @@ type mnld, domain;
 type mnld_exec, exec_type, file_type;
 
 init_daemon_domain(mnld)
-
 net_domain(mnld)
-allow mnld agpsd_data_file:dir create_dir_perms;
-allow mnld agpsd_data_file:sock_file create_file_perms;
 
-allow mnld mtk_agpsd:unix_dgram_socket sendto;
-
-allow mnld sysfs:file rw_file_perms;
-allow mnld sysfs_wake_lock:file rw_file_perms;
-
+# Nvram / Nvdata
 allow mnld nvram_data_file:dir create_dir_perms;
 allow mnld nvram_data_file:file create_file_perms;
 allow mnld nvram_data_file:lnk_file read;
@@ -23,6 +16,14 @@ allow mnld nvram_device:chr_file{ ioctl open read write};
 
 allow mnld nvdata_file:dir create_dir_perms;
 allow mnld nvdata_file:file create_file_perms;
+
+allow mnld agpsd_data_file:dir create_dir_perms;
+allow mnld agpsd_data_file:sock_file create_file_perms;
+
+allow mnld mtk_agpsd:unix_dgram_socket sendto;
+
+allow mnld sysfs:file rw_file_perms;
+allow mnld sysfs_wake_lock:file rw_file_perms;
 
 allow mnld sysfs_gps_file:dir search;
 allow mnld sysfs_gps_file:file rw_file_perms;
@@ -51,13 +52,8 @@ allow mnld self:capability { fsetid dac_override };
 allow mnld stpbt_device:chr_file { read write };
 allow mnld ttyGS_device:chr_file { read write };
 
-allow mnld fuse:dir search;
-allow mnld fuse:dir write;
-allow mnld fuse:dir add_name;
-allow mnld fuse:file create;
-allow mnld fuse:file rw_file_perms;
-allow mnld fuse:file create_file_perms;
-allow mnld fuse:dir { read remove_name create open };
+allow mnld fuse:file { create rw_file_perms };
+allow mnld fuse:dir { add_name create open search read remove_name write };
 
 allow mnld tmpfs:lnk_file { read create open };
 allow mnld tmpfs:dir search;

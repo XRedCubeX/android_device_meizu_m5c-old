@@ -2,8 +2,6 @@
 
 allow system_app touch_device:chr_file { read ioctl open };
 
-# Date: 2014/08/04
-# Stage: BaseUT
 # Purpose: [MTKThermalManager][View thermal zones and coolers, and change thermal policies]
 # Package Name: com.mediatek.mtkthermalmanager
 allow system_app apk_private_data_file:dir getattr;
@@ -24,37 +22,25 @@ allow system_app proc_mtktz:dir search;
 allow system_app proc_mtktz:file  { read getattr open write };
 allow system_app proc_slogger:file { read getattr open write };
 
-# Date : 2014/10/28
-# Operation: SQC
 # Purpose : ALPS01761930
 # Package: com.android.settings
 allow system_app asec_apk_file:file r_file_perms;
 
-# Date : 2014/11/18
-# Operation : SQC
 # Purpose : for oma dm fota recovery update
 allow system_app ctl_rbfota_prop:property_service set;
 
-# Date : 2014/11/26
-# Operation: SQC
 # Purpose: [Settings][Browser][warning kernel API'selinux enforce violation:sdcardd' when do stress test with ' AT_ST_Browser_Test.rar']
 # Package: com.android.settings
 allow system_app platform_app_tmpfs:file write;
 
-# Date : 2015/01/13
-# Operation: SQC
 # Purpose: access ashmem of isolated_app
 # Package: com.fw.upgrade.sysoper
 dontaudit system_app isolated_app_tmpfs:file write;
 
-# Date : 2015/01/14
-# Operation: SQC
 # Purpose: access ashmem of untrusted_app
 # Package: android.ui
 dontaudit system_app untrusted_app_tmpfs:file write;
 
-# Date : 2015/01/27
-# Operation: SQC
 # Purpose: It's not normal behavior, that system_app want to access radio_file_data
 # Package: android.ui
 dontaudit system_app radio_data_file:dir search;

@@ -85,9 +85,6 @@ service.wcn u:object_r:wmt_prop:s0
 #persist.md.perm.checked
 persist.md    u:object_r:persist_md_prop:s0
 
-#=============allow sensor daemon==============
-ctl.msensord     u:object_r:ctl_msensord_prop:s0
-ctl.akmd09911     u:object_r:ctl_akmd09911_prop:s0
 #=============allow statusd==============
 net.cdma.mdmstat u:object_r:net_cdma_mdmstat:s0
 
@@ -111,5 +108,10 @@ ctl.pppd_gprs   u:object_r:pppd_gprs_prop:s0
 #=============allow wifi offload deamon  ==============
 net.wo.   u:object_r:mtk_wod_prop:s0
 
+# Sensors
+ctl.msensord     u:object_r:ctl_msensord_prop:s0
+ctl.akmd09911     u:object_r:ctl_akmd09911_prop:s0
+
+# Mtk sn
 ro.serialno          u:object_r:serial_number_prop:s0
 vold.encryption.type u:object_r:vold_encryption_type_prop:s0
