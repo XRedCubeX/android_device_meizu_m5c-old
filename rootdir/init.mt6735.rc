@@ -102,8 +102,6 @@ on post-fs
     mkdir /nvdata/APCFG 0770 system camera
     mkdir /nvdata/APCFG/APRDCL 0770 system camera
     mkdir /nvdata/APCFG/APRDEB 0770 system camera
-    # allow BT to read mac address
-    chown root:net_bt_stack /nvdata/APCFG/APRDEB/BT_Addr
     mkdir /nvdata/md     0770 system radio
     mkdir /nvdata/md_cmn 0770 system radio
     mkdir /nvdata/media  0770 media audio
@@ -373,14 +371,15 @@ on post-fs-data
     mkdir /data/misc/akmd 0770 system system
     mkdir /data/misc/s62x 0771 compass compass
     mkdir /data/acdapi/ 0770 system system
-    chmod 0666 /data/misc/acdapi/calib.dat
-    chmod 0666 /data/misc/acdapi/param.dat
-    chmod 0666 /data/misc/acdapi/sensors.dat
+    chmod 0660 /data/misc/acdapi/calib.dat
+    chmod 0660 /data/misc/acdapi/param.dat
+    chmod 0660 /data/misc/acdapi/sensors.dat
     chown system /sys/devices/platform/msensor/driver/cpsopmode
     chown system /sys/devices/platform/msensor/driver/cpsreptxy
     chown system /sys/devices/platform/msensor/driver/cpsreptz
     chown system /sys/devices/platform/gsensor/driver/cpsopmode
     chown system /sys/devices/platform/gsensor/driver/cpsrange
+    mkdir /data/data/mcube 0664 system system
 
     chown system /sys/class/input/input1/enable
     chown system /sys/class/input/input1/delay
@@ -425,8 +424,6 @@ on post-fs-data
 
     #EM eint
     chown root diag /sys/bus/platform/drivers/eint/current_eint
-
-    mkdir /data/data/mcube 0664 system system
 
     # Display
     chmod 0660 /dev/graphics/fb0
@@ -820,9 +817,9 @@ service akmd09911 /system/bin/akmd09911
 # emsvr service (start)
 #
 service emsvr /system/bin/em_svr
-    class main
+    disabled
     user system
-    group system radio diag
+    group system radio diag net_bt_stack
 
 #
 # emsvr service (end)
