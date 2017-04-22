@@ -69,25 +69,15 @@ ro.telephony.ril_class=MediaTekRIL
 ro.telephony.ril.config=fakeiccid
 
 ro.telephony.sim.count=2
-persist.radio.default.sim=0
-persist.radio.mobile.data=0,0
 persist.radio.multisim.config=dsds
-bgw.current3gband=0
 ril.current.share_modem=2
 ril.external.md=0
 ril.telephony.mode=0
-persist.md.perm.checked=to_upgrade
-
 persist.radio.fd.counter=15
 persist.radio.fd.off.counter=5
 persist.radio.fd.r8.counter=15
 persist.radio.fd.off.r8.counter=5
 ro.mtk_gemini_support=1
-persist.gemini.sim_num=2
-ro.gemini.smart_sim_switch=false
-ro.mtk_gemini_enhancement=1
-
-ro.mtk_eap_sim_aka=1
 ro.mtk_enable_md1=1
 ro.mtk_flight_mode_power_off_md=1
 ro.mtk_sim_hot_swap=1
@@ -97,9 +87,15 @@ ro.mtk_lte_support=1
 ro.mtk_rild_read_imsi=1
 persist.md.perm.checked=1
 
-ro.mtk_bg_power_saving_support=1
-ro.mtk_bg_power_saving_ui=1
+bgw.current3gband=0
+persist.mtk.wcn.combo.chipid=-1
+wfd.dummy.enable=1
 
+# ClearMotion
+persist.sys.display.clearMotion=1
+ro.mtk_clearmotion_support=1
+
+# SoC
 ro.mediatek.chip_ver=S01
 ro.mediatek.platform=MT6735
 mediatek.wlan.chip=CONSYS_MT6735
@@ -108,11 +104,3 @@ ro.mediatek.version.release=ALPS.L1.MP3.V2.95_MEIZU6753.65CN.L1
 ro.mediatek.version.branch=L1.MP3.EE.WFC.DEV
 ro.mediatek.project.path=device/meizu/meizu6753_65cn_l1
 ro.product.perf.config=M81-l1_base
-persist.mtk.wcn.combo.chipid=-1
-
-wfd.dummy.enable=1
-
-persist.sys.keyguard_intercept=true
-persist.call.waiting.volume=70
-persist.call_recording.enabled=true
-persist.call_recording.src=1
