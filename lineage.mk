@@ -2,8 +2,6 @@
 # Release name
 PRODUCT_RELEASE_NAME := M2 Note
 
-EXTENDED_FONT_FOOTPRINT := true
-
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
