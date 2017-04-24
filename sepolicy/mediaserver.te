@@ -1,9 +1,7 @@
-# Mediaserver
-# Nvram / Nvdata
+# nvram
 allow mediaserver nvdata_file:dir rw_dir_perms;
 allow mediaserver nvdata_file:file create_file_perms;
-
-# Bt
-allow mediaserver bt_data_file:file read;
-
 allow mediaserver ccci_device:chr_file rw_file_perms;
+
+# PQ
+allow mediaserver pq_service:service_manager find;

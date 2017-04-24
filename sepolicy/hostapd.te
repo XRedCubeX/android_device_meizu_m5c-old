@@ -1,9 +1,0 @@
-# hostapd
-allow hostapd system_wpa_socket:sock_file write;
-dontaudit hostapd kernel:system module_request;
-
-# Mtk
-allow hostapd unlabeled:file read;
-
-# Nougat
-allow hostapd wifi_data_file:sock_file write;

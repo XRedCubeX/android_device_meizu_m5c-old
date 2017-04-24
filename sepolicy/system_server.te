@@ -1,104 +1,15 @@
-# system_server
-# Purpose : for 120Hz Smart Switch
-allow system_server mtk_rrc_device:chr_file { read write ioctl open };
-# Purpose : for bring up
-allow system_server hwmsensor_device:chr_file { read ioctl open };
-allow system_server m_batch_misc_device:chr_file { read ioctl open };
-allow system_server proc:file write;
-allow system_server touch_device:chr_file { read ioctl open };
-
-# Purpose : for wifi functionality
-allow system_server hostapd:unix_dgram_socket sendto;
-allow hostapd system_server:unix_dgram_socket sendto;
-
-# Purpose : for WFD functionality
-allow system_server media_wfd_prop:property_service set;
-
-# Purpose : for idling on homescreen
-allow system_server dontpanic_data_file:dir search;
+# GPS
 allow system_server mnld:unix_dgram_socket sendto;
-
-# Purpose : for debug
-allow system_server debuggerd:fd use;
+allow system_server mnld_data_file:dir w_dir_perms;
 allow system_server mnld_data_file:sock_file create_file_perms;
-allow system_server mnld_data_file:sock_file rw_file_perms;
-allow system_server mnld_data_file:dir create_file_perms;
-allow system_server mnld_data_file:dir rw_dir_perms;
-
-# Purpose : for idling on homescreen
-allow system_server touch_device:chr_file write;
-
-# Purpose : for relabeling files in /data/anr/ created at bootup
-allow system_server anr_data_file:file relabelto;
-
-# Purpose : for debug
-allow system_server debuggerd:binder call;
-
-# Purpose : for operate HDMI device
-allow system_server graphics_device:chr_file { read ioctl open };
-
-# Purpose : [ALPS01756200] wwop boot up fail
-allow system_server custom_file:dir { read search open getattr};
-allow system_server custom_file:file { read open getattr};
-
-# Purpose : boost surfaceflinger to RT
-allow system_server surfaceflinger:process setsched;
-
-# Purpose : [ALPS01760531] for bring up after auto-merge
-allow system_server zygote:binder impersonate;
-
-# Purpose : for system_server operate /dev/RT_Monitor when enable hang detect
-allow system_server RT_Monitor_device:chr_file { read ioctl open };
-
-# Purpose : for system_server to start bootanim
-allow system_server ctl_bootanim_prop:property_service set;
-
-# After connected to DHCPv6 enabled 6to4 IPv6 AP, 
-#the ipv6 related values of getprop command are wrong  
-#============= system_server ==============
-allow system_server proc_net:file write;
-
-# Purpose : for bring up
-allow system_server anr_data_file:dir relabelfrom;
-
-# Purpose : for mtk gps epos library useage
-allow system_server devmap_device:chr_file r_file_perms;
-
-# Purpose : for sensorhubservice
-allow system_server shf_device:chr_file rw_file_perms;
-
-# Purpose : for saveLocale to set SystemProperties
-allow system_server save_locale_prop:property_service set;
-
-# Purpose : for native process backtrace dump
-allow system_server exec_type:file r_file_perms;
-
-# Purpose : for querying zygote socket
-allow system_server zygote:unix_stream_socket { getopt getattr };
-
-# Purpose : for kill-switch should only grant to access frp partition, to be fix
-allow system_server platformblk_device:dir search;
-
-# Agps
-allow system_server agpsd_data_file:dir search;
+allow system_server mnld_data_file:file create_file_perms;
 
 # Persist
 allow system_server protect_s_data_file:dir r_dir_perms;
 
-# Debugfs
-allow system_server debugfs:dir { read open };
-allow system_server debugfs:file { read open };
-
-# Nougat
-allow system_server unlabeled:file unlink;
-allow system_server wmt_prop:file { read open getattr };
-allow system_server wifi_data_file:sock_file { unlink };
-
-# Sensor
+# Sensors
 allow system_server akmd_access_file1:file { getattr open read setattr write };
+allow system_server hwmsensor_device:chr_file r_file_perms;
 
-# Mtk sn
-allow system_server serial_number_prop:file read;
-
-# Thunderquake vibrator
-allow system_server sysfs_vibrator:file rw_file_perms;
+# Wifi
+allow system_server wmtWifi_device:chr_file w_file_perms;

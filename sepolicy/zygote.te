@@ -1,5 +1,0 @@
-# Mtk sn
-allow zygote serial_number_prop:file { getattr open read };
-
-# Mtk fix
-allow zygote self:capability { sys_nice };

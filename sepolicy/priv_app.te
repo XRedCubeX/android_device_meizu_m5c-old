@@ -1,2 +1,0 @@
-# Mtk sn
-allow priv_app serial_number_prop:file read;

@@ -1,2 +1,0 @@
-# Mtk sdcardfs fix
-allow blkid_untrusted voldblk_device:blk_file { getattr ioctl open read };

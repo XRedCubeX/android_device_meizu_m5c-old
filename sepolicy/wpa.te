@@ -1,8 +1,0 @@
-# wpa
-allow wpa mtkrild:unix_stream_socket connectto;
-allow wpa platform_app:fd use;
-allow wpa platform_app_tmpfs:file write;
-
-# Nougat
-allow wpa wifi_data_file:sock_file { create setattr unlink };
-

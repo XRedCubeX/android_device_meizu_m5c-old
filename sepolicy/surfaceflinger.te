@@ -1,39 +1,5 @@
-# surfaceflinger
 allow surfaceflinger pq_service:service_manager find;
 
-# for debug purpose
-allow surfaceflinger self:capability { dac_override net_admin sys_nice };
-allow surfaceflinger self:netlink_socket { read bind create };
 allow surfaceflinger debug_prop:property_service set;
-allow surfaceflinger system_data_file:dir { write add_name create};
-allow surfaceflinger system_data_file:file { open };
-allow surfaceflinger proc:file write;
-allow surfaceflinger shell_exec:file { read execute open execute_no_trans };
-allow surfaceflinger anr_data_file:dir { write search create add_name };
-allow surfaceflinger anr_data_file:file { create write};
-allow surfaceflinger custom_file:dir search;
-binder_call(surfaceflinger, debuggerd)
-allow surfaceflinger RT_Monitor_device:chr_file { read ioctl open };
 
-# for using toolbox
-allow surfaceflinger system_file:file x_file_perms;
-
-# for bootanimation
-allow surfaceflinger bootanim:dir search;
-allow surfaceflinger bootanim:file { read getattr open };
-
-# for watchdog
-allow surfaceflinger anr_data_file:dir { relabelfrom read remove_name getattr };
-allow surfaceflinger anr_data_file:file { rename getattr unlink open };
-
-# for system shrinks memory pages when low memory
-allow surfaceflinger platform_app_tmpfs:file write;
-allow surfaceflinger isolated_app_tmpfs:file write;
-allow surfaceflinger untrusted_app_tmpfs:file write;
-
-#for BufferQueue check process name of em_svr   
-allow surfaceflinger em_svr:dir search;
-allow surfaceflinger em_svr:file { read getattr open };
-
-# /dev/mtk_smi
 allow surfaceflinger mtk_smi_device:chr_file { read write open ioctl };

@@ -1,14 +1,4 @@
-# terservice
 type terservice_exec, exec_type, file_type;
-type terservice, domain;
+type terservice, domain, domain_deprecated;
 
 init_daemon_domain(terservice)
-
-allow terservice	ccci_device:chr_file { read write ioctl open };
-allow terservice	persist_ril_prop:file { read open getattr };
-allow terservice	rootfs:lnk_file { getattr };
-allow terservice	terservice_prop:property_service set;
-allow terservice	terservice_service:service_manager add;
-
-binder_use(terservice) 
-binder_service(terservice) 

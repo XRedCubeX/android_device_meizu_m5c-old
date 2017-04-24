@@ -1,6 +1,5 @@
-# muxreport
 type muxreport_exec, exec_type, file_type;
-type muxreport, domain;
+type muxreport, domain, domain_deprecated;
 
 init_daemon_domain(muxreport)
 
@@ -10,9 +9,5 @@ allow muxreport init:unix_stream_socket connectto;
 allow muxreport property_socket:sock_file write;
 allow muxreport devpts:chr_file { read write getattr ioctl };
 allow muxreport self:capability dac_override;
-
-# Nougat
-allow muxreport ril_mux_report_case_prop:file { read open getattr };
-allow muxreport persist_ril_prop:file { read open getattr };
-allow muxreport sysfs:file { read open };
-allow muxreport rootfs:lnk_file { getattr };
+allow muxreport sysfs_ccci:dir search;
+allow muxreport sysfs_ccci:file r_file_perms;

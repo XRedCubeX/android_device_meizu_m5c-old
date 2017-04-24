@@ -1,2 +1,0 @@
-# Mtk sdcardfs fix
-allow fsck_untrusted voldblk_device:blk_file { open read write };

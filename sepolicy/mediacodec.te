@@ -1,13 +1,15 @@
-# Mediacodec
-# Nvram / Nvdata
+# nvram
 allow mediacodec nvdata_file:dir rw_dir_perms;
 allow mediacodec nvdata_file:file create_file_perms;
 allow mediacodec ccci_device:chr_file rw_file_perms;
 
-allow mediacodec proc:file { getattr ioctl open read };
-allow mediacodec proc_meminfo:file { getattr open read };
-allow mediacodec Vcodec_device:chr_file { ioctl open read write };
-
-allow mediacodec mtk_smi_device:chr_file { ioctl open read };
-allow mediacodec proc:file { getattr ioctl open read };
+# video codec
+allow mediacodec Vcodec_device:chr_file rw_file_perms;
+allow mediacodec devmap_device:chr_file { ioctl r_file_perms };
+allow mediacodec mtk_smi_device:chr_file { ioctl read open };
+allow mediacodec proc:file { open read ioctl };
 allow mediacodec sysfs:file { open read write };
+allow mediacodec sysfs_devinfo:file { open read write };
+
+# M4U
+allow mediacodec M4U_device_device:chr_file rw_file_perms;

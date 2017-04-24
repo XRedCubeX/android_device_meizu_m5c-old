@@ -1,18 +1,13 @@
-# pq
 type pq_exec, exec_type, file_type;
-type pq, domain;
+type pq, domain, domain_deprecated;
 
 init_daemon_domain(pq)
 
-allow pq system_prop:property_service set;
-allow pq graphics_device:chr_file { read write open ioctl };
+binder_use(pq)
+binder_call(pq, binderservicedomain)
+binder_service(pq)
 
-allow pq tmpfs:lnk_file read;
+allow pq pq_service:service_manager add;
+unix_socket_connect(pq, property, init)
 
-# Nougat
-allow pq proc:file { read open ioctl };
-allow pq rootfs:lnk_file { getattr };
-
-# Socket
-allow pq init:unix_stream_socket connectto;
-allow pq property_socket:sock_file write;
+allow pq pq_conf_prop:property_service set;

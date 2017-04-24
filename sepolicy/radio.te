@@ -1,42 +1,4 @@
-# radio
-allow radio custom_file:dir getattr;
-allow radio zygote:unix_stream_socket { getopt getattr };
+unix_socket_connect(radio, rild, ril-daemon-mtk)
 
-# Purpose : for mtkrild and viarild
-allow radio mtkrild:unix_stream_socket connectto;
-
-# Purpose : for engineermode
-allow radio mediatek_prop:property_service set;
-allow radio em_svr:unix_stream_socket connectto;
-allow radio mt_otg_test_device:chr_file { read write ioctl open };
-allow radio mtgpio_device:chr_file { read ioctl open };
-allow radio platformblk_device:dir search;
-allow radio stpbt_device:chr_file { read write open };
-allow radio persist_ril_prop:property_service set;
-allow radio system_prop:property_service set;
-
-# Purpose : [ALPS01756200] wwop boot up fail
-allow radio custom_file:dir { search getattr open read };
-allow radio custom_file:file { read open getattr};
-
-# C2K System Property
-allow radio cdma_prop:property_service set;
-
-# Purpose : mtk_agpsd establishes the local socket as agpsd for all A-GPS 
-# application to do something with mtk_agpsd
-unix_socket_connect(radio, agpsd, mtk_agpsd)
-
-# Purpose : allow to access kpd driver file
-allow radio sysfs_keypad_file:dir { open write };
-allow radio sysfs_keypad_file:file { open write };
-
-# Purpose : for bluetooth relayer mode
-allow radio block_device:dir search;
-allow radio ttyGS_device:chr_file { open read write ioctl };
-
-# Purpose : for engineermode sensor can work normal
-allow radio als_ps_device:chr_file { read open ioctl };
-
-# Purpose : for engineermode camera
-allow radio debug_prop:property_service set;
-
+allow radio ril_mux_report_case_prop:property_service set;
+allow radio ril_msim_power_prop:property_service set;
