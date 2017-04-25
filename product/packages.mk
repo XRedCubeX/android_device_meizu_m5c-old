@@ -36,9 +36,7 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     libtinyxml
 
-# tinymix is an alsa plugin (breaks audio as of now)
-# PRODUCT_PACKAGES += \
-#     libtinymix
+#PRODUCT_PACKAGES += libtinymix
 
 # GPS
 PRODUCT_PACKAGES += \

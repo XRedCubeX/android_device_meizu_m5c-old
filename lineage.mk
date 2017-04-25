@@ -1,6 +1,8 @@
-
 # Release name
 PRODUCT_RELEASE_NAME := M2 Note
+
+# Sign the build with private certs
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/moyster/keys/releasekey
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
@@ -23,6 +25,3 @@ PRODUCT_DEFAULT_LANGUAGE := en
 PRODUCT_DEFAULT_REGION   := US
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-
-# Sign the build with private certs
-PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/moyster/keys/releasekey
