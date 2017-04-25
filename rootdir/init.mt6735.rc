@@ -68,7 +68,7 @@ on charger
     symlink /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/logo /dev/block/platform/mtk-msdc.0/by-name/logo
     chown root system /dev/block/platform/mtk-msdc.0/by-name/logo
     chmod 0770 /dev/block/platform/mtk-msdc.0/by-name/logo
-    mount ext4 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/system /system ro wait
+    mount ext4 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/system /system ro
     start fuelgauged
     start kpoc_charger
     start servicemanager
@@ -86,8 +86,7 @@ on post-fs
     #change permissions for mediaserver
     chown root media /proc/clkmgr/mipi_test
 
-# change owner
-    chown system system /proc/bootprof
+    # change owner
     chown root system /proc/mtprof/cputime
     chown root system /proc/mtprof/reboot_pid
 
@@ -96,8 +95,6 @@ on post-fs
 
     chown system system /protect_s
     chmod 0770 /protect_s
-
-    mkdir /protect_s/properties 0770 system system
 
     mkdir /nvdata/APCFG 0770 system camera
     mkdir /nvdata/APCFG/APRDCL 0770 system camera
@@ -515,17 +512,6 @@ on post-fs-data
     chown system camera /dev/CAM_CAL_DRV
     chown system camera /dev/CAM_CAL_DRV_SUB
 
-    #MATV
-    chmod 0660 /dev/MATV
-    chown system media /dev/MATV
-
-    # otg_test
-    chown root radio /dev/mt_otg_test
-    chmod 0660 /dev/mt_otg_test
-
-    # MDP
-    chmod 0660 /dev/mt-mdp
-    chown system media /dev/mt-mdp
 
     # SMI
     chmod 0660 /dev/MTK_SMI
@@ -534,8 +520,7 @@ on post-fs-data
     chown system camera /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario
     chmod 0660 /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario
 
-   #change partition permission
-
+    # change partition permission
     chmod 0640 /mtd@sec_ro
     chown root system /mtd@sec_ro
 

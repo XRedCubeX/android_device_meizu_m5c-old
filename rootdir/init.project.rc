@@ -89,7 +89,6 @@ on post-fs-data
     chown system system /dev/iio\:device9
     chmod 0666 /dev/iio\:device9
 
-
 # meizu sensor interfaces
     chown system system /sys/class/meizu/acc/acc_calibration
     chown system system /sys/class/meizu/acc/acc_enable
@@ -127,11 +126,6 @@ on post-fs-data
     chown system system /sys/class/meizu/compass/compass_id
     chown system system /sys/class/meizu/compass/compass_name
 
-# Char device for BT 3.0 HS
-    mknod /dev/ampc0 c 151 0
-    chown bluetooth bluetooth /dev/ampc0
-    chmod 0660 /dev/ampc0
-
 # Add by Meizu BSP@YinShunQing for HALL
     chown system system /sys/devices/platform/gpio-keys.0/key_hall_state
     chmod 0440 /sys/devices/platform/gpio-keys.0/key_hall_state
@@ -159,23 +153,4 @@ on post-fs-data
 
 # Encrypt phone function
     setprop vold.post_fs_data_done 1
-
-#
-# Connectivity related services (Begin)
-#
-
-service wmtLoader /system/bin/wmt_loader
-    user root
-    group root
-    class core
-    oneshot
-
-service conn_launcher /system/bin/6620_launcher -p /system/etc/firmware/
-    user system
-    group system
-    class core
-
-#
-# Connectivity related services (End)
-#
 
