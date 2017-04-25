@@ -5,7 +5,7 @@
 /system/bin/md_ctrl                                             u:object_r:md_ctrl_exec:s0
 /system/bin/fuelgauged                                          u:object_r:fuelgauged_exec:s0
 /system/bin/gsm0710muxd                                         u:object_r:gsm0710muxd_exec:s0
-/system/xbin/mnld                                               u:object_r:mnld_exec:s0
+/system/bin/mnld                                                u:object_r:mnld_exec:s0
 /system/bin/muxreport                                           u:object_r:muxreport_exec:s0
 /system/bin/msensord                                            u:object_r:msensord_exec:s0
 /system/bin/akmd09911                                           u:object_r:akmd09911_exec:s0
@@ -48,7 +48,7 @@
 /dev/kd_camera_flashlight                                       u:object_r:camera_device:s0
 /dev/MAINAF                                                     u:object_r:camera_device:s0
 /dev/mtk_jpeg(/.*)                                              u:object_r:camera_device:s0
-/dev/DW9714AF(/.*)?                                             u:object_r:camera_device:s0
+/dev/BU64245(/.*)?                                              u:object_r:camera_device:s0
 /dev/CAM_CAL_DRV(/.*)?                                          u:object_r:camera_device:s0
 /dev/MTK_SMI                                                    u:object_r:mtk_smi_device:s0
 /dev/MT_pmic_adc_cali                                           u:object_r:pmic_adc_device:s0
