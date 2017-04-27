@@ -20,9 +20,6 @@ PRODUCT_PACKAGES += libstlport
 # Ion
 PRODUCT_PACKAGES += libion
 
-# Bt
-PRODUCT_PACKAGES += libbt-vendor
-
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
