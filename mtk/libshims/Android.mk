@@ -28,7 +28,7 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
     ui/mtk_ui.cpp \
-    ui/mtk_gbc1.cpp \
+    ui/mtk_gbc1.cpp
 
 LOCAL_SHARED_LIBRARIES := libbinder libui
 LOCAL_MODULE := libshim_ui
