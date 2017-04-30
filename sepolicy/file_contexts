@@ -130,3 +130,4 @@
 /data/mdl(/.*)?                                                 u:object_r:mdlog_data_file:s0
 /data/ccci_cfg(/.*)?                                            u:object_r:ccci_cfg_file:s0
 /data/.tp(/.*)?                                                 u:object_r:thermal_manager_data_file:s0
+/data/\.tp\.settings                                            u:object_r:thermal_manager_data_file:s0
