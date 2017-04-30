@@ -18,6 +18,7 @@ type msensord_daemon_sysfs, fs_type, sysfs_type;
 
 type gyro_orientation_sysfs, fs_type, sysfs_type;
 type perf_control_sysfs, fs_type, sysfs_type;
+type smartwake_sysfs, fs_type, sysfs_type;
 
 type proc_mtkcooler, fs_type;
 type proc_mtktz, fs_type;
