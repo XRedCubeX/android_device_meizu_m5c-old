@@ -13,3 +13,5 @@ allow cameraserver devmap_device:chr_file { ioctl r_file_perms };
 
 # PQ
 allow cameraserver pq_service:service_manager find;
+
+allow cameraserver sysfs_devinfo:file { open read };
