@@ -20,6 +20,9 @@
 /system/bin/em_svr                                              u:object_r:em_svr_exec:s0
 /system/bin/kpoc_charger                                        u:object_r:kpoc_charger_exec:s0
 
+# Meizupshelper
+/system/bin/meizupshelper                                       u:object_r:meizupshelper_exec:s0
+
 # Meta mode
 /system/bin/meta_tst                                            u:object_r:meta_tst_exec:s0
 /system/bin/factory                                             u:object_r:factory_exec:s0
