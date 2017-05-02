@@ -135,3 +135,4 @@
 /data/ccci_cfg(/.*)?                                            u:object_r:ccci_cfg_file:s0
 /data/.tp(/.*)?                                                 u:object_r:thermal_manager_data_file:s0
 /data/\.tp\.settings                                            u:object_r:thermal_manager_data_file:s0
+/data/fuelgauge_datalog.txt                                     u:object_r:fuelgauge_data_file:s0
