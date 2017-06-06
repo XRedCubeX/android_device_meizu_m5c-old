@@ -117,7 +117,7 @@
 /sys/devices/.*/queue/scheduler                                 u:object_r:perf_control_sysfs:s0
 /sys/devices/platform/mx-gs/gesture_control                     u:object_r:smartwake_sysfs:s0
 /sys/class/meizu/ps/ps_calibration                              u:object_r:meizu_ps_calibration_trigger:s0
-/sys/class/BOOT/BOOT/boot/boot_mode                             u:object_r:sysfs_bootmode:s0
+/sys/class/BOOT/BOOT/boot(/.*)?                                 u:object_r:sysfs_bootmode:s0
 
 # Config/Runtime files
 /data/agps_supl(/.*)?                                           u:object_r:agpsd_data_file:s0

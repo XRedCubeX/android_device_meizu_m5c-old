@@ -19,5 +19,6 @@ allow mtk_agpsd fuse:dir create_dir_perms;
 allow mtk_agpsd fuse:file create_file_perms;
 
 allow mtk_agpsd sdcardfs:dir search;
+allow mtk_agpsd media_rw_data_file:dir search;
 
 unix_socket_send(mtk_agpsd, mnld, mnld);
