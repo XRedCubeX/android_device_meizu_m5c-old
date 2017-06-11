@@ -4,6 +4,7 @@
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := device/meizu/m2note/rootdir/recovery.fstab
+BOARD_NO_SECURE_DISCARD := true # secure discard is painfully slow...
 
 # TWRP stuff
 ifeq ($(RECOVERY_VARIANT), twrp)
