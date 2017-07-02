@@ -20,3 +20,6 @@ allow system_server sysfs_devinfo:file { open read };
 
 # Debugfs
 allow system_server debugfs:dir r_file_perms;
+
+# Guiext
+allow system_server guiext-server_service:service_manager find;
