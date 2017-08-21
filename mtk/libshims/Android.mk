@@ -8,7 +8,7 @@ LOCAL_SRC_FILES := \
     agps/icu53.c \
     agps/ssl.c
 
-LOCAL_SHARED_LIBRARIES := liblog libicuuc libicui18n libcrypto
+LOCAL_SHARED_LIBRARIES := liblog libicuuc libssl libcrypto
 LOCAL_MODULE := libshim_agps
 include $(BUILD_SHARED_LIBRARY)
 
