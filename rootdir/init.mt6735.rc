@@ -1,5 +1,5 @@
-import /init.project.rc
-import /init.modem.rc
+import init.mt6735.usb.rc
+import init.modem.rc
 
 on late-fs
     # boot time fs tune
@@ -24,6 +24,9 @@ on init
     mkdir /protect_s 0771 system system
     mkdir /persist 0771 system system
     mkdir /nvdata 0771 system system
+
+    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    mkdir /storage/usbotg 0700 root root
 
     # ion device
     chmod 0666 /dev/ion
@@ -89,9 +92,6 @@ on post-fs
     swapon_all /fstab.swap
     write /proc/sys/vm/page-cluster 0
 
-    #change permissions for mediaserver
-    chown root media /proc/clkmgr/mipi_test
-
     # change owner
     chown root system /proc/mtprof/cputime
     chown root system /proc/mtprof/reboot_pid
@@ -136,16 +136,16 @@ on post-fs
     chmod 0660 /dev/wmtdetect
     chown system system /dev/wmtdetect
 
+    restorecon /dev/wmtWifi
+    restorecon /dev/stpwmt
+    restorecon /dev/stpbt
+    restorecon /dev/stpgps
+
     # GPS
     chmod 0660 /dev/gps
     chown system gps /dev/gps
     chmod 0660 /dev/stpgps
     chown gps gps /dev/stpgps
-
-    restorecon /dev/wmtWifi
-    restorecon /dev/stpwmt
-    restorecon /dev/stpbt
-    restorecon /dev/stpgps
 
 
 on post-fs-data
@@ -158,8 +158,6 @@ on post-fs-data
 
     # Set SELinux security contexts on upgrade or policy update.
     restorecon_recursive /nvdata
-
-    chmod 0660 /data/misc/wifi/p2p_supplicant.conf
 
     #give system access to rfkill device node
     chmod 0660 /dev/rfkill
@@ -178,9 +176,6 @@ on post-fs-data
     chown gps gps /sys/class/gpsdrv/gps/pwrsave
     chown gps gps /sys/class/gpsdrv/gps/status
 
-    # AGPS
-    mkdir /data/agps_supl 0771 gps system
-    restorecon_recursive /data/misc/gps
 
     # md32 boot
     chown root system /dev/md32
@@ -189,28 +184,8 @@ on post-fs-data
     chmod 0660 /sys/class/misc/md32/md32_mobile_log
     write /sys/class/misc/md32/md32_boot 1
 
-    # radvd
-    mkdir /data/misc/radvd 0770 system system
-    chmod 444 /etc/radvd/radvd.conf
-
     # Mali Graphics
     chmod 666 /dev/mali0
-
-    # Touch Panel
-    chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time
-    chown root diag /sys/module/tpd_setting/parameters/tpd_mode
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time0
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time1
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_spl_num
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_pressure_threshold
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_auto_time_interval
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_sample_cnt
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_asamp
-    chown root diag /sys/module/tpd_debug/parameters/tpd_em_log
-    chown root diag /sys/module/tpd_debug/parameters/tpd_em_log_to_fs
-
-    chmod 0666 /dev/pmem_multimedia
 
     # watch dog kicker
     write /proc/wdk "0 20 30"
@@ -264,6 +239,57 @@ on post-fs-data
     chown system system /sys/class/misc/m_acc_misc/accdelay
     chown system system /sys/class/misc/m_acc_misc/accbatch
     chown system system /sys/class/misc/m_acc_misc/accflush
+
+# ltr559
+    chmod 0660 /sys/bus/i2c/devices/2-0023/als_data
+    chown system system /sys/bus/i2c/devices/2-0023/als_data
+
+    chmod 0660 /sys/bus/i2c/devices/2-0023/als_enable
+    chown system system /sys/bus/i2c/devices/2-0023/als_enable
+
+    chmod 0660 /sys/bus/i2c/devices/2-0023/ps_data
+    chown system system /sys/bus/i2c/devices/2-0023/ps_data
+
+    chmod 0660 /sys/bus/i2c/devices/2-0023/ps_enable
+    chown system system /sys/bus/i2c/devices/2-0023/ps_enable
+
+    chmod 0660 /sys/bus/i2c/devices/2-0023/ps_interrupt
+    chown system system /sys/bus/i2c/devices/2-0023/ps_interrupt
+
+    chmod 0660 /sys/bus/i2c/devices/2-0023/ps_offset
+    chown system system /sys/bus/i2c/devices/2-0023/ps_offset
+
+    chmod 0660 /sys/bus/i2c/devices/2-0023/reg
+    chown system system /sys/bus/i2c/devices/2-0023/reg
+
+    chmod 660            /sys/bus/i2c/devices/2-0023/self_test
+    chown system system  /sys/bus/i2c/devices/2-0023/self_test
+
+# sensor st480 and ak09911
+    chmod 660            /sys/bus/i2c/devices/2-000c/self_test
+    chown system system  /sys/bus/i2c/devices/2-000c/self_test
+
+# lsm6ds3
+    chown system system /dev/iio\:device0
+    chmod 0666 /dev/iio\:device0
+    chown system system /dev/iio\:device1
+    chmod 0666 /dev/iio\:device1
+    chown system system /dev/iio\:device2
+    chmod 0666 /dev/iio\:device2
+    chown system system /dev/iio\:device3
+    chmod 0666 /dev/iio\:device3
+    chown system system /dev/iio\:device4
+    chmod 0666 /dev/iio\:device4
+    chown system system /dev/iio\:device5
+    chmod 0666 /dev/iio\:device5
+    chown system system /dev/iio\:device6
+    chmod 0666 /dev/iio\:device6
+    chown system system /dev/iio\:device7
+    chmod 0666 /dev/iio\:device7
+    chown system system /dev/iio\:device8
+    chmod 0666 /dev/iio\:device8
+    chown system system /dev/iio\:device9
+    chmod 0666 /dev/iio\:device9
 
     #camera flashlight sysfs
     chmod 0644 /sys/class/flashlightdrv/kd_camera_flashlight/flash1
@@ -335,16 +361,64 @@ on post-fs-data
     chown system system /sys/class/misc/m_baro_misc/barobatch
     chown system system /sys/class/misc/m_baro_misc/baroflush
 
-    #dixiaobing@wind-mobi.com 20150525
-    # ps cali
-    chown system system /sys/class/meizu/ps/ps_calibration
-    chown system system /sys/class/meizu/ps/ps_offset
-
-    # acc cali
+    # Meizu sensor interfaces
     chown system system /sys/class/meizu/acc/acc_calibration
+    chown system system /sys/class/meizu/acc/acc_enable
+    chown system system /sys/class/meizu/acc/acc_self_test
+    chown system system /sys/class/meizu/acc/acc_x_calibbias
+    chown system system /sys/class/meizu/acc/acc_y_calibbias
+    chown system system /sys/class/meizu/acc/acc_z_calibbias
     chown system system /sys/class/meizu/acc/acc_x_offset
     chown system system /sys/class/meizu/acc/acc_y_offset
     chown system system /sys/class/meizu/acc/acc_z_offset
+    chown system system /sys/class/meizu/acc/acc_id
+    chown system system /sys/class/meizu/acc/acc_name
+
+    chown system system /sys/class/meizu/gyr/gyr_enable
+    chown system system /sys/class/meizu/gyr/gyr_self_test
+    chown system system /sys/class/meizu/gyr/gyr_id
+    chown system system /sys/class/meizu/gyr/gyr_name
+
+    chown system system /sys/class/meizu/ps/ps_enable
+    chown system system /sys/class/meizu/ps/ps_data
+    chown system system /sys/class/meizu/ps/ps_calibration
+    chown system system /sys/class/meizu/ps/ps_calibbias
+    chown system system /sys/class/meizu/ps/ps_offset
+    chown system system /sys/class/meizu/ps/ps_id
+    chown system system /sys/class/meizu/ps/ps_name
+    chown system system /sys/class/meizu/ps/ps_irq_gpio
+
+    chown system system /sys/class/meizu/als/als_enable
+    chown system system /sys/class/meizu/als/als_data
+    chown system system /sys/class/meizu/als/als_id
+    chown system system /sys/class/meizu/als/als_name
+
+    chown system system /sys/class/meizu/compass/compass_enable
+    chown system system /sys/class/meizu/compass/compass_self_test
+    chown system system /sys/class/meizu/compass/compass_id
+    chown system system /sys/class/meizu/compass/compass_name
+
+    # Add by Meizu BSP@YinShunQing for HALL
+    chown system system /sys/devices/platform/gpio-keys.0/key_hall_state
+    chmod 0440 /sys/devices/platform/gpio-keys.0/key_hall_state
+
+    # Add by WuWeilin@BSP for power mode permission 
+    chown system system /sys/power/power_mode
+
+    # Meizu Holster
+    chown system system /sys/devices/mx_tsp/hall_mode
+    chmod 0660 /sys/devices/mx_tsp/hall_mode
+
+    # Meizu Gesture
+    chown system system /sys/devices/platform/mx-gs/gesture_control
+    chmod 0660 /sys/devices/platform/mx-gs/gesture_control
+    chown system system /sys/devices/platform/mx-gs/gesture_data
+    chmod 0660 /sys/devices/platform/mx-gs/gesture_data
+
+    # Meizu notification leds
+    chmod 0660 /sys/class/leds/button-backlight/trigger
+    chmod 0660 /sys/class/leds/button-backlight/oneshot_blink
+    chmod 0660 /sys/class/leds/button-backlight/brightness
 
     #duanzhanyang@wind-mobi.com 20150620
     chown system system /sys/devices/mx_leds/leds_mode
@@ -361,12 +435,6 @@ on post-fs-data
     chmod 0660 /dev/MJC
     chown system media /dev/MJC
 
-    #kpd
-    chown radio radio /sys/devices/platform/mtk-kpd/driver/kpd_call_state
-
-    #Charging Battery
-    chown radio radio /sys/devices/platform/battery/Charging_CallState
-
     # PMIC property
     chown radio system /sys/devices/platform/mt-pmic/low_battery_protect_stop
     chown radio system /sys/devices/platform/mt-pmic/low_battery_protect_ut
@@ -375,60 +443,12 @@ on post-fs-data
     mkdir /data/misc/sensor 0774 system system
     mkdir /data/misc/akmd 0770 system system
     mkdir /data/misc/s62x 0771 compass compass
-    mkdir /data/acdapi/ 0770 system system
-    chmod 0660 /data/misc/acdapi/calib.dat
-    chmod 0660 /data/misc/acdapi/param.dat
-    chmod 0660 /data/misc/acdapi/sensors.dat
     chown system /sys/devices/platform/msensor/driver/cpsopmode
     chown system /sys/devices/platform/msensor/driver/cpsreptxy
     chown system /sys/devices/platform/msensor/driver/cpsreptz
     chown system /sys/devices/platform/gsensor/driver/cpsopmode
     chown system /sys/devices/platform/gsensor/driver/cpsrange
     mkdir /data/data/mcube 0664 system system
-
-    chown system /sys/class/input/input1/enable
-    chown system /sys/class/input/input1/delay
-    chown system /sys/class/input/input1/wake
-    chown system /sys/class/input/input1/offsets
-    chown system /sys/class/input/input2/enable
-    chown system /sys/class/input/input2/delay
-    chown system /sys/class/input/input2/wake
-    chown system /sys/class/input/input2/offsets
-    chown system /sys/class/input/input3/enable
-    chown system /sys/class/input/input3/delay
-    chown system /sys/class/input/input3/wake
-    chown system /sys/class/input/input3/offsets
-    chown system /sys/class/input/input4/enable
-    chown system /sys/class/input/input4/delay
-    chown system /sys/class/input/input4/wake
-    chown system /sys/class/input/input4/offsets
-    chown system /sys/class/input/input5/enable
-    chown system /sys/class/input/input5/delay
-    chown system /sys/class/input/input5/wake
-    chown system /sys/class/input/input5/offsets
-    chown system /sys/class/input/input6/enable
-    chown system /sys/class/input/input6/delay
-    chown system /sys/class/input/input6/wake
-    chown system /sys/class/input/input6/offsets
-    chown system /sys/class/input/input7/enable
-    chown system /sys/class/input/input7/delay
-    chown system /sys/class/input/input7/wake
-    chown system /sys/class/input/input7/offsets
-    chown system /sys/class/input/input8/enable
-    chown system /sys/class/input/input8/delay
-    chown system /sys/class/input/input8/wake
-    chown system /sys/class/input/input8/offsets
-    chown system /sys/class/input/input9/enable
-    chown system /sys/class/input/input9/delay
-    chown system /sys/class/input/input9/wake
-    chown system /sys/class/input/input9/offsets
-    chown system /sys/class/input/input10/enable
-    chown system /sys/class/input/input10/delay
-    chown system /sys/class/input/input10/wake
-    chown system /sys/class/input/input10/offsets
-
-    #EM eint
-    chown root diag /sys/bus/platform/drivers/eint/current_eint
 
     # Display
     chmod 0660 /dev/graphics/fb0
@@ -475,33 +495,16 @@ on post-fs-data
     chown bluetooth bluetooth /data/@btmtk/dev_cache
     chown bluetooth bluetooth /dev/hid-keyboard
     chmod 0660 /dev/hid-keyboard
-    #Use uinput's default permission
+    # Use uinput's default permission
     chown system net_bt_admin /dev/uinput
 
     # UIBC
     chown system media /dev/uibc
     chmod 0660 /dev/uibc
 
-    #TV-out
-    chmod 0664 /dev/TV-out
-
-    #HDMI
-    chmod 0664 /dev/hdmitx
-
-    # JPEG
-    #chmod 0444 /dev/mtk_jpeg
-
-    # almk
-    chmod 0440 /dev/mtk_almk
-
-    # DISP
-    chmod 0444 /dev/mtk_disp
-
     #Camera
-    chmod 0660 /dev/camera-sysram
     chmod 0660 /dev/camera-isp
     chmod 0660 /dev/camera-fdvt
-    chmod 0660 /dev/camera-pipemgr
     chmod 0660 /dev/kd_camera_hw
     chmod 0660 /dev/kd_camera_flashlight
     chmod 0660 /dev/kd_camera_hw_bus2
@@ -509,17 +512,14 @@ on post-fs-data
     chmod 0660 /dev/CAM_CAL_DRV
     chmod 0660 /dev/CAM_CAL_DRV_SUB
 
-    chown system camera /dev/camera-sysram
     chown system camera /dev/camera-isp
     chown system camera /dev/camera-fdvt
-    chown system camera /dev/camera-pipemgr
     chown system camera /dev/kd_camera_hw
     chown system camera /dev/kd_camera_flashlight
     chown system camera /dev/kd_camera_hw_bus2
     chown system camera /dev/BU64245
     chown system camera /dev/CAM_CAL_DRV
     chown system camera /dev/CAM_CAL_DRV_SUB
-
 
     # SMI
     chmod 0660 /dev/MTK_SMI
@@ -561,10 +561,6 @@ on post-fs-data
     chmod 0660 /dev/ebc
     chown system media /dev/ebc
 
-    #otp
-    chmod 0660 /proc/driver/otp
-    chown root system /proc/driver/otp
-
     # autok
     chown root system /sys/autok/debug
     chown root system /sys/autok/param_count
@@ -583,7 +579,11 @@ on post-fs-data
     chmod 0664 /sys/devices/platform/mt_usb/cmode
     chown root system /sys/devices/platform/mt_usb/cmode
 
-    # Thermal	
+    # AGPS
+    mkdir /data/agps_supl 0771 gps system
+    restorecon_recursive /data/misc/gps
+
+    # Thermal
     mkdir /data/.tp/ 0775 system system
 
     chmod 0660 /dev/ttyC2
@@ -634,10 +634,6 @@ on boot
     chown radio system /sys/power/tuxonice/do_hibernate
     chmod 0770 /sys/power/tuxonice
     chmod 0220 /sys/power/tuxonice/do_hibernate
-
-    # Smartbook Handler Framework
-    chown system system /sys/power/sb_state
-    chmod 0660 /sys/power/sb_state
 
     # HMP CPU hotplug strategy
     chown system system /proc/hps/num_base_perf_serv

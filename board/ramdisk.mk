@@ -11,7 +11,6 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/init.modem.rc:root/init.modem.rc \
     $(DEVICE_PATH)/rootdir/init.mt6735.rc:root/init.mt6735.rc \
     $(DEVICE_PATH)/rootdir/init.mt6735.usb.rc:root/init.mt6735.usb.rc \
-    $(DEVICE_PATH)/rootdir/init.project.rc:root/init.project.rc \
     $(DEVICE_PATH)/rootdir/meta_init.modem.rc:root/meta_init.modem.rc \
     $(DEVICE_PATH)/rootdir/meta_init.project.rc:root/meta_init.project.rc \
     $(DEVICE_PATH)/rootdir/meta_init.rc:root/meta_init.rc \
