@@ -16,7 +16,6 @@ allow system_server smartwake_sysfs:file rw_file_perms;
 
 # Wifi
 allow system_server wmtWifi_device:chr_file w_file_perms;
-allow system_server sysfs_devinfo:file { open read };
 
 # Debugfs
 allow system_server debugfs:dir r_file_perms;
