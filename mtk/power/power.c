@@ -37,6 +37,7 @@
 
 static void power_init(struct power_module *module)
 {
+    ALOGI("MTK power HAL initing.");
 }
 
 static void power_set_interactive(struct power_module *module, int on)
