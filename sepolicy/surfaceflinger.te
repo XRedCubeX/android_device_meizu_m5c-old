@@ -5,3 +5,6 @@ allow surfaceflinger guiext-server_service:service_manager { find add };
 allow surfaceflinger debug_prop:property_service set;
 
 allow surfaceflinger mtk_smi_device:chr_file { read write open ioctl };
+
+# boot_mode
+allow surfaceflinger sysfs_boot_mode:file r_file_perms;

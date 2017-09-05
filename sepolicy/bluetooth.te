@@ -7,3 +7,6 @@ allow bluetooth nvdata_file:file rw_file_perms;
 allow bluetooth nvdata_file:lnk_file r_file_perms;
 
 allow bluetooth block_device:dir search;
+
+# boot_mode
+allow bluetooth sysfs_boot_mode:file r_file_perms;
