@@ -23,8 +23,5 @@ set_prop(ccci_mdinit, ctl_rildaemon_prop)
 set_prop(ccci_mdinit, radio_prop)
 set_prop(ccci_mdinit, ril_mux_report_case_prop)
 
-allow ccci_mdinit mdlog_data_file:file r_file_perms;
-allow ccci_mdinit mdlog_data_file:dir r_dir_perms;
-
 # boot_mode
 allow ccci_mdinit sysfs_boot_mode:file r_file_perms;
