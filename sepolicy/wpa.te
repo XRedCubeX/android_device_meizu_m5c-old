@@ -1,0 +1,2 @@
+# wlan0 hostap
+allow wpa wifi_data_file:sock_file { setattr create write unlink };
