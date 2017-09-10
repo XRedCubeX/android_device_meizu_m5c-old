@@ -7,6 +7,7 @@ PRODUCT_COPY_FILES += \
 # GPS
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/gps/slp_conf:system/etc/slp_conf \
+    $(DEVICE_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
     $(DEVICE_PATH)/configs/gps/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
 
 # Bluetooth
