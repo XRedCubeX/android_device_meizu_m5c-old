@@ -18,7 +18,6 @@
 /(system|system\/vendor|vendor)/bin/wifi2agps                                           u:object_r:wifi2agps_exec:s0
 /(system|system\/vendor|vendor)/bin/wmt_loader                                          u:object_r:wmt_loader_exec:s0
 /(system|system\/vendor|vendor)/bin/em_svr                                              u:object_r:em_svr_exec:s0
-/(system|system\/vendor|vendor)/bin/kpoc_charger                                        u:object_r:kpoc_charger_exec:s0
 
 # Meizupshelper
 /(system|system\/vendor|vendor)/bin/meizupshelper                                       u:object_r:meizupshelper_exec:s0
