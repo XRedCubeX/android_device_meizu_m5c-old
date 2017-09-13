@@ -16,6 +16,9 @@ on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
     restorecon /sys/class/meizu/ps/ps_calibration
 
+    # Turn off backlight on blank
+    write /sys/class/leds/lcd-backlight/trigger "backlight"
+
 on init
     export LD_SHIM_LIBS "/system/lib/libshowlogo.so|libshim_asc.so:/system/lib/libmedia.so|libshim_snd.so:/system/lib64/libmedia.so|libshim_snd.so:/system/lib/liblog.so|libshim_xlog.so:/system/lib64/liblog.so|libshim_xlog.so:/system/lib/libui.so|libshim_ui.so:/system/lib64/libui.so|libshim_ui.so:/system/lib/libgui.so|libshim_gui.so:/system/lib64/libgui.so|libshim_gui.so:/system/bin/mtk_agpsd|libshim_agps.so"
 
@@ -71,16 +74,6 @@ on init
 
     chown root system /dev/kmsg
     chmod 0660 /dev/kmsg
-
-on charger
-    mkdir /dev/block/platform/mtk-msdc.0/by-name 0755 root system
-    symlink /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/logo /dev/block/platform/mtk-msdc.0/by-name/logo
-    chown root system /dev/block/platform/mtk-msdc.0/by-name/logo
-    chmod 0770 /dev/block/platform/mtk-msdc.0/by-name/logo
-    mount ext4 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/system /system ro
-    start fuelgauged
-    start kpoc_charger
-    start servicemanager
 
 on fs
     mount_all /fstab.mt6735
@@ -843,6 +836,8 @@ service conn_launcher /system/bin/6620_launcher -p /system/etc/firmware/
     group system
     class core
 
-service kpoc_charger /system/bin/kpoc_charger
+# healthd charger
+service charger /sbin/charger
     class charger
-    seclabel u:r:kpoc_charger:s0
+    critical
+    seclabel u:r:healthd:s0
