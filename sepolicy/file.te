@@ -34,6 +34,3 @@ type mal_mfi_socket, file_type;
 # akmd
 type akmd_access_file1, file_type,data_file_type;
 type akmd_access_file2, file_type,data_file_type;
-
-# fuelgauge
-type fuelgauge_data_file, file_type, data_file_type;
