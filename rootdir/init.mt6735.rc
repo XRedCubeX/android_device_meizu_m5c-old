@@ -837,7 +837,7 @@ service conn_launcher /system/bin/6620_launcher -p /system/etc/firmware/
     class core
 
 # healthd charger
-service charger /sbin/charger
+service charger /sbin/healthd -c
     class charger
     critical
     seclabel u:r:healthd:s0
