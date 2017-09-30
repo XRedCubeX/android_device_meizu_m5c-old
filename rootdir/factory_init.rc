@@ -381,7 +381,6 @@ on property:vold.decrypt=trigger_restart_framework
     start nvram_daemon
     class_start main
     class_start late_start
-    start permission_check
 
 on property:vold.decrypt=trigger_shutdown_framework
     class_reset late_start
@@ -450,11 +449,6 @@ service thermal_manager /system/bin/thermal_manager
     user root
     oneshot
 
-service permission_check /system/bin/permission_check
-    user root
-    group system radio
-    oneshot
-
 service ccci_fsd /system/bin/ccci_fsd 0
     user radio
     group radio system
@@ -462,11 +456,6 @@ service ccci_fsd /system/bin/ccci_fsd 0
 
 service ccci_mdinit /system/bin/ccci_mdinit 0
     user system
-    group radio system
-    oneshot
-
-service ccci_rpcd /system/bin/ccci_rpcd 0
-    user radio
     group radio system
     oneshot
 
@@ -487,9 +476,6 @@ service factory_no_image /system/bin/factory
 service factory_with_image /sbin/factory
     disabled
     oneshot
-
-service mobile_log_d /system/bin/mobile_log_d
-	class main
 
 #
 # Connectivity related services (End)
