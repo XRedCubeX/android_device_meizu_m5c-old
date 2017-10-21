@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2013-2014 The CyanogenMod Project
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
+
           http://www.apache.org/licenses/LICENSE-2.0
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -11,7 +14,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
- <string name="device_settings_app_name">Gestos con Pantalla Apagada</string>
+
+    <string name="device_settings_app_name">Gestos con Pantalla Apagada</string>
+
     <!-- Gesture shortcuts -->
     <string name="screen_gestures_panel_title">Atajos de gestos</string>
     <string name="screen_gestures_panel_summary">Usar gestos cuando la pantalla está apagada</string>
@@ -34,12 +39,6 @@
     <string name="touchscreen_v_gesture_title">Dibujar \"v\"</string>
     <string name="touchscreen_e_gesture_title">Dibujar \"e\"</string>
     <string name="touchscreen_m_gesture_title">Dibujar \"m\"</string>
-
-    <!-- unused -->
-    <!-- &lt; equals to < and &gt; equals to > -->
-    <string name="touchscreen_v_left_gesture_title">Dibujar \"&lt;\"</string>
-    <string name="touchscreen_v_right_gesture_title">Dibujar \"&gt;\"</string>
-    <string name="touchscreen_v_down_gesture_title">Dibujar \"?\"</string>
 
     <!-- haptic feedback  -->
     <string name="touchscreen_extras">Extras</string>

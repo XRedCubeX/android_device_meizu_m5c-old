@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2013-2014 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +16,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="device_settings_app_name">Жесты выключенного экрана</string>
+
     <!-- Gesture shortcuts -->
     <string name="screen_gestures_panel_title">Управление жестами</string>
     <string name="screen_gestures_panel_summary">Использовать жесты, когда экран выключен</string>
