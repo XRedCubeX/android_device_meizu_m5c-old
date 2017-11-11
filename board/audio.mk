@@ -1,6 +1,3 @@
-# Audio
-TARGET_CPU_MEMCPY_OPT_DISABLE := true
-
 # Audio config
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf \
