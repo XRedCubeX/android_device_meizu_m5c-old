@@ -28,3 +28,6 @@ allow system_server wifi_data_file:sock_file unlink;
 
 # dev_info
 allow system_server sysfs_devinfo:file r_file_perms;
+
+# thermal
+allow system_server sysfs_thermal:file r_file_perms;

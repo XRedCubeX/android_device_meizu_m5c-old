@@ -6,3 +6,6 @@ allow system_app em_svr:unix_stream_socket connectto;
 
 # dev_info
 allow system_app sysfs_devinfo:file r_file_perms;
+
+# thermal
+allow system_app sysfs_thermal:file r_file_perms;

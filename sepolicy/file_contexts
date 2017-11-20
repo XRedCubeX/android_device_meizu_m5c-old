@@ -120,6 +120,7 @@
 /sys/devices/.*/queue/scheduler                                 u:object_r:perf_control_sysfs:s0
 /sys/devices/platform/mx-gs/gesture_control                     u:object_r:smartwake_sysfs:s0
 /sys/class/meizu/ps/ps_calibration                              u:object_r:meizu_ps_calibration_trigger:s0
+/sys/devices/virtual/thermal/thermal_zone*/temp                 u:object_r:thermal_sysfs:s0
 
 # Config/Runtime files
 /data/agps_supl(/.*)?                                           u:object_r:agpsd_data_file:s0
