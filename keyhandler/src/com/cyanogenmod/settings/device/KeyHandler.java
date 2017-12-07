@@ -296,22 +296,22 @@ public class KeyHandler implements DeviceKeyHandler {
         }
     }
 
-    public boolean handleKeyEvent(KeyEvent event) {
-        boolean isHandled = false;
+    public KeyEvent handleKeyEvent(KeyEvent event) {
+        KeyEvent isHandled = event;
 
 
         switch (event.getScanCode()) {
             case 102: // Home button event
                 if (event.getAction() == KeyEvent.ACTION_DOWN) {
                     if (event.getKeyCode() == KeyEvent.KEYCODE_BACK && isLastPressHomeButton) {
-                        isHandled = true;
+                        isHandled = null;
                     }
                     isLastPressHomeButton = mPowerManager.isInteractive()
                             && event.getKeyCode() == KeyEvent.KEYCODE_HOME;
                 }
                 break;
             case 195: // Gesture event
-                isHandled = true;
+                isHandled = null;
                 if (event.getAction() == KeyEvent.ACTION_DOWN) {
                     try {
                         int gestureData = readGestureData();
@@ -331,7 +331,7 @@ public class KeyHandler implements DeviceKeyHandler {
                         }
                     } catch (Exception e) {
                         Log.e(TAG, "Gesture handling failed.", e);
-                        isHandled = false;
+                        isHandled = event;
                     }
                 }
         }
@@ -446,4 +446,3 @@ public class KeyHandler implements DeviceKeyHandler {
         return Integer.valueOf(readSingleLine(f));
     }
 }
-
