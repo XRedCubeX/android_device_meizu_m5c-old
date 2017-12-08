@@ -13,8 +13,9 @@ TW_INCLUDE_CRYPTO := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 
-TW_USE_TOOLBOX := true
+#TW_USE_TOOLBOX := true
 TW_INCLUDE_NTFS_3G := true
+TW_NO_EXFAT_FUSE := true
 TW_EXCLUDE_SUPERSU := true
 
 #M2Note: Flip the screen 180deg
@@ -32,8 +33,6 @@ TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
-
-TW_NO_EXFAT_FUSE := true
 
 RECOVERY_SDCARD_ON_DATA := true
 TW_DEFAULT_EXTERNAL_STORAGE := true
