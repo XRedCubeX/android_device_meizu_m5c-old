@@ -8,10 +8,8 @@ on post-fs-data
 
     write /proc/bootprof "post-fs-data: on modem start"
 
-    # Modem related device nodes
+    # Modem related nodes
     mkdir /data/nvram/md 0770 root system
-    mkdir /data/nvram/md3  0770 root system
-    mkdir /data/md3	0770 root system
     chown radio radio /sys/kernel/ccci/boot
     chown radio radio /dev/ccci_fs
     chown radio radio /dev/ccci_ioctl0
@@ -26,13 +24,13 @@ on post-fs-data
     restorecon_recursive /protect_f
     restorecon_recursive /protect_s
 
-    # ignore permission check
+    # Ignore permission check
     write /data/ccci_cfg/md_new_ver.1 "flag"
     chmod 0660 /data/ccci_cfg/md_new_ver.1
 
     setprop vold.post_fs_data_done 1
 
-    # clear the sim switch flag
+    # Clear the sim switch flag
     setprop persist.radio.simswitch ""
 
 service gsm0710muxd /vendor/bin/gsm0710muxd -s /dev/ttyC0 -f 512 -n 8 -m basic
@@ -77,7 +75,6 @@ service ril-daemon-mtk /vendor/bin/mtkrild
     group radio cache inet misc audio sdcard_r sdcard_rw log system
     disabled
     oneshot
-
 
 service ccci_fsd /vendor/bin/ccci_fsd 0
     user radio
