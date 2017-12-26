@@ -22,10 +22,6 @@
 # Meizupshelper
 /(system|system\/vendor|vendor)/bin/meizupshelper                                       u:object_r:meizupshelper_exec:s0
 
-# Meta mode
-/(system|system\/vendor|vendor)/bin/meta_tst                    u:object_r:meta_tst_exec:s0
-/(system|system\/vendor|vendor)/bin/factory                     u:object_r:factory_exec:s0
-
 # Files from firmware/nv partitions
 /protect_f(/.*)?                                                u:object_r:protect_f_data_file:s0
 /protect_s(/.*)?                                                u:object_r:protect_s_data_file:s0
