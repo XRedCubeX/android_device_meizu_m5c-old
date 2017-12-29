@@ -22,3 +22,6 @@ allow cameraserver sysfs_ddr_type:file r_file_perms;
 
 # PQ
 allow cameraserver pq_service:service_manager find;
+
+# batt_vol
+allow cameraserver sysfs_batt_vol:file r_file_perms;
