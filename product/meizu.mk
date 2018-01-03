@@ -5,5 +5,6 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    MeizuDoze \
-    lights.$(TARGET_BOARD_PLATFORM)
+    MeizuDoze
+
+#lights.$(TARGET_BOARD_PLATFORM)
