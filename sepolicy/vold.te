@@ -12,3 +12,9 @@ allow vold protect_s_data_file:file create_file_perms;
 
 allow vold proc_mtkcooler:dir r_dir_perms;
 allow vold proc_mtktz:dir r_dir_perms;
+
+# dm_device
+allow vold dm_device:blk_file unlink;
+
+# modules
+allow vold kernel:system module_request;
