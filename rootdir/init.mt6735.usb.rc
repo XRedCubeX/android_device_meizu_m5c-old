@@ -1,7 +1,7 @@
 on boot
     setprop sys.usb.vid 2A45
     write /sys/class/android_usb/android0/iManufacturer Meizu
-    write /sys/class/android_usb/android0/iProduct M81
+    write /sys/class/android_usb/android0/iProduct M2Note
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
     write /sys/class/android_usb/android0/f_rndis/wceis 1
     write /sys/class/android_usb/android0/f_rndis/manufacturer Meizu

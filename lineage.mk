@@ -17,7 +17,7 @@ $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk
 PRODUCT_DEVICE := m2note
 PRODUCT_NAME := lineage_m2note
 PRODUCT_BRAND := Meizu
-PRODUCT_MODEL := M2 Note
+PRODUCT_MODEL := M2Note
 PRODUCT_MANUFACTURER := Meizu
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
