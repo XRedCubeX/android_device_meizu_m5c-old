@@ -6,7 +6,7 @@ DEVICE_PATH := device/meizu/m2note
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 
 # Recovery allowed devices
-TARGET_OTA_ASSERT_DEVICE := m2note,m2n,meizu_m2_note
+TARGET_OTA_ASSERT_DEVICE := m2note,m2n,meizu_m2_note,m571,m571h
 
 # Device artwork density
 PRODUCT_AAPT_CONFIG := normal xhdpi
