@@ -13,6 +13,9 @@ TW_INCLUDE_CRYPTO := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 
+# don't prompt to install twrp apk
+TW_EXCLUDE_TWRPAPP := true
+
 #TW_USE_TOOLBOX := true
 TW_INCLUDE_NTFS_3G := true
 TW_NO_EXFAT_FUSE := true
