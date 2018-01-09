@@ -13,5 +13,4 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/init.recovery.mt6735.rc:root/init.recovery.mt6735.rc
 
 # hack for TWRP
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
+PRODUCT_COPY_FILES += $(DEVICE_PATH)/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
