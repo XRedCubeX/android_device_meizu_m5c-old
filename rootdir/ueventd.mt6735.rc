@@ -110,6 +110,8 @@ subsystem adf
 
 # touch
 /dev/touch              0660   root  system
+
+# Meizu m2note
 # for lsm6ds3
 #common sensors files
 /sys/devices/iio:device* buffer/enable 0666 system system

@@ -327,6 +327,8 @@ on post-fs-data
     # Meizu notification leds
     chmod 0660 /sys/class/leds/button-backlight/trigger
     chmod 0660 /sys/class/leds/button-backlight/oneshot_blink
+    chmod 0660 /sys/class/leds/button-backlight/delay_on
+    chmod 0660 /sys/class/leds/button-backlight/delay_off
     chmod 0660 /sys/class/leds/button-backlight/brightness
 
     #duanzhanyang@wind-mobi.com 20150620
@@ -508,6 +510,8 @@ on boot
     chown system system /sys/class/leds/button-backlight/trigger
     # Add by Meizu BSP@YinShunQing
     chown system system /sys/class/leds/button-backlight/oneshot_blink
+    chown system system /sys/class/leds/button-backlight/delay_on
+    chown system system /sys/class/leds/button-backlight/delay_off
 
     # Permission for hibernation
     chown radio system /sys/power/tuxonice
