@@ -18,10 +18,10 @@
     <Decoders>
 
         <!--  ffmpeg audio codecs -->
-        <MediaCodec name="OMX.ffmpeg.aac.decoder"    type="audio/mp4a-latm">
+        <!-- MediaCodec name="OMX.ffmpeg.aac.decoder"    type="audio/mp4a-latm">
             <Limit name="channel-count" max="8" />
             <Limit name="sample-rate" ranges="8000-192000" />
-        </MediaCodec>
+        </MediaCodec -->
         <MediaCodec name="OMX.ffmpeg.ac3.decoder"    type="audio/ac3" >
             <Limit name="channel-count" max="8" />
             <Limit name="sample-rate" ranges="8000-192000" />
@@ -68,7 +68,7 @@
         </MediaCodec>
 
         <!--  ffmpeg video codecs -->
-        <MediaCodec name="OMX.ffmpeg.divx.decoder"   type="video/divx">
+        <!-- MediaCodec name="OMX.ffmpeg.divx.decoder"   type="video/divx">
             <Limit name="size" min="2x2" max="2048x2048" />
             <Limit name="alignment" value="2x2" />
             <Feature name="adaptive-playback" />
@@ -107,6 +107,6 @@
             <Limit name="size" min="2x2" max="2048x2048" />
             <Limit name="alignment" value="2x2" />
             <Feature name="adaptive-playback" />
-        </MediaCodec>
+        </MediaCodec -->
     </Decoders>
 </Included>
