@@ -81,55 +81,63 @@ Only the three quirks included above are recognized at this point:
     <Decoders>
         <!-- Mtk codecs -->
         <MediaCodec name="OMX.MTK.VIDEO.DECODER.MPEG4" type="video/mp4v-es" >
-            <Limit name="size" min="16x16" max="1920x1088" />
+            <Limit name="size" min="16x16" max="1920x1080" />
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="8" />
+	    <Limit name="concurrent-instances" max="4" />
+            <Limit name="measured-frame-rate-176x144" range="300-500" />
+            <Limit name="measured-frame-rate-480x360" range="200-300" />
         </MediaCodec>
         <MediaCodec name="OMX.MTK.VIDEO.DECODER.H263" type="video/3gpp" >
             <Limit name="size" min="16x16" max="1920x1080" />
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="8" />
+            <Limit name="concurrent-instances" max="4" />
+            <Limit name="measured-frame-rate-176x144" range="300-400" />
+            <Limit name="measured-frame-rate-352x288" range="200-300" />
         </MediaCodec>
         <MediaCodec name="OMX.MTK.VIDEO.DECODER.AVC" type="video/avc" >
-            <Limit name="size" min="64x64" max="1920x1088" />
+            <Limit name="size" min="64x64" max="1920x1080" />
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="6" />
+            <Limit name="concurrent-instances" max="4" />
+            <Limit name="measured-frame-rate-320x240" range="300-400" />
+            <Limit name="measured-frame-rate-720x480" range="200-350" />
+            <Limit name="measured-frame-rate-1280x720" range="150-300" />
+            <Limit name="measured-frame-rate-1920x1080" range="50-100" />
         </MediaCodec>
         <MediaCodec name="OMX.MTK.VIDEO.DECODER.VC1" type="video/x-ms-wmv" >
-            <Limit name="size" min="16x16" max="1920x1088" />
+            <Limit name="size" min="16x16" max="1920x1080" />
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="concurrent-instances" max="8" />
+            <Limit name="concurrent-instances" max="4" />
         </MediaCodec>
         <MediaCodec name="OMX.MTK.VIDEO.DECODER.DIVX" type="video/divx" >
-            <Limit name="size" min="16x16" max="1920x1088" />
+            <Limit name="size" min="16x16" max="1920x1080" />
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="concurrent-instances" max="8" />
+            <Limit name="concurrent-instances" max="4" />
         </MediaCodec>
         <MediaCodec name="OMX.MTK.VIDEO.DECODER.DIVX3" type="video/divx3" >
-            <Limit name="size" min="16x16" max="1920x1088" />
+            <Limit name="size" min="16x16" max="1920x1080" />
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="concurrent-instances" max="8" />
+            <Limit name="concurrent-instances" max="4" />
         </MediaCodec>
         <MediaCodec name="OMX.MTK.VIDEO.DECODER.XVID" type="video/xvid" >
-            <Limit name="size" min="16x16" max="1920x1088" />
+            <Limit name="size" min="16x16" max="1920x1080" />
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="concurrent-instances" max="8" />
+            <Limit name="concurrent-instances" max="4" />
         </MediaCodec>
         <MediaCodec name="OMX.MTK.VIDEO.DECODER.S263" type="video/flv1" >
-            <Limit name="size" min="16x16" max="1920x1088" />
+            <Limit name="size" min="16x16" max="1920x1080" />
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="concurrent-instances" max="8" />
+            <Limit name="concurrent-instances" max="4" />
         </MediaCodec>
     </Decoders>
 
@@ -140,7 +148,8 @@ Only the three quirks included above are recognized at this point:
             <Limit name="block-size" value="16x16" />
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="concurrent-instances" max="8" />
+            <Limit name="concurrent-instances" max="4" />
+            <Limit name="measured-frame-rate-176x144" range="300-500" />
         </MediaCodec>
         <MediaCodec name="OMX.MTK.VIDEO.ENCODER.H263" type="video/3gpp" >
             <Limit name="size" min="176x144" max="176x144" />
@@ -148,7 +157,8 @@ Only the three quirks included above are recognized at this point:
             <Limit name="block-size" value="16x16" />
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="concurrent-instances" max="8" />
+            <Limit name="concurrent-instances" max="4" />
+            <Limit name="measured-frame-rate-176x144" range="500-800" />
         </MediaCodec>
         <MediaCodec name="OMX.MTK.VIDEO.ENCODER.AVC" type="video/avc" >
             <Limit name="size" min="64x64" max="1920x1080" />
@@ -156,7 +166,11 @@ Only the three quirks included above are recognized at this point:
             <Limit name="block-size" value="16x16" />
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="concurrent-instances" max="8" />
+            <Limit name="concurrent-instances" max="4" />
+            <Limit name="measured-frame-rate-320x240" range="200-300" />
+            <Limit name="measured-frame-rate-720x480" range="50-100" />
+            <Limit name="measured-frame-rate-1280x720" range="50-100" />
+            <Limit name="measured-frame-rate-1920x1080" range="50-100" />
         </MediaCodec>
     </Encoders>
     <Include href="media_codecs_ffmpeg.xml" />
