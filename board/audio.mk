@@ -4,7 +4,7 @@ USE_XML_AUDIO_POLICY_CONF := 1
 # Audio config
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/audio_device.xml:system/etc/audio_device.xml \
-    $(DEVICE_PATH)/configs/audio/audio_effects.xml:system/etc/audio_effects.xml \
+    $(DEVICE_PATH)/configs/audio/audio_effects.conf:system/etc/audio_effects.conf \
     $(DEVICE_PATH)/configs/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
     $(DEVICE_PATH)/configs/audio/a2dp_audio_policy_configuration.xml:/system/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:/system/etc/audio_policy_volumes.xml \
