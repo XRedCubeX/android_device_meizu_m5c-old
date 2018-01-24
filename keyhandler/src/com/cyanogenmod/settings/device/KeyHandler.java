@@ -103,16 +103,16 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int GESTURE_WAKELOCK_DURATION = 3000;
 
     private final Context mContext;
-
     private final PowerManager mPowerManager;
     private KeyguardManager mKeyguardManager;
     private EventHandler mEventHandler;
     private SensorManager mSensorManager;
     private PackageManager mPackageManager;
-    private Sensor mProximitySensor;
-    private Vibrator mVibrator;
     private CameraManager mCameraManager;
     private String mRearCameraId;
+    private boolean mTorchEnabled;
+    private Sensor mProximitySensor;
+    private Vibrator mVibrator;
     private WakeLock mProximityWakeLock;
     private WakeLock mGestureWakeLock;
     private int mProximityTimeOut;
@@ -121,7 +121,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private Context cmaContext = null;
 
     private boolean isLastPressHomeButton = false;
-    private boolean mTorchEnabled;
     private boolean mNotificationSliderVibrate;
 
     public KeyHandler(Context context) {
@@ -250,7 +249,6 @@ public class KeyHandler implements DeviceKeyHandler {
                             } catch (CameraAccessException e) {
                                 // Ignore
                             }
-                            //doHapticFeedback();
                         }
                         break;
                     case "prev":
@@ -369,8 +367,7 @@ public class KeyHandler implements DeviceKeyHandler {
             }
 
             @Override
-            public void onAccuracyChanged(Sensor sensor, int accuracy) {
-            }
+            public void onAccuracyChanged(Sensor sensor, int accuracy) {}
 
         }, mProximitySensor, SensorManager.SENSOR_DELAY_FASTEST);
     }
@@ -391,8 +388,8 @@ public class KeyHandler implements DeviceKeyHandler {
     private void startActivitySafely(Intent intent) {
         intent.addFlags(
                 Intent.FLAG_ACTIVITY_NEW_TASK
-                        | Intent.FLAG_ACTIVITY_SINGLE_TOP
-                        | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                | Intent.FLAG_ACTIVITY_SINGLE_TOP
+                | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         try {
             UserHandle user = new UserHandle(UserHandle.USER_CURRENT);
             mContext.startActivityAsUser(intent, null, user);
