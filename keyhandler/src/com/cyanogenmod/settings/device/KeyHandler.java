@@ -49,6 +49,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.WindowManagerGlobal;
 
+import cyanogenmod.hardware.CMHardwareManager;
 import cyanogenmod.providers.CMSettings;
 
 import com.android.internal.os.DeviceKeyHandler;
@@ -296,7 +297,8 @@ public class KeyHandler implements DeviceKeyHandler {
 
     public KeyEvent handleKeyEvent(KeyEvent event) {
         KeyEvent isHandled = event;
-
+	CMHardwareManager hardware = CMHardwareManager.getInstance(mContext);
+	boolean virtualKeysEnabled = hardware.get(CMHardwareManager.FEATURE_KEY_DISABLE);
 
         switch (event.getScanCode()) {
             case 102: // Home button event
@@ -306,7 +308,7 @@ public class KeyHandler implements DeviceKeyHandler {
                     }
                     isLastPressHomeButton = mPowerManager.isInteractive()
                             && event.getKeyCode() == KeyEvent.KEYCODE_HOME;
-                }
+		 }
                 break;
             case 195: // Gesture event
                 isHandled = null;
@@ -333,6 +335,9 @@ public class KeyHandler implements DeviceKeyHandler {
                     }
                 }
         }
+	if (event.getScanCode() == 102) {
+	  return virtualKeysEnabled ? null : isHandled;
+	}
         return isHandled;
     }
 
