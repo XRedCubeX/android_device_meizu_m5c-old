@@ -1,10 +1,10 @@
-Device repository for Meizu M2 Note (LineageOS 14.1)
+Device repository for Meizu M5c (LineageOS 14.1) (Development in progress)
 ===========================
 
 Getting Started
 ---------------
 
-See : https://github.com/Moyster/android_local_manifest  
+See : https://github.com/LineageOS/android/tree/cm-14.1
   
 Credits & Thanks 
 ---------
