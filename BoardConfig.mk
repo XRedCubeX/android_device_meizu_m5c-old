@@ -1,5 +1,5 @@
-DEVICE_PATH := device/meizu/m2note
-VENDOR_PATH := vendor/meizu/m2note
+DEVICE_PATH := device/meizu/m5c
+VENDOR_PATH := vendor/meizu/m5c
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
