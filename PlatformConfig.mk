@@ -1,3 +1,4 @@
+$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
 # Platform
 TARGET_BOARD_PLATFORM := mt6737
 TARGET_BOOTLOADER_BOARD_NAME := mt6737
