@@ -6,4 +6,4 @@ PRODUCT_PACKAGES += \
 # Doze
 PRODUCT_PACKAGES += \
     MeizuDoze \
-    lights.mt6753
+    lights.mt6737m
