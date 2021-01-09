@@ -39,3 +39,7 @@ TARGET_USES_MKE2FS := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery.fstab
 
 POLICYVERS := 29
+
+# Shims
+LINKER_FORCED_SHIM_LIBS += \
+    /system/vendor/lib/libui_ext.so|libshim_gui.so
