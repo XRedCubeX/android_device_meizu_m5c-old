@@ -43,7 +43,7 @@ ro.sys.sdcardfs=true
 ro.sf.lcd_density=480
 ro.sf.hwrotation=180
 ro.opengles.version=196609
-sys.display-size=1920x1080
+sys.display-size=1280x720
 debug.hwui.render_dirty_regions=false
 
 # Device
