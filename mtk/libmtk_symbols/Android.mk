@@ -19,7 +19,7 @@ LOCAL_SRC_FILES_64 := mtk_parcel.cpp
 LOCAL_SRC_FILES_64 += mtk_wvm64.cpp
 
 
-LOCAL_SHARED_LIBRARIES := libdpframework libbinder libutils liblog libgui libgui_ext libui libcam_utils.so \
+LOCAL_SHARED_LIBRARIES := libdpframework libbinder libutils liblog libgui libgui_ext libui \
                           libicuuc libicui18n libcrypto libstagefright_foundation
 LOCAL_MODULE := libmtk_symbols
 LOCAL_MODULE_TAGS := optional

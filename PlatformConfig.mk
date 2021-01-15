@@ -36,7 +36,10 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USES_MKE2FS := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt6735
+
+# Disable memcpy opt (for audio libraries)
+TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
 POLICYVERS := 29
 

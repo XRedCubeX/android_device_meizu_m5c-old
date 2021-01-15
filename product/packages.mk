@@ -31,6 +31,9 @@ PRODUCT_PACKAGES += \
     libtinyalsa \
     libtinycompress \
     libtinyxml
+    
+# MTK Symbols
+PRODUCT_PACKAGES += libmtk_symbols
 
 #PRODUCT_PACKAGES += libtinymix
 

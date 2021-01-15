@@ -10,4 +10,3 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/factory_init.usb.rc:root/factory_init.usb.rc \
     $(DEVICE_PATH)/rootdir/fstab.mt6735:root/fstab.mt6735 \
     $(DEVICE_PATH)/rootdir/init.project.rc:root/init.project.rc \
-    $(DEVICE_PATH)/rootdir/recovery.fstab:root/recovery.fstab 
