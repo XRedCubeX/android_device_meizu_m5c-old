@@ -12,6 +12,12 @@ TARGET_OTA_ASSERT_DEVICE := m5c,mblu5c,mblu5color,meizu_m5c
 PRODUCT_AAPT_CONFIG := normal xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap \
+    libcamera_parameters_mtk \
+    libcam.halsensor
+    
 # Product fragments
 -include $(DEVICE_PATH)/product/*.mk
 
