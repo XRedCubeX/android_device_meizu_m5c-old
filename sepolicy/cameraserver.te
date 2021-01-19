@@ -18,6 +18,7 @@ allow cameraserver sysfs_devinfo:file rw_file_perms;
 allow cameraserver sysfs_membw:file rw_file_perms;
 allow cameraserver proc_meminfo:file { open read getattr };
 allow cameraserver sysfs_boot_mode:file r_file_perms;
+allow cameraserver device:chr_file { ioctl open read write };
 allow cameraserver sysfs_ddr_type:file r_file_perms;
 
 # PQ
