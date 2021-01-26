@@ -15,7 +15,7 @@ $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := m5c
-PRODUCT_NAME := cm_m5c
+PRODUCT_NAME := lineage_m5c
 PRODUCT_BRAND := Meizu
 PRODUCT_MODEL := M5c
 PRODUCT_MANUFACTURER := Meizu
