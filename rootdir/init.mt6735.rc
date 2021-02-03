@@ -556,7 +556,7 @@ on post-fs-data
 
     # device info /proc interface
     mknod /dev/devmap c 196 0;
-    chmod 0440 /dev/devmap
+    chmod 0666 /dev/devmap
     chown root system /dev/devmap
 
     # bluetooth

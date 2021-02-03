@@ -292,7 +292,7 @@ on post-fs-data
     chown dhcp dhcp /data/misc/dhcp
 
     # device info interface
-    chmod 0440 /dev/devmap
+    chmod 0666 /dev/devmap
     chown root system /dev/devmap
 
 
