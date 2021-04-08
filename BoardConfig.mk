@@ -1,11 +1,11 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/meizu/meilan2/BoardConfigVendor.mk
+-include vendor/meizu/m5c/BoardConfigVendor.mk
 #64 bit
 TARGET_ARCH := arm64
 TARGET_NO_BOOTLOADER := true
-TARGET_BOARD_PLATFORM := mt6735
+TARGET_BOARD_PLATFORM := mt6737
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 := 
 TARGET_ARCH_VARIANT := armv8-a
@@ -28,7 +28,7 @@ TARGET_GLOBAL_CFLAGS   += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_USERIMAGES_USE_EXT4:=true
 
-TARGET_BOOTLOADER_BOARD_NAME := mt6735
+TARGET_BOOTLOADER_BOARD_NAME := mt6737
 
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x40078000
@@ -37,29 +37,25 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x03f88000
 
 #extracted from /proc/partinfo
-BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216 # 0x1000000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 50331648 # 0x3000000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1610612736 # 0x60000000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 12831948800 # 0x2fcd80000
-BOARD_CACHEIMAGE_PARTITION_SIZE := 419439400 # 0x19000000
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216 
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 20971520
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1610612736 
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 12831948800 
+BOARD_CACHEIMAGE_PARTITION_SIZE := 419439400 
 #pagesize * 64
 BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --tags_offset 0x0df88000 --board 1450664547 
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --tags_offset 0x0df88000 --board mt6737
 
-#in case we want to build kernel from source
-#TARGET_KERNEL_SOURCE := kernel/meizu/meilan2
-#TARGET_KERNEL_CONFIG := cyanogenmod_meilan2_defconfig
 
 #for now lets use prebuilt
-TARGET_PREBUILT_KERNEL := device/meizu/meilan2/prebuilt/Image.gz-dtb
+TARGET_PREBUILT_KERNEL := device/meizu/m5c/prebuilt/Image.gz-dtb
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_HAS_NO_SELECT_BUTTON := true
-#recovery
-#TARGET_RECOVERY_INITRC := device/meizu/meilan2/recovery/init.mt6753.rc
-TARGET_RECOVERY_FSTAB := device/meizu/meilan2/recovery/root/fstab.mt6735
+TARGET_RECOVERY_FSTAB := device/meizu/m5c/recovery/root/fstab.mt6735
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness\"
 
 #system.prop
-TARGET_SYSTEM_PROP := device/meizu/meilan2/system.prop
+TARGET_SYSTEM_PROP := device/meizu/m5c/system.prop
 
 # WiFi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -77,40 +73,6 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
 
-#twrp ( WIP do not use!!! see comments )
-
-#tw_theme is essential flag
-TW_THEME := portrait_hdpi
-
-#brightness settings (needs verification)
-TW_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness/
-TW_MAX_BRIGHTNESS := 255
-
-#may be usefull if we get graphical glitches
-#RECOVERY_GRAPHICS_USE_LINELENGTH := true
-
-#in case of wrong color this needs modification
-#TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-
-#if sdcard0 is a /data/media emulated one
-#RECOVERY_SDCARD_ON_DATA := true
-
-#ntfs support? (needs much space..)
-#TW_INCLUDE_NTFS_3G := true
-
-#we may need that if sdcard0 dont work
-#TW_FLASH_FROM_STORAGE := true
-#TW_EXTERNAL_STORAGE_PATH := "/external_sd"
-#TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-#TW_DEFAULT_EXTERNAL_STORAGE := true
-
-#only add if kernel supports
-#TW_INCLUDE_FUSE_EXFAT := true
-
-#F2FS support (only activate if kernel supports)
-#TARGET_USERIMAGES_USE_F2FS:=true
-
-
 #Mediatek flags
 BOARD_HAS_MTK_HARDWARE := true
 MTK_HARDWARE := true
@@ -119,5 +81,5 @@ COMMON_GLOBAL_CPPFLAGS += -DMTK_HARDWARE -DMTK_AOSP_ENHANCEMENT
 
 #EGL settings
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/meizu/meilan2/egl.cfg
+BOARD_EGL_CFG := device/meizu/m5c/egl.cfg
 
