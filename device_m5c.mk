@@ -18,7 +18,6 @@ TARGET_OTA_ASSERT_DEVICE := m5c,meizu_m5c
 PRODUCT_COPY_FILES += \
 	device/meizu/m5c/rootdir/enableswap.sh:root/enableswap.sh \
 	device/meizu/m5c/rootdir/init.mt6735.rc:root/init.mt6735.rc \
-	device/meizu/m5c/rootdir/init.ssd.rc:root/init.ssd.rc \
 	device/meizu/m5c/rootdir/init.xlog.rc:root/init.xlog.rc \
 	device/meizu/m5c/rootdir/init.usb.rc:root/init.usb.rc \
 	device/meizu/m5c/rootdir/init.mt6735.usb.rc:root/init.mt6735.usb.rc \
